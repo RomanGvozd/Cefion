@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF UI Display', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+
+    &:active {
+        transform: scale(1);
+    }
+
+}
+
+.description__title {
+    font-weight: 500;
+    font-size: 2.25rem;
+    line-height: 125%;
+
+}
+
+.description__text-dark {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 170%;
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.5);
+
+}
+
+.description__text-light {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 170%;
+    margin-top: 15px;
+    color: rgba(0, 0, 0, 0.5);
+
+}

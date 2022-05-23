@@ -1,0 +1,68 @@
+const marketNevsCards = [
+    {
+        id: 1,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 2,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 3,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 4,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 5,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 6,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 7,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+    {
+        id: 8,
+        titleRU: '5 часов назад',
+        titleEN: '5 hours ago',
+        avtor: 'by Yashu Gola',
+        descriptionRU: 'Выведение крипторынка "на свет" не решает проблемы правоприменения: председатель CFTC',
+        descriptionEN: 'Bringing crypto market "into the light" doesn’t address enforcement: CFTC chair',
+    },
+]
+
+export default marketNevsCards;

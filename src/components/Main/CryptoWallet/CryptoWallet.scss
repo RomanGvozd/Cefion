@@ -1,0 +1,66 @@
+.crypto-wallet-dark {
+    background-color: black;
+    color: white;
+}
+
+.crypto-wallet-light {
+    background-color: white;
+    color: black;
+}
+
+.crypto-wallet {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(66, 66, 70);
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 14% 150px;
+    transition: 0.5s;
+
+    .crypto-wallet__image {
+        width: 60%;
+        height: 500px;
+        object-fit: contain;
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        .crypto-wallet__image {
+            margin-top: 50px;
+        }
+    }
+
+    @media screen and (max-width: 1155px) {
+        .crypto-wallet__image {
+            width: 100%;
+        }
+    }
+
+
+    .crypto-wallet__description {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        .crypto-wallet__description {
+            margin-top: 50px;
+            width: 60%;
+
+        }
+        
+    }
+
+    @media screen and (max-width: 900px) {
+        .crypto-wallet__description {
+            width: 100%;
+
+        }
+        
+    }
+
+}

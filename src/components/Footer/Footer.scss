@@ -1,0 +1,235 @@
+.footer-dark {
+    background-color: black;
+    color: white;
+}
+
+.footer-light {
+    background-color: white;
+    color: black;
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(66, 66, 70);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 14% 70px;
+    transition: 0.5s;
+
+    .footer__nav {
+        width: 100%;
+        display: flex;
+
+        .nav__item-dark {
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 229%;
+            color: white;
+            margin-right: 40px;
+
+        }
+
+        .nav__item-light {
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: 229%;
+            color: black;
+            margin-right: 40px;
+
+        }
+
+    }
+
+    .footer__download {
+        width: 100%;
+        border-bottom: 1px solid rgb(66, 66, 70);
+        display: flex;
+        align-items: center;
+        padding: 40px 0;
+
+        .download__title {
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 125%;
+
+        }
+
+        .block__download {
+            margin-left: 50px;
+
+            .download__button {
+                width: 120px;
+                height: 40px;
+                margin-left: 20px;
+                border-radius: 5px;
+
+            }
+
+            .download__app-store {
+                background-image: url(./image/app-store.svg);
+                background-size: cover;
+
+            }
+
+            .download__google-play {
+                background-image: url(./image/google-play.svg);
+                background-size: cover;
+
+            }
+
+            .download__android {
+                background-image: url(./image/android.svg);
+                background-size: cover;
+                
+            }
+
+        }
+
+    }
+
+    .footer__social {
+        width: 100%;
+        border-bottom: 1px solid rgb(66, 66, 70);
+        display: flex;
+        align-items: center;
+        padding: 40px 0;
+
+        .social__title {
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 125%;
+
+        }
+
+        .block__social {
+            margin-left: 200px;
+            display: flex;
+
+            .social__button {
+                width: 55px;
+                height: 55px;
+                background: rgba(46, 156, 62, 0.05);
+                border: 1px solid #2E9C3E;
+                border-radius: 10px;
+                margin-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .social__button-image {
+                    width: 50%;
+                    height: 50%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+    
+                .social__button-faceboock-dark {
+                    background-image: url(./image/faceboockDark.svg);
+
+                }
+    
+                .social__button-faceboock-light {
+                    background-image: url(./image/faceboockLight.svg);
+
+                }
+
+                .social__button-twitter-dark {
+                    background-image: url(./image/twitterDark.svg);
+
+                }
+
+                .social__button-twitter-light {
+                    background-image: url(./image/twitterLight.svg);
+
+                }
+
+                .social__button-instagram-dark {
+                    background-image: url(./image/instagramDark.svg);
+                    
+                }
+    
+                .social__button-instagram-light {
+                    background-image: url(./image/instagramLight.svg);
+
+                }
+
+                .social__button-youtube-dark {
+                    background-image: url(./image/youtubeDark.svg);
+
+                }
+
+                .social__button-youtube-light {
+                    background-image: url(./image/youtubeLight.svg);
+
+                }
+
+                .social__button-telegram-dark {
+                    background-image: url(./image/telegramDark.svg);
+                    
+                }
+    
+                .social__button-telegram-light {
+                    background-image: url(./image/telegramLight.svg);
+
+                }
+
+                .social__button-discord-dark {
+                    background-image: url(./image/discordDark.svg);
+
+                }
+
+                .social__button-discord-light {
+                    background-image: url(./image/discordLight.svg);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .footer__other {
+        width: 100%;
+        display: flex;
+        margin-top: 40px;
+
+        .other__text-dark {
+            font-weight: 300;
+            font-size: 0.8rem;
+            line-height: 229%;
+            color: rgba(255, 255, 255, 0.5);
+            margin-right: 50px;
+
+        }
+
+        .other__text-light {
+            font-weight: 300;
+            font-size: 0.8rem;
+            line-height: 229%;
+            color: rgba(0, 0, 0, 0.5);
+            margin-right: 50px;
+            
+        }
+
+        @media screen and (max-width: 900px) {
+            .other__text-dark {
+                margin: 0;
+    
+            }
+    
+            .other__text-light {
+                margin: 0;
+                
+            }
+        
+        }
+
+    }
+    
+}
+
+
+

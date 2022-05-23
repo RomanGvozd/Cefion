@@ -1,0 +1,85 @@
+.select-dark {
+    color: white;
+}
+
+.select-light {
+    color: black;
+}
+
+.select {
+    position: relative;
+    margin-left: 15px;
+
+    .select__button {
+        cursor: pointer;
+        width: 80px;
+        height: 40px;
+        background: rgba(0, 0, 0, 0.05);
+        border: 1px solid #D6D6D6;
+        border-radius: 10px;
+        position: relative;
+        padding: 13px 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .selectArrow-dark {
+            width: 15px;
+            height: 10px;
+            background-image: url(./images/selectArrowDark.svg);
+            background-size: cover;
+            transition: 0.5s;
+
+        }
+
+        .selectArrow-light {
+            width: 15px;
+            height: 10px;
+            background-image: url(./images/selectArrowLight.svg);
+            background-size: cover;
+            transition: 0.5s;
+
+        }
+
+    }
+
+    .select__content-dark {
+        background: #1C1C1E;
+        border: 1px solid #424246;
+    }
+
+    .select__content-light {
+        background: #F5F5F5;
+        border: 1px solid #D6D6D6;
+
+    }
+
+    .select__content {
+        width: 80px;
+        height: auto;
+        border-radius: 10px;
+        border-top: none;
+        position: absolute;
+        left: 0;
+        top: 110%;
+        z-index: 10;
+
+        .content__item {
+            cursor: pointer;
+            padding: 10px 35%;
+            transition: 0.3s;
+
+            &:hover {
+                opacity: 0.3;
+            }
+
+        }
+
+    }
+
+}

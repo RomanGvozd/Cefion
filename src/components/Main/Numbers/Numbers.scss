@@ -1,0 +1,95 @@
+.numbers-dark {
+    background-color: black;
+    color: white;
+}
+
+.numbers-light {
+    background-color: white;
+    color: black;
+}
+
+.numbers {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(66, 66, 70);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 150px 0 150px;
+    transition: 0.5s;
+    
+
+    .numbers__line-wrapper {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+        overflow: hidden;
+
+        .numbers__line {
+            width: 100%;
+            height: auto;
+            margin-top: 50px;
+            display: flex;
+    
+            .line-item {
+                min-width: 350px;
+                height: 125px;
+                background: rgba(46, 156, 62, 0.05);
+                border: 1px solid #2E9C3E;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin: 0 10px;
+
+                animation-duration: 8s;
+                animation-name: ticker;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+    
+                .line-item__title {
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    line-height: 43px;
+                    color: #2E9C3E;
+                    
+                }
+    
+                .line-item__text-dark {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 170%;
+                    margin-top: 15px;
+                    color: rgba(255, 255, 255, 0.5);
+    
+                }
+    
+                .line-item__text-light {
+                    font-weight: 400;
+                    font-size: 0.9rem;
+                    line-height: 170%;
+                    margin-top: 15px;
+                    color: rgba(0, 0, 0, 0.5);
+    
+                }
+    
+            }
+
+    
+        }
+
+        @keyframes ticker {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-370px);
+            }
+
+        }
+
+    }
+
+}

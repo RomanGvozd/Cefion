@@ -1,0 +1,89 @@
+.timeline-dark {
+    background-color: black;
+    color: white;
+}
+
+.timeline-light {
+    background-color: white;
+    color: black;
+}
+
+.timeline {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(66, 66, 70);
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 14% 150px;
+    transition: 0.5s;
+
+    .timeline__description {
+        width: 40%;
+        margin-top: 150px;
+
+        .description__button {
+            width: 190px;
+            height: 70px;
+            background: rgba(46, 156, 62, 0.05);
+            border: 1px solid #2E9C3E;
+            border-radius: 10px;
+            color: #2E9C3E;
+            margin-top: 30px;
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .description__button {
+                width: 200px;
+    
+            }
+            
+        }
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        .timeline__description {
+            width: 60%;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+    
+        }
+        
+    }
+
+    @media screen and (max-width: 900px) {
+        .timeline__description {
+            margin-top: 50px;
+            width: 100%;
+
+        }
+        
+    }
+
+    .timeline__image {
+        width: 60%;
+        height: 600px;
+        object-fit: contain;
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        .timeline__image {
+            margin-top: 50px;
+
+        }
+        
+    }
+
+    @media screen and (max-width: 900px) {
+        .timeline__image {
+            width: 100%;
+
+        }
+        
+    }
+
+}

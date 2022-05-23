@@ -1,0 +1,116 @@
+.ask-question-dark {
+    background-color: black;
+    color: white;
+}
+
+.ask-question-light {
+    background-color: white;
+    color: black;
+}
+
+.ask-question {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(66, 66, 70);
+    padding: 100px 14% 100px;
+    transition: 0.5s;
+
+    .ask-question-description__title {
+        font-weight: 500;
+        font-size: 2.25rem;
+        line-height: 125%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .ask-question-description__title {
+            display: flex;
+            justify-content: center;
+
+        }
+
+    }
+
+    .ask-question__messege {
+        width: 100%;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #424246;
+        border-radius: 10px;
+        margin-top: 50px;
+        padding: 30px;
+        color: #2E9C3E;
+
+        &:focus {
+            outline: 1px solid #2E9C3E;
+
+        }
+
+    }
+
+    .ask-question__block {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .block__input {
+            width: 48%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #424246;
+            border-radius: 10px;
+            color: #2E9C3E;
+            
+            &:focus {
+                outline: 1px solid #2E9C3E;
+
+            }
+
+        }
+
+        .block__button {
+            width: 48%;
+            padding: 20px;
+            background: rgba(46, 156, 62, 0.05);
+            border: 1px solid #2E9C3E;
+            color: #2E9C3E;
+            border-radius: 10px;
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .block__input {
+                width: 100%;
+
+            }
+
+            .block__button {
+                width: 100%;
+                margin-top: 20px;
+    
+            }
+            
+        }
+
+    }
+
+    @media only screen and (max-width: 600px) {
+        .ask-question__block {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .ask-question {
+        padding: 100px 5% 100px;
+
+    }
+
+}

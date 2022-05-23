@@ -1,0 +1,85 @@
+.personal-account-dark {
+    background-color: black;
+    color: white;
+}
+
+.personal-account-light {
+    background-color: white;
+    color: black;
+}
+
+.personal-account {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgb(66, 66, 70);
+    display: flex;
+    justify-content: space-between;
+    padding: 150px 14% 150px;
+    transition: 0.5s;
+
+    .personal-account__image {
+        width: 50%;
+        height: 450px;
+        object-fit: contain;
+        
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        .personal-account__image {
+            margin-top: 50px;
+        }
+        
+    }
+
+    @media screen and (max-width: 900px) {
+        .personal-account__image {
+            width: 100%;
+        }
+        
+    }
+
+    .personal-account__description {
+        width: 40%;
+
+        .description__button {
+            width: 190px;
+            height: 70px;
+            background: rgba(46, 156, 62, 0.05);
+            border: 1px solid #2E9C3E;
+            color: #2E9C3E;
+            border-radius: 10px;
+            margin-top: 30px;
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .description__button {
+                width: 100%;
+        
+            }
+            
+        }
+
+    }
+
+    @media screen and (max-width: 1155px) {
+        .personal-account__description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+    
+        }
+        
+    }
+
+    @media screen and (max-width: 900px) {
+        .personal-account__description {
+            width: 100%;
+    
+        }
+        
+    }
+
+}
