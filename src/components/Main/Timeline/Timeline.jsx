@@ -1,6 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import { motion } from "framer-motion";
 
 import './Timeline.scss';
 import './TimelineAdaptive.scss';
@@ -13,9 +14,28 @@ function Timeline() {
     const scrollTop = () => {
         window.scrollTo(0, 0);
     }
+
+    const imgAnimation = {
+        hidden : {
+            opacity: 0,
+            scale: 0,
+            transition: { duration: 0.7 },
+        },
+        visible : {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.7 },
+        }
+    }
     
     return(
-        <section className={theme === "dark" ? "timeline timeline-dark" : "timeline timeline-light"}>
+        <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{amount: 0.2}}
+        id="timeline" 
+        className={theme === "dark" ? "timeline timeline-dark" : "timeline timeline-light"}
+        >
             <div className="timeline__description">
                 <h2 className="description__title">
                     {language === "RU"
@@ -57,10 +77,10 @@ function Timeline() {
                 </Link>
             </div>
             {theme === "dark" 
-            ? <img className="timeline__image" src={require('./image/timelineDark.png')} alt="" />
-            : <img className="timeline__image" src={require('./image/timelineLight.png')} alt="" />
+            ? <motion.img variants={imgAnimation} className="timeline__image" src={require('./image/timelineDark.png')} alt="" />
+            : <motion.img variants={imgAnimation} className="timeline__image" src={require('./image/timelineLight.png')} alt="" />
             }
-        </section>
+        </motion.section>
     )
 }
 

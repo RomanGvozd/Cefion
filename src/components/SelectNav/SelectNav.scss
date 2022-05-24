@@ -1,0 +1,85 @@
+.select-dark {
+    color: white;
+}
+
+.select-light {
+    color: black;
+}
+
+.select-nav {
+    position: relative;
+
+    .select-nav__button {
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        background: none;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        .selectArrow-dark {
+            width: 15px;
+            height: 10px;
+            background-image: url(./images/selectArrowDark.svg);
+            background-size: cover;
+            transition: 0.5s;
+            margin-left: 5px;
+
+        }
+
+        .selectArrow-light {
+            width: 15px;
+            height: 10px;
+            background-image: url(./images/selectArrowLight.svg);
+            background-size: cover;
+            transition: 0.5s;
+            margin-left: 5px;
+
+        }
+
+    }
+
+    .select__content-dark {
+        background: #1C1C1E;
+        border: 1px solid #424246;
+    }
+
+    .select__content-light {
+        background: #F5F5F5;
+        border: 1px solid #D6D6D6;
+
+    }
+
+    .select__content {
+        width: auto;
+        height: auto;
+        border-radius: 10px;
+        border-top: none;
+        position: absolute;
+        padding: 10px;
+        left: 0;
+        top: 110%;
+        z-index: 10;
+
+        .content__item {
+            cursor: pointer;
+            transition: 0.3s;
+            color: white;
+            padding: 2px;
+
+            &:hover {
+                opacity: 0.3;
+            }
+
+        }
+
+    }
+
+}

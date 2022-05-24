@@ -51,3 +51,23 @@ button {
     color: rgba(0, 0, 0, 0.5);
 
 }
+
+@media only screen and (max-width: 600px) {
+    .description__title {
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    .description__text-dark {
+        display: flex;
+        justify-content: center;
+    
+    }
+    
+    .description__text-light {
+        display: flex;
+        justify-content: center;
+    
+    }
+}

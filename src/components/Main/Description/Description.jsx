@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
+import { motion } from "framer-motion";
 
 import './Description.scss';
 import './DescriptionAdaptive.scss';
@@ -39,8 +40,25 @@ function Description() {
 
     },[blocks])
 
+    const imgAnimation = {
+        hidden : {
+            opacity: 0,
+            scale: 0,
+            transition: { duration: 0.7 },
+        },
+        visible : {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.7 },
+        }
+    }
+
     return(
-        <section className={theme === "dark" ? "description description-dark" : "description description-light"}>
+        <motion.section
+        initial="hidden"
+        whileInView="visible"
+        className={theme === "dark" ? "description description-dark" : "description description-light"}
+        >
             <div className="description__block">
                 <div className="block__information">
                     <h2 className="description__title">
@@ -75,8 +93,8 @@ function Description() {
                     </div>
                 </div>
                 {theme === "dark" 
-                ? <img className="block__image" src={require('./image/descriptionDark.png')} alt="" />
-                : <img className="block__image" src={require('./image/descriptionLight.png')} alt="" />
+                ? <motion.img variants={imgAnimation} className="block__image" src={require('./image/descriptionDark.png')} alt="" />
+                : <motion.img variants={imgAnimation} className="block__image" src={require('./image/descriptionLight.png')} alt="" />
                 }
             </div>
             <div className="description__partners">
@@ -92,7 +110,7 @@ function Description() {
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

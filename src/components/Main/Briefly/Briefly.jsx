@@ -1,5 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
+import { motion } from "framer-motion";
 
 import './Briefly.scss';
 import './BrieflyAdaptive.scss';
@@ -8,11 +9,29 @@ function Briefly() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
+    const imgAnimation = {
+        hidden : {
+            opacity: 0,
+            scale: 0,
+            transition: { duration: 0.7 },
+        },
+        visible : {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.7 },
+        }
+    }
+
     return(
-        <section className={theme === "dark" ? "briefly briefly-dark" : "briefly briefly-light"}>
+        <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{amount: 0.2}}
+        className={theme === "dark" ? "briefly briefly-dark" : "briefly briefly-light"}
+        >
             {theme === "dark" 
-            ? <img className="briefly__image" src={require('./image/brieflyDark.png')} alt="" />
-            : <img className="briefly__image" src={require('./image/brieflyLight.png')} alt="" />
+            ? <motion.img variants={imgAnimation} className="briefly__image" src={require('./image/brieflyDark.png')} alt="" />
+            : <motion.img variants={imgAnimation} className="briefly__image" src={require('./image/brieflyLight.png')} alt="" />
             }
             <div className="briefly__description">
                 <h2 className="description__title">
@@ -38,7 +57,7 @@ function Briefly() {
                     }
                 </p>
             </div>
-        </section>
+        </motion.section>
     );
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Link, useLocation} from "react-router-dom";
-import routs from "../../common/routs.config";
 
 import './Footer.scss';
 import './FooterAdaptive.scss';

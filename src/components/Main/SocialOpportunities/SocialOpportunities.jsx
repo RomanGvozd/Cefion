@@ -1,5 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
+import { motion } from "framer-motion";
 
 import './SocialOpportunities.scss';
 import './SocialOpportunitiesAdaptive.scss';
@@ -8,8 +9,27 @@ function SocialOpportunities() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
+    const imgAnimation = {
+        hidden : {
+            opacity: 0,
+            scale: 0,
+            transition: { duration: 0.7 },
+        },
+        visible : {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.7 },
+        }
+    }
+
     return(
-        <section className={theme === "dark" ? "social-opportunities social-opportunities-dark" : "social-opportunities social-opportunities-light "}>
+        <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{amount: 0.2}}
+        id="socialOpportunities" 
+        className={theme === "dark" ? "social-opportunities social-opportunities-dark" : "social-opportunities social-opportunities-light "}
+        >
             <div className="social-opportunities__description">
                 <h2 className="description__title">
                     {language === "RU"
@@ -61,10 +81,10 @@ function SocialOpportunities() {
                 </p>
             </div>
             {theme === "dark" 
-            ? <img className="social-opportunities__image" src={require('./image/SocialOpportunitiesDark.png')} alt="" />
-            : <img className="social-opportunities__image" src={require('./image/SocialOpportunitiesLight.png')} alt="" />
+            ? <motion.img variants={imgAnimation} className="social-opportunities__image" src={require('./image/SocialOpportunitiesDark.png')} alt="" />
+            : <motion.img variants={imgAnimation} className="social-opportunities__image" src={require('./image/SocialOpportunitiesLight.png')} alt="" />
             }
-        </section>
+        </motion.section>
     );
 }
 

@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { Link } from "react-router-dom";
+import { Link,useLocation } from "react-router-dom";
 
 import Select from '../Select/Select';
+import SelectNav from '../SelectNav/SelectNav';
 
 import {changeTheme} from '../../common/store/theme/actions';
 import {changeLanguage} from '../../common/store/language/actions';
@@ -17,17 +18,15 @@ function Header({openModalLogin}) {
     const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop
     const [hide, setHide] = useState(0);
 
+    const {pathname} = useLocation();
+
     useEffect(() => {
         window.addEventListener('scroll', () => {
-
             if (scrollPosition() > lastScroll) {
-                setHide(-100)
-                
+                setHide(-100)             
             } else if (scrollPosition() < lastScroll) {
                 setHide(0)
-
-            }
-            
+            }     
             lastScroll = scrollPosition()
         })
     }, [])
@@ -38,6 +37,39 @@ function Header({openModalLogin}) {
 
     const [selected, setSelected] = useState("RU");
     const options = ["RU", "EN",];
+
+    const [selectedNav, setSelectedNav] = useState({
+        titleRU: "Функции приложения",
+        titleEN: "Application Features",
+    },)
+
+    const optionsNav = [
+        {
+            id: "personalAccount",
+            titleRU: "Личный аккаунт",
+            titleEN: "Personal account",
+        },
+        {
+            id: "socialOpportunities",
+            titleRU: "Социальные возможности",
+            titleEN: "Social Opportunities",
+        },
+        {
+            id: "cryptoWallet",
+            titleRU: "Криптокошелек",
+            titleEN: "Crypto wallet",
+        },
+        {
+            id: "timeline",
+            titleRU: "Лента новостей",
+            titleEN: "Timeline",
+        },
+        {
+            id: "otherFeatures",
+            titleRU: "Другие функции",
+            titleEN: "Other features",
+        },
+    ];
 
     const handleTheme = () => {
         if (theme === "dark") {
@@ -51,19 +83,80 @@ function Header({openModalLogin}) {
         dispatch(changeLanguage(option))
     }
 
+    const [nav, setNav] = useState(false);
+
     return (
         <>
             <header      
                 className={theme === 'dark' ? 'header header-dark' : 'header header-light'}
                 style={{transform: `translateY(${hide}%)`}}
                 >
-                <Link to="/">
-                    <div className='header__logo'>
-
+                <div className="header__logo-wrapper">
+                    <Link to="/">
+                        <div className='header__logo'>
+                        </div>
+                    </Link>
+                    <div className='nav__buuton-wrapper'>
+                        <div className='nav__button' onClick={()=>setNav(true)}>
+                            <span className='nav__button-span'></span>
+                        </div>
                     </div>
-                </Link>
-                <nav className='header__nav'>
+                </div>
 
+                <nav className='header__nav'>
+                    <div 
+                        className={nav ? 'nav__list nav__list-open' : 'nav__list'}
+                        style={theme === "dark" ? {backgroundColor: "black"} : {backgroundColor: "white"}}
+                    >
+                            {nav 
+                            ? <div className='nav__buuton-wrapper'>
+                                <div className='nav__button-close' onClick={()=>setNav(false)}></div>
+                            </div> 
+                            : <></>
+                            }
+                            <div className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'}>
+                                <SelectNav
+                                    selected={selectedNav} 
+                                    setSelected={setSelectedNav}
+                                    options={optionsNav}
+                                    theme={theme}
+                                    language={language}
+                                />
+                            </div>
+                            <Link 
+                            className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
+                            to="/Roadmap"
+                            style={pathname === "/Roadmap" ? {color: "#2E9C3E"} : {}}
+                            onClick={()=>setNav(false)}
+                            >
+                                {language === "RU"
+                                ? "Дорожная карта"
+                                : "Roadmap"
+                                }
+                            </Link>
+                            <Link 
+                            className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
+                            to="/news" 
+                            style={pathname === "/news" ? {color: "#2E9C3E"} : {}}
+                            onClick={()=>setNav(false)}
+                            >
+                                {language === "RU"
+                                ? "Новости"
+                                : "News"
+                                }
+                            </Link>
+                            <Link 
+                            className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
+                            to="/about" 
+                            style={pathname === "/about" ? {color: "#2E9C3E"} : {}}
+                            onClick={()=>setNav(false)}
+                            >
+                                {language === "RU"
+                                ? "О нас"
+                                : "About Us"
+                                }
+                            </Link>   
+                    </div>
                 </nav>
                 <div className='header__setting'>
                     <button className='header__login' onClick={openModalLogin}>

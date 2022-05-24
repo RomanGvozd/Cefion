@@ -1,5 +1,6 @@
 import React from "react";
 import {useSelector} from "react-redux";
+import { motion } from "framer-motion";
 
 import './CryptoWallet.scss';
 import './CryptoWalletAdaptive.scss';
@@ -8,11 +9,30 @@ function CryptoWallet() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
+    const imgAnimation = {
+        hidden : {
+            opacity: 0,
+            scale: 0,
+            transition: { duration: 0.7 },
+        },
+        visible : {
+            opacity: 1,
+            scale: 1,
+            transition: { duration: 0.7 },
+        }
+    }
+
     return(
-        <section className={theme === "dark" ? "crypto-wallet crypto-wallet-dark" : "crypto-wallet crypto-wallet-light"}>
+        <motion.section 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{amount: 0.2}}
+        id="cryptoWallet" 
+        className={theme === "dark" ? "crypto-wallet crypto-wallet-dark" : "crypto-wallet crypto-wallet-light"}
+        >
             {theme === "dark" 
-            ? <img className="crypto-wallet__image" src={require('./image/ctyptoWalletDark.png')} alt="" />
-            : <img className="crypto-wallet__image" src={require('./image/cryptoWalletLight.png')} alt="" />
+            ? <motion.img variants={imgAnimation} className="crypto-wallet__image" src={require('./image/ctyptoWalletDark.png')} alt="" />
+            : <motion.img variants={imgAnimation} className="crypto-wallet__image" src={require('./image/cryptoWalletLight.png')} alt="" />
             }
             <div className="crypto-wallet__description">
             <h2 className="description__title">
@@ -28,7 +48,7 @@ function CryptoWallet() {
                     }
                 </p>
             </div>
-        </section>
+        </motion.section>
     )
 }
 
