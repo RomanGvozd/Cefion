@@ -1,62 +1,84 @@
-import React, {useState, useEffect} from "react";
-import {useSelector} from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
+import { content } from "./Number.config";
+import arr from "./numbersArray";
 
-import arr from './numbersArray';
-
-import './Numbers.scss';
+import "./Numbers.scss";
 
 function Numbers() {
-    const theme = useSelector((store) => store.theme.theme);
-    const language = useSelector((store) => store.language.language);
+  const theme = useSelector((store) => store.theme.theme);
+  const language = useSelector((store) => store.language.language);
+  
+  const [firstElRef, setFirstElRef] = useState({});
+  const [translate, setTranslate] = useState(0);
+  const [numbers, setNumbers] = useState(arr);
 
-    const [numbers, setNumbers] = useState(arr)
+  useEffect(() => {
+    const maxTranslate = firstElRef.clientWidth + 20 || 0;
+    let translate = 0;
+    const interval = setInterval(() => {
+      if (translate === maxTranslate) {
+        setTranslate(0);
+        const item = numbers[0];
+        const arr = numbers.slice(1);
+        setNumbers([...arr, item]);
+        clearInterval(interval);
+      } else {
+        translate++;
+        setTranslate((state) => state + 1);
+      }
+    }, 10);
+    return () => clearInterval(interval);
+  }, [firstElRef]);
 
-    useEffect(() => {
+  const { title } = content[language];
 
-        setTimeout(() => {
-            const result = []
-            let firstItem = null
-            let count = 0
-            numbers.map((number)=> {
-                count++
-                if (count === 1) {
-                    firstItem = number
-                } else {
-                    result.push(number)
-                }
-            })
-            count = 0
-            result.push(firstItem)
-            setNumbers(result)
-        }, 8000);
-
-    },[numbers])
-    
-    return(
-        <section className={theme === "dark" ? "numbers numbers-dark" : "numbers numbers-light"}>
-            <h2 className="description__title">
-                {language === "RU"
-                ? "Мы в цифрах"
-                : "We are in numbers"
-                }
-            </h2>
-            <div className="numbers__line-wrapper">
-                <div className="numbers__line" >
-                    {numbers.map((number)=>(
-                        <div className="line-item" >
-                            <h6 className="line-item__title">
-                                {number.title}
-                            </h6>
-                            {language === "RU"
-                            ? <p className={theme === "dark" ? "line-item__text-dark" : "line-item__text-light"}>{number.descriptionRU}</p>
-                            : <p className={theme === "dark" ? "line-item__text-dark" : "line-item__text-light"}>{number.descriptionEN}</p>
-                            }
-                        </div>
-                    ))}
-                </div >
+  return (
+    <section
+      className={
+        theme === "dark" ? "numbers numbers-dark" : "numbers numbers-light"
+      }
+    >
+      <h2 className="description__title">{title}</h2>
+      <div className="numbers__line-wrapper">
+        <div
+          className="numbers__line"
+          style={{ transform: `translateX(-${translate}px)` }}
+        >
+          {numbers.map((number, index) => (
+            <div
+              key={number.id}
+              ref={index === 0 ? setFirstElRef : undefined}
+              className="line-item"
+            >
+              <h6 className="line-item__title">{number.title}</h6>
+              {language === "RU" ? (
+                <p
+                  className={
+                    theme === "dark"
+                      ? "line-item__text-dark"
+                      : "line-item__text-light"
+                  }
+                >
+                  {number.descriptionRU}
+                </p>
+              ) : (
+                <p
+                  className={
+                    theme === "dark"
+                      ? "line-item__text-dark"
+                      : "line-item__text-light"
+                  }
+                >
+                  {number.descriptionEN}
+                </p>
+              )}
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Numbers;

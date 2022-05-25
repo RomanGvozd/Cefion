@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
+import {arr} from "./blocksArray";
+
 import './Description.scss';
 import './DescriptionAdaptive.scss';
 
@@ -10,53 +12,27 @@ function Description() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
-    const [blocks, setBlocks] = useState([
-        {
-            hrefDark: "./imagesPartnersDark/SocPull.png",
-            hrefLight: "./imagesPartnersLight/SocPull.png",
-        },
-        {
-            hrefDark: "./imagesPartnersDark/Hackernoon.png",
-            hrefLight: "./imagesPartnersLight/Hackernoon.png",
-        },
-        {
-            hrefDark: "./imagesPartnersDark/Everscale.png",
-            hrefLight: "./imagesPartnersLight/Everscale.png",
-        },
-        {
-            hrefDark: "./imagesPartnersDark/Portfolio.png",
-            hrefLight: "./imagesPartnersLight/Portfolio.png",
-        },
-        {
-            hrefDark: "./imagesPartnersDark/SocPull.png",
-            hrefLight: "./imagesPartnersLight/SocPull.png",
-        },
-        {
-            hrefDark: "./imagesPartnersDark/Everscale.png",
-            hrefLight: "./imagesPartnersLight/Everscale.png",
-        },
-    ])
+    const [firstElRef, setFirstElRef] = useState({});
+    const [translate, setTranslate] = useState(0);
+    const [blocks, setBlocks] = useState(arr)
 
     useEffect(() => {
-
-        setTimeout(() => {
-            const result = []
-            let firstItem = null
-            let count = 0
-            blocks.map((block)=> {
-                count++
-                if (count === 1) {
-                    firstItem = block
-                } else {
-                    result.push(block)
-                }
-            })
-            count = 0
-            result.push(firstItem)
-            setBlocks(result)
-        }, 8000);
-
-    },[blocks])
+        const maxTranslate = firstElRef.clientWidth + 20 || 0;
+        let translate = 0;
+        const interval = setInterval(() => {
+            if (translate === maxTranslate) {
+                setTranslate(0);
+                const item = blocks[0];
+                const arr = blocks.slice(1);
+                setBlocks([...arr, item]);
+                clearInterval(interval);
+            } else {
+                translate++;
+                setTranslate((state) => state + 1);
+            }
+        }, 10);
+        return () => clearInterval(interval);
+    }, [firstElRef]);
 
     const imgAnimation = {
         hidden : {
@@ -122,7 +98,10 @@ function Description() {
                     :"Our partners:"
                     }
                 </h2>
-                <div className="partners__line">
+                <div 
+                    className="partners__line"
+                    style={{ transform: `translateX(-${translate}px)` }}
+                >
                     {blocks.map((block)=>(
                         <div className="partners__item">
                             {theme === "dark"

@@ -43,11 +43,6 @@
                 justify-content: center;
                 align-items: center;
                 margin: 0 10px;
-
-                animation-duration: 8s;
-                animation-name: ticker;
-                animation-timing-function: linear;
-                animation-iteration-count: infinite;
     
                 .line-item__title {
                     font-weight: 500;
@@ -78,16 +73,6 @@
             }
 
     
-        }
-
-        @keyframes ticker {
-            from {
-                transform: translateX(0);
-            }
-            to {
-                transform: translateX(-370px);
-            }
-
         }
 
     }
