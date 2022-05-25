@@ -1,0 +1,30 @@
+.landing-faqs {
+
+    .landing-faqs__header {
+        width: 100%;
+        height: auto;
+    
+        .header__button-dark {
+            color: white;
+            background: #1C1C1E;
+            border: 1px solid #424246;
+        }
+    
+        .header__button-light {
+            color: black;
+            background: #F5F5F5;
+            border: 1px solid #D6D6D6;
+        }
+    
+        .header__button {
+            width: auto;
+            height: auto;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-right: 20px;
+            
+        }
+    
+    }
+
+}

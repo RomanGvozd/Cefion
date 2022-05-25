@@ -11,12 +11,30 @@ function Description() {
     const language = useSelector((store) => store.language.language);
 
     const [blocks, setBlocks] = useState([
-        {},
-        {},
-        {},
-        {},
-        {},
-        {},
+        {
+            hrefDark: "./imagesPartnersDark/SocPull.png",
+            hrefLight: "./imagesPartnersLight/SocPull.png",
+        },
+        {
+            hrefDark: "./imagesPartnersDark/Hackernoon.png",
+            hrefLight: "./imagesPartnersLight/Hackernoon.png",
+        },
+        {
+            hrefDark: "./imagesPartnersDark/Everscale.png",
+            hrefLight: "./imagesPartnersLight/Everscale.png",
+        },
+        {
+            hrefDark: "./imagesPartnersDark/Portfolio.png",
+            hrefLight: "./imagesPartnersLight/Portfolio.png",
+        },
+        {
+            hrefDark: "./imagesPartnersDark/SocPull.png",
+            hrefLight: "./imagesPartnersLight/SocPull.png",
+        },
+        {
+            hrefDark: "./imagesPartnersDark/Everscale.png",
+            hrefLight: "./imagesPartnersLight/Everscale.png",
+        },
     ])
 
     useEffect(() => {
@@ -106,7 +124,13 @@ function Description() {
                 </h2>
                 <div className="partners__line">
                     {blocks.map((block)=>(
-                        <div className="partners__item"></div>
+                        <div className="partners__item">
+                            {theme === "dark"
+                            ? <img src={require(`${block.hrefDark}`)} alt="" />
+                            : <img src={require(`${block.hrefLight}`)} alt="" />
+                            }
+                           
+                        </div>
                     ))}
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { Link,useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import Select from '../Select/Select';
 import SelectNav from '../SelectNav/SelectNav';
@@ -85,6 +85,10 @@ function Header({openModalLogin}) {
 
     const [nav, setNav] = useState(false);
 
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     return (
         <>
             <header      
@@ -92,7 +96,7 @@ function Header({openModalLogin}) {
                 style={{transform: `translateY(${hide}%)`}}
                 >
                 <div className="header__logo-wrapper">
-                    <Link to="/">
+                    <Link to="/" onClick={scrollTop}>
                         <div className='header__logo'>
                         </div>
                     </Link>
@@ -127,7 +131,10 @@ function Header({openModalLogin}) {
                             className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
                             to="/Roadmap"
                             style={pathname === "/Roadmap" ? {color: "#2E9C3E"} : {}}
-                            onClick={()=>setNav(false)}
+                            onClick={()=>{
+                                setNav(false) 
+                                scrollTop()}
+                            }
                             >
                                 {language === "RU"
                                 ? "Дорожная карта"
@@ -138,7 +145,10 @@ function Header({openModalLogin}) {
                             className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
                             to="/news" 
                             style={pathname === "/news" ? {color: "#2E9C3E"} : {}}
-                            onClick={()=>setNav(false)}
+                            onClick={()=>{
+                                setNav(false) 
+                                scrollTop()}
+                            }
                             >
                                 {language === "RU"
                                 ? "Новости"
@@ -149,7 +159,10 @@ function Header({openModalLogin}) {
                             className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
                             to="/about" 
                             style={pathname === "/about" ? {color: "#2E9C3E"} : {}}
-                            onClick={()=>setNav(false)}
+                            onClick={()=>{
+                                setNav(false) 
+                                scrollTop()}
+                            }
                             >
                                 {language === "RU"
                                 ? "О нас"

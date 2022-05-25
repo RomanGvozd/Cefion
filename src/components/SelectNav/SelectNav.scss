@@ -74,6 +74,14 @@
             color: white;
             padding: 2px;
 
+            .item__text-dark {
+                color: white;
+            }
+
+            .item__text-light {
+                color: black;
+            }
+
             &:hover {
                 opacity: 0.3;
             }

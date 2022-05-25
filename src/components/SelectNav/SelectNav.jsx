@@ -38,8 +38,8 @@ const SelectNav = ({selected, options, theme, language}) => {
                         onClick={() =>handleScroll(option.id)}
                         >
                             {language === "RU"
-                            ? <p>{option.titleRU}</p>
-                            : <p>{option.titleEN}</p>
+                            ? <p className={theme === "dark" ? "item__text-dark" : "item__text-light"}>{option.titleRU}</p>
+                            : <p className={theme === "dark" ? "item__text-dark" : "item__text-light"}>{option.titleEN}</p>
                             }   
                         </a>
                     ))}

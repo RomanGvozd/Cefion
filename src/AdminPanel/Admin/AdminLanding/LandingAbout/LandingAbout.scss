@@ -1,0 +1,27 @@
+.landing-about {
+    width: 100%;
+
+    .landing-about__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .header__about {
+            width: 34%;
+            padding: 15px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 21px;
+        }
+
+        .header__team {
+            width: 64%;
+            padding: 15px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 21px;
+        }
+
+    }
+
+}

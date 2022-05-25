@@ -1,0 +1,123 @@
+.create-account-dark {
+    color: white;
+}
+
+.create-account-light {
+    color: black;
+}
+
+.create-account {
+    width: 20%;
+    height: auto;
+    margin-right: 20px;
+
+    .create-account__title {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 29px;
+
+    }
+
+    .create-account__input-dark {
+        background: #1C1C1E;
+        border: 1px solid #424246;
+    }
+
+    .create-account__input-light {
+        background: #F5F5F5;
+        border: 1px solid #D6D6D6;
+    }
+
+    .create-account__input {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        color: #2E9C3E;
+
+        &:focus {
+            outline: 1px solid #2E9C3E;
+        }
+
+    }
+
+    .wrapper-checkbox-dark {
+        background: #1C1C1E;
+        border: 1px solid #424246;
+    }
+
+    .wrapper-checkbox-light {
+        background: #F5F5F5;
+        border: 1px solid #D6D6D6;
+    }
+
+    .create-account__wrapper-checkbox {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+
+        .checkbox__item {
+            width: 100%;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+
+            .item__checkbox {
+                width: 25px;
+                height: 25px;
+                border: 1px solid #424246;
+                border-radius: 5px;
+
+            }
+
+            .item__checkbox-active {
+                width: 25px;
+                height: 25px;
+                border: 1px solid #2E9C3E;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .item__checkbox-vector {
+                    width: 15px;
+                    height: 10px;
+                    background-image: url(./image/Vector.svg);
+                    background-size: cover;
+
+                }
+
+            }
+
+            .item__text {
+                margin-left: 10px;
+                font-weight: 300;
+                font-size: 0,75rem;
+                line-height: 21px;
+            }
+
+            .item__text-active {
+                color: #2E9C3E;
+            }
+
+        }
+
+    }
+
+    .create-account__button {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        background: #2E9C3E;
+        border: 1px solid #2E9C3E;
+        border-radius: 10px;
+        color: white;
+        margin-top: 10px;
+
+    }
+
+}

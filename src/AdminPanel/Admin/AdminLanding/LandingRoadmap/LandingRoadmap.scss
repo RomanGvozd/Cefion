@@ -1,0 +1,50 @@
+.landing-roadmap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .landing-roadmap__block-left {
+        width: 39%;
+
+        .block-left__input {
+            width: 100%;
+            height: 40px;
+            padding: 10px;
+            color: #2E9C3E;
+
+            &:focus {
+                outline: 1px solid #2E9C3E;
+    
+            }
+
+        }
+
+        .block-left__texarea {
+            width: 100%;
+            height: 140px;
+            margin-top: 20px;
+            padding: 10px;
+            color: #2E9C3E;
+
+            &:focus {
+                outline: 1px solid #2E9C3E;
+    
+            }
+
+        }
+
+    }
+
+    .landing-roadmap__block-right {
+        width: 59%;
+
+        .block-right__button {
+            width: 150px;
+            height: 40px;
+            padding: 10px;
+
+        }
+
+    }
+
+}

@@ -27,6 +27,20 @@ button {
 
 }
 
+.background-dark {
+    background: #1C1C1E;
+    border: 1px solid #424246;
+    border-radius: 10px;
+    color: white;
+}
+
+.background-light {
+    background: #F5F5F5;
+    border: 1px solid #D6D6D6;
+    border-radius: 10px;
+    color: black;
+}
+
 .description__title {
     font-weight: 500;
     font-size: 2.25rem;

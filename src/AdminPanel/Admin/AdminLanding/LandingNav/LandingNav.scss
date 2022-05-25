@@ -1,0 +1,24 @@
+.admin-landing__header {
+    width: 100%;
+    height: auto;
+
+    .header__button-dark {
+        color: white;
+    }
+
+    .header__button-light {
+        color: black;
+    }
+
+    .header__button {
+        width: auto;
+        height: auto;
+        padding: 15px 25px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #424246;
+        border-radius: 10px;
+        margin-right: 20px;
+        
+    }
+
+}

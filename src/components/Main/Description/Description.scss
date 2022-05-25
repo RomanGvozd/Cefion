@@ -123,6 +123,9 @@
                 border: 1px solid #2E9C3E;
                 border-radius: 15px; 
                 margin: 0 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 animation-duration: 8s;
                 animation-name: ticker;
