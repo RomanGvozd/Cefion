@@ -17,7 +17,7 @@ function Description() {
     const [blocks, setBlocks] = useState(arr)
 
     useEffect(() => {
-        const maxTranslate = firstElRef.clientWidth + 20 || 0;
+        const maxTranslate = firstElRef.clientWidth + 40 || 0;
         let translate = 0;
         const interval = setInterval(() => {
             if (translate === maxTranslate) {
