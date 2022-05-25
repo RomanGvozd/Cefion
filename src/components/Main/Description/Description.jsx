@@ -2,11 +2,10 @@ import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
-import {arr} from "./blocksArray";
+import arr from "./blocksArray";
 
 import './Description.scss';
 import './DescriptionAdaptive.scss';
-
 
 function Description() {
     const theme = useSelector((store) => store.theme.theme);
@@ -49,9 +48,9 @@ function Description() {
 
     return(
         <motion.section
-        initial="hidden"
-        whileInView="visible"
-        className={theme === "dark" ? "description description-dark" : "description description-light"}
+            initial="hidden"
+            whileInView="visible"
+            className={theme === "dark" ? "description description-dark" : "description description-light"}
         >
             <div className="description__block">
                 <div className="block__information">
@@ -98,19 +97,25 @@ function Description() {
                     :"Our partners:"
                     }
                 </h2>
-                <div 
-                    className="partners__line"
-                    style={{ transform: `translateX(-${translate}px)` }}
-                >
-                    {blocks.map((block)=>(
-                        <div className="partners__item">
-                            {theme === "dark"
-                            ? <img src={require(`${block.hrefDark}`)} alt="" />
-                            : <img src={require(`${block.hrefLight}`)} alt="" />
-                            }
-                           
-                        </div>
-                    ))}
+                <div className="partners__line-wrapper">
+                    <div 
+                        className="partners__line"
+                        style={{ transform: `translateX(-${translate}px)` }}
+                    >
+                        {blocks.map((block, index)=>(
+                            <div 
+                                key={block.id}
+                                ref={index === 0 ? setFirstElRef : undefined}
+                                className="partners__item"
+                            >
+                                {theme === "dark"
+                                ? <img src={require(`${block.hrefDark}`)} alt="" />
+                                : <img src={require(`${block.hrefLight}`)} alt="" />
+                                }
+                            
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </motion.section>

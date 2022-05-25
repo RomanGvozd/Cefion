@@ -109,24 +109,31 @@
             line-height: 125%;
         }
 
-        .partners__line {
+        .partners__line-wrapper {
             width: 100%;
             height: auto;
-            display: flex;
             overflow: hidden;
             margin-top: 40px;
 
-            .partners__item {
-                min-width: 300px;
-                height: 140px;
-                background: rgba(46, 156, 62, 0.05);
-                border: 1px solid #2E9C3E;
-                border-radius: 15px; 
-                margin: 0 20px;
+            .partners__line {
+                width: 100%;
+                height: auto;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-
+                margin-top: 40px;
+    
+                .partners__item {
+                    min-width: 300px;
+                    height: 140px;
+                    background: rgba(46, 156, 62, 0.05);
+                    border: 1px solid #2E9C3E;
+                    border-radius: 15px; 
+                    margin: 0 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+    
+                }
+    
             }
 
         }
