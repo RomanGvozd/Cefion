@@ -2,11 +2,11 @@ import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
-import AdminHeader from "../Admin/AdminHeader/AdminHeader";
-import AdminNav from "../Admin/AdminNav/AdminNav";
+import AdminHeader from "./AdminHeader/AdminHeader";
+import AdminNav from "./AdminNav/AdminNav";
 
-import Roles from "../Admin/Roles/Roles";
-import AdminLanding from "../Admin/AdminLanding/AdminLanding";
+import Roles from "./Roles/Roles";
+import AdminLanding from "./AdminLanding/AdminLanding";
 import AdminGroups from "./AdminGroups/AdminGroups";
 
 import './Admin.scss';

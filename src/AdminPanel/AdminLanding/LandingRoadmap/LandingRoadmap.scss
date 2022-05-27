@@ -1,10 +1,11 @@
 .landing-roadmap {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 
     .landing-roadmap__block-left {
-        width: 39%;
+        width: 34%;
 
         .block-left__input {
             width: 100%;
@@ -21,7 +22,7 @@
 
         .block-left__texarea {
             width: 100%;
-            height: 140px;
+            height: 150px;
             margin-top: 20px;
             padding: 10px;
             color: #2E9C3E;
@@ -36,13 +37,26 @@
     }
 
     .landing-roadmap__block-right {
-        width: 59%;
+        width: 64%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         .block-right__button {
-            width: 150px;
+            width: 25%;
             height: 40px;
             padding: 10px;
+            margin-left: 20px;
 
+        }
+
+        .landing-roadmap__block-roadmap {
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 0 20px;
+            margin-top: 20px;
         }
 
     }

@@ -1,0 +1,40 @@
+.roadmap-description__goal {
+    width: 100%;
+    height: auto;
+    background: rgba(46, 156, 62, 0.05);
+    border: 1px solid #2E9C3E;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+
+    .goal__title {
+        font-weight: 400;
+        font-size: 1.75rem;
+        line-height: 125%;
+        color: #2E9C3E;
+        position: relative;
+        margin-left: 15px;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 4px;
+            height: 20px;
+            background:  #2E9C3E;
+            border-radius: 5px;
+            left: -20px;
+            top: 7px;
+        }
+
+    }
+
+    .goal__list-text {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 170%;
+        margin-top: 20px;
+        margin-left: 20px;
+
+    }
+
+}

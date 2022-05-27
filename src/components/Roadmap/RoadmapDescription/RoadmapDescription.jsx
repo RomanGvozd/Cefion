@@ -1,16 +1,13 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 
-import Q12022 from './Q12022/Q12022';
-import Q22022 from './Q22022/Q22022';
-import Q32022 from './Q32022/Q32022';
-import Q42022 from './Q42022/Q42022';
-import Q12023 from './Q12023/Q12023';
+import BlocksItem from './BlocksItem/BlocksItem';
 
 import './RoadmapDescription.scss';
 
 function RoadmapDescription() {
     const theme = useSelector((store) => store.theme.theme);
+    const roadmap = useSelector((store) => store.roadmap);
     const language = useSelector((store) => store.language.language);
 
     return (
@@ -30,11 +27,11 @@ function RoadmapDescription() {
                         }
                     </p>
                 </div>
-                <Q12022/>
-                <Q22022/>
-                <Q32022/>
-                <Q42022/>
-                <Q12023/>
+                <div>
+                    {roadmap.map((block)=>(
+                        <BlocksItem key={block.id} block={block}/>
+                    ))}
+                </div>
             </section>
             
         </>

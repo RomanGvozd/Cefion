@@ -1,0 +1,123 @@
+.landing-media {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .landing-media__header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: 30%;
+        padding: 0 20px;
+
+        .landing-media__wrapper-file {
+            width: 19%;
+            height: 100%;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+    
+            .landing-media__input-file {
+                visibility: hidden;
+            }
+    
+        }
+    
+        .landing-media-wrapper {
+            width: 79%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+    
+            .wrapper__RU {
+                width: 43%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+    
+                .landing-media__input {
+                    width: 100%;
+                    height: 30%;
+                    border-radius: 10px;
+                    padding: 10px;
+                    color: #2E9C3E;
+        
+                    &:focus {
+                        outline: 1px solid #2E9C3E;
+            
+                    }
+                }
+        
+                .landing-media__texarea {
+                    width: 100%;
+                    height: 60%;
+                    border-radius: 10px;
+                    padding: 10px;
+                    color: #2E9C3E;
+        
+                    &:focus {
+                        outline: 1px solid #2E9C3E;
+            
+                    }
+        
+                }
+    
+            }
+    
+            .wrapper__EN {
+                width: 43%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                
+                .landing-media__input {
+                    width: 100%;
+                    height: 30%;
+                    border-radius: 10px;
+                    padding: 10px;
+                    color: #2E9C3E;
+        
+                    &:focus {
+                        outline: 1px solid #2E9C3E;
+            
+                    }
+                }
+        
+                .landing-media__texarea {
+                    width: 100%;
+                    height: 60%;
+                    border-radius: 10px;
+                    padding: 10px;
+                    color: #2E9C3E;
+        
+                    &:focus {
+                        outline: 1px solid #2E9C3E;
+            
+                    }
+        
+                }
+    
+            }
+
+            .landing-media__button {
+                width: 10%;
+            }
+    
+        }
+
+    }
+
+    .landing-media__blocks {
+        width: 100%;
+        height: 69%;
+        margin-top: 20px;
+        padding: 0 20px;
+        overflow-y: auto;
+    }
+
+}

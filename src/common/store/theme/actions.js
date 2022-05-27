@@ -5,4 +5,4 @@ export function changeTheme(payload) {
       type: CHANGE_THEME,
       payload: payload,
     };
-  }
+}

@@ -29,68 +29,7 @@
         }
     
     }
-
-    .media__block {
-        width: 100%;
-        height: auto;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid #424246;
-        border-radius: 10px;
-        padding: 25px;
-        margin-top: 25px;
-        display: flex;
-        justify-content: space-between;
-
-        .block__image {
-            width: 15%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        @media only screen and (max-width: 800px) {
-            .block__image {
-                width: 30%;
-                height: 200%;
-            }
-        
-        }
-
-        
-
-        .block__content {
-            width: 70%;
-            height: 100%;
-
-            .content__title {
-                font-weight: 500;
-                font-size: 1.5rem;
-                line-height: 160%;
-
-            }
-
-        }
-
-        @media only screen and (max-width: 800px) {
-            .block__content {
-                width: 100%;
-                margin-top: 20px;
-        
-            }
-        
-        }
-
-    }
-
-    @media only screen and (max-width: 800px) {
-        .media__block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
     
-        }
-    
-    }
-
 }
 
 @media only screen and (max-width: 600px) {

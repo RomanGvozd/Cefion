@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import Select from '../../../components/Select/Select';
+import Select from '../../components/Select/Select';
 
-import {changeTheme} from '../../../common/store/theme/actions';
-import {changeLanguage} from '../../../common/store/language/actions';
+import {changeTheme} from '../../common/store/theme/actions';
+import {changeLanguage} from '../../common/store/language/actions';
 
 import './AdminHeader.scss';
 
