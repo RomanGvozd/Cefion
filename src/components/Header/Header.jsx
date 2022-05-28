@@ -16,14 +16,16 @@ import './HeaderAdaptive.scss';
 function Header({openModalLogin}) {
     let lastScroll = 0
     const scrollPosition = () => window.pageYOffset || document.documentElement.scrollTop
-    const [hide, setHide] = useState(0);
 
+    const [hide, setHide] = useState(0);
     const {pathname} = useLocation();
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (scrollPosition() > lastScroll) {
-                setHide(-100)             
+                setHide(-100)
+                setIsActive(false)        
             } else if (scrollPosition() < lastScroll) {
                 setHide(0)
             }     
@@ -125,6 +127,8 @@ function Header({openModalLogin}) {
                                     options={optionsNav}
                                     theme={theme}
                                     language={language}
+                                    setIsActive={setIsActive}
+                                    isActive={isActive}
                                 />
                             </div>
                             <Link 

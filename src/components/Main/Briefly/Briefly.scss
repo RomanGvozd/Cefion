@@ -1,20 +1,21 @@
 .briefly-dark {
     background-color: black;
     color: white;
+    border-bottom: 1px solid rgb(66, 66, 70);
 }
 
 .briefly-light {
     background-color: white;
     color: black;
+    border-bottom: 1px solid #D6D6D6;
 }
 
 .briefly {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
     display: flex;
     justify-content: space-between;
-    padding: 150px 14% 150px;
+    padding: 150px 18% 150px;
     transition: 0.5s;
 
     .briefly__image {

@@ -27,7 +27,7 @@ function Numbers() {
         translate++;
         setTranslate((state) => state + 1);
       }
-    }, 10);
+    }, 20);
     return () => clearInterval(interval);
   }, [firstElRef]);
 

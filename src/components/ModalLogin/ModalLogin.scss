@@ -64,7 +64,8 @@
             color: #2E9C3E;
 
             &:focus {
-                outline: 1px solid #2E9C3E;
+                border: 1px solid #2E9C3E;
+                outline: none;
             }
 
         }
@@ -87,20 +88,20 @@
             cursor: pointer;
         }
 
-        .nodal__register {
-            margin-top: 130px;
-            font-weight: 400;
-            font-size: 0.75rem;
-            line-height: 17px;
-            opacity: 0.8;
+        // .nodal__register {
+        //     margin-top: 130px;
+        //     font-weight: 400;
+        //     font-size: 0.75rem;
+        //     line-height: 17px;
+        //     opacity: 0.8;
 
-            .nodal__register-button {
-                color: #2E9C3E;
-                cursor: pointer;
+        //     .nodal__register-button {
+        //         color: #2E9C3E;
+        //         cursor: pointer;
 
-            }
+        //     }
 
-        }
+        // }
 
         .modal__button {
             width: 270px;
@@ -109,7 +110,7 @@
             border: 1px solid #2E9C3E;
             border-radius: 10px;
             color: white;
-            margin-top: 15px;
+            margin-top: 180px;
 
         }
 

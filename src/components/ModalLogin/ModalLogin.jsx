@@ -24,10 +24,10 @@ function ModalLogin({setIshShow, openModalForgot,  openModalRegister}) {
                     : "Forgot Password?"
                     }
                 </p>
-                {language === "RU"
+                {/* {language === "RU"
                 ? <p className="nodal__register">Нет учетной записи? <span className="nodal__register-button" onClick={openModalRegister}>Регистрация</span></p>
                 : <p className="nodal__register">Don’t have an account? <span className="nodal__register-button" onClick={openModalRegister}>Sign Up</span></p>
-                }
+                } */}
                 <button className="modal__button" onClick={()=>setIshShow(false)}>
                     {language === "RU"
                     ? "Войти"

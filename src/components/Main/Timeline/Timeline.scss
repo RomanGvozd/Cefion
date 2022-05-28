@@ -1,29 +1,31 @@
 .timeline-dark {
     background-color: black;
     color: white;
+    border-bottom: 1px solid rgb(66, 66, 70);
 }
 
 .timeline-light {
     background-color: white;
     color: black;
+    border-bottom: 1px solid #D6D6D6;
 }
 
 .timeline {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
     display: flex;
     justify-content: space-between;
-    padding: 150px 14% 150px;
+    padding: 150px 18% 150px;
     transition: 0.5s;
 
     .timeline__description {
-        width: 40%;
+        width: 59%;
         margin-top: 150px;
 
         .description__button {
-            width: 190px;
-            height: 70px;
+            width: auto;
+            height: auto;
+            padding: 15px 25px;
             background: rgba(46, 156, 62, 0.05);
             border: 1px solid #2E9C3E;
             border-radius: 10px;
@@ -63,24 +65,64 @@
         
     }
 
-    .timeline__image {
-        width: 60%;
-        height: 600px;
-        object-fit: contain;
+    .timeline__block-image {
+        width: 40%;
+        height: 500px;
+        display: flex;
+        align-items: center;
+
+        .timeline__image1 {
+            width: 49%;
+            object-fit: contain;
+            margin: 0 10px;
+        }
+
+        .timeline__block-right {
+            width: 49%;
+
+            .timeline__image2 {
+                width: 100%;
+                object-fit: contain;
+                margin: 10px;
+            }
+
+            .timeline__image3 {
+                width: 100%;
+                object-fit: contain;
+                margin: 10px;
+            }
+
+        }
 
     }
 
     @media screen and (max-width: 1155px) {
-        .timeline__image {
+        .timeline__block-image {
             margin-top: 50px;
 
         }
         
     }
 
-    @media screen and (max-width: 900px) {
-        .timeline__image {
-            width: 100%;
+    @media screen and (max-width: 740px) {
+        .timeline__block-image {
+            width: 60%;
+
+        }
+        
+    }
+
+    @media screen and (max-width: 500px) {
+        .timeline__block-image {
+            width: 70%;
+
+        }
+        
+    }
+
+    @media screen and (max-width: 500px) {
+        .timeline__block-image {
+            width: 80%;
 
         }
         

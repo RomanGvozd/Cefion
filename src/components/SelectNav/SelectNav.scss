@@ -76,14 +76,18 @@
 
             .item__text-dark {
                 color: white;
+
+                &:hover {
+                    color: #2E9C3E;
+                }
             }
 
             .item__text-light {
                 color: black;
-            }
 
-            &:hover {
-                opacity: 0.3;
+                &:hover {
+                    color: #2E9C3E;
+                }
             }
 
         }

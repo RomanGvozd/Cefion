@@ -1,18 +1,19 @@
 .header-dark {
     background: black;
     color: white;
+    border-bottom: 1px solid rgb(66, 66, 70);
 }
 
 .header-light {
     background: white;
     color: black;
+    border-bottom: 1px solid #D6D6D6;
 }
 
 .header {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
-    padding: 20px 10% 20px 10%;
+    padding: 10px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -209,7 +210,7 @@
         display: flex;
 
         .header__login {
-            width: 100px;
+            width: 80px;
             height: 40px;
             background: rgba(46, 156, 62, 0.05);
             border: 1px solid #2E9C3E;
@@ -220,7 +221,7 @@
         }
 
         .setting__theme {
-            width: 50px;
+            width: 45px;
             height: 40px;
             background: rgba(0, 0, 0, 0.05);
             border: 1px solid #D6D6D6;

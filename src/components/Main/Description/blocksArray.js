@@ -26,8 +26,18 @@ const blocks = [
     },
     {
         id: 6,
+        hrefDark: "./imagesPartnersDark/Hackernoon.png",
+        hrefLight: "./imagesPartnersLight/Hackernoon.png",
+    },
+    {
+        id: 7,
         hrefDark: "./imagesPartnersDark/Everscale.png",
         hrefLight: "./imagesPartnersLight/Everscale.png",
+    },
+    {
+        id: 8,
+        hrefDark: "./imagesPartnersDark/Portfolio.png",
+        hrefLight: "./imagesPartnersLight/Portfolio.png",
     },
 ]
 

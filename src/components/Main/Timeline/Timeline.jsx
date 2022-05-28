@@ -21,20 +21,20 @@ function Timeline() {
             scale: 0,
             transition: { duration: 0.7 },
         },
-        visible : {
+        visible : custom => ({
             opacity: 1,
             scale: 1,
-            transition: { duration: 0.7 },
-        }
+            transition: { duration: 0.7, delay: custom * 0.3},
+        })
     }
     
     return(
         <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{amount: 0.2}}
-        id="timeline" 
-        className={theme === "dark" ? "timeline timeline-dark" : "timeline timeline-light"}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{amount: 0.2}}
+            id="timeline" 
+            className={theme === "dark" ? "timeline timeline-dark" : "timeline timeline-light"}
         >
             <div className="timeline__description">
                 <h2 className="description__title">
@@ -77,8 +77,20 @@ function Timeline() {
                 </Link>
             </div>
             {theme === "dark" 
-            ? <motion.img variants={imgAnimation} className="timeline__image" src={require('./image/timelineDark.png')} alt="" />
-            : <motion.img variants={imgAnimation} className="timeline__image" src={require('./image/timelineLight.png')} alt="" />
+            ? <div className="timeline__block-image">
+                <motion.img custom={1} variants={imgAnimation} className="timeline__image1" src={require('./image/block-1Dark.png')} alt="" />
+                <div className="timeline__block-right">
+                    <motion.img custom={2} variants={imgAnimation} className="timeline__image2" src={require('./image/block-2Dark.png')} alt="" />
+                    <motion.img custom={3} variants={imgAnimation} className="timeline__image3" src={require('./image/block-3Dark.png')} alt="" />
+                </div>
+            </div>
+            : <div className="timeline__block-image">
+                <motion.img custom={1} variants={imgAnimation} className="timeline__image1" src={require('./image/block-1Light.png')} alt="" />
+                <div className="timeline__block-right">
+                    <motion.img custom={2} variants={imgAnimation} className="timeline__image2" src={require('./image/block-2Light.png')} alt="" />
+                    <motion.img custom={3} variants={imgAnimation} className="timeline__image3" src={require('./image/block-3Light.png')} alt="" />
+                </div>
+            </div>
             }
         </motion.section>
     )

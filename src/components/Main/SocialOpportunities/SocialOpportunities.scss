@@ -1,24 +1,25 @@
 .social-opportunities-dark {
     background-color: black;
     color: white;
+    border-bottom: 1px solid rgb(66, 66, 70);
 }
 
 .social-opportunities-light {
     background-color: white;
     color: black;
+    border-bottom: 1px solid #D6D6D6;
 }
 
 .social-opportunities {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
     display: flex;
     justify-content: space-between;
-    padding: 150px 14% 150px;
+    padding: 150px 18% 150px;
     transition: 0.5s;
 
     .social-opportunities__description {
-        width: 50%;
+        width: 54%;
 
         .description__subtitle {
             font-weight: 400;
@@ -26,7 +27,7 @@
             line-height: 125%;
             position: relative;
             margin-left: 20px;
-            margin-top: 40px;
+            margin-top: 15px;
 
             &::after {
                 content: '';
@@ -74,17 +75,83 @@
         
     }
 
-    .social-opportunities__image {
-        width: 45%;
+    .social-opportunities__block-image {
+        width: 44%;
         height: 500px;
-        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-30%);
 
+        .social-opportunities__image {
+            width: 50%;
+            height: 500px;
+            object-fit: contain;
+            
+            &:first-child {
+                z-index: 3;
+            }
+
+            &:nth-child(2) {
+                z-index: 2;
+            }
+
+            &:last-child {
+                z-index: 1;
+            }
+        }
+
+        @media screen and (max-width: 1115px) {
+            .social-opportunities__-image {
+                width: 30%;
+                height: 300px;
+        
+            }
+            
+        }
+        
     }
 
     @media screen and (max-width: 1155px) {
-        .social-opportunities__image {
-            width: 100%;
+        .social-opportunities__block-image {
+            width: 80%;
             margin-top: 50px;
+    
+        }
+        
+    }
+
+    @media screen and (max-width: 800px) {
+        .social-opportunities__block-image {
+            width: 100%;
+            transform: translateX(-33%);
+            padding: 5%;
+    
+        }
+        
+    }
+
+    @media screen and (max-width: 600px) {
+        .social-opportunities__block-image {
+            transform: translateX(-43%);
+    
+        }
+        
+    }
+
+    @media screen and (max-width: 500px) {
+        .social-opportunities__block-image {
+            width: 100%;
+            transform: translateX(-50%);
+    
+        }
+        
+    }
+
+    @media screen and (max-width: 400px) {
+        .social-opportunities__block-image {
+            width: 100%;
+            transform: translateX(-60%);
     
         }
         

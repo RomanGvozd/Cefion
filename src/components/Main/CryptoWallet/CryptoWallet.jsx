@@ -15,24 +15,30 @@ function CryptoWallet() {
             scale: 0,
             transition: { duration: 0.7 },
         },
-        visible : {
+        visible : custom => ({
             opacity: 1,
             scale: 1,
-            transition: { duration: 0.7 },
-        }
+            transition: { duration: 0.7, delay: custom * 0.3},
+        })
     }
 
     return(
         <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{amount: 0.2}}
-        id="cryptoWallet" 
-        className={theme === "dark" ? "crypto-wallet crypto-wallet-dark" : "crypto-wallet crypto-wallet-light"}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{amount: 0.2}}
+            id="cryptoWallet" 
+            className={theme === "dark" ? "crypto-wallet crypto-wallet-dark" : "crypto-wallet crypto-wallet-light"}
         >
             {theme === "dark" 
-            ? <motion.img variants={imgAnimation} className="crypto-wallet__image" src={require('./image/ctyptoWalletDark.png')} alt="" />
-            : <motion.img variants={imgAnimation} className="crypto-wallet__image" src={require('./image/cryptoWalletLight.png')} alt="" />
+            ? <div className="crypto-wallet__block-image">
+                <motion.img custom={1} variants={imgAnimation} className="crypto-wallet__image" src={require('./image/block-1Dark.png')} alt="" />
+                <motion.img custom={2} variants={imgAnimation} className="crypto-wallet__image" src={require('./image/block-2Dark.png')} alt="" />
+            </div>
+            : <div className="crypto-wallet__block-image">
+                <motion.img custom={1} variants={imgAnimation} className="crypto-wallet__image" src={require('./image/block-1Light.png')} alt="" />
+                <motion.img custom={2} variants={imgAnimation} className="crypto-wallet__image" src={require('./image/block-2Light.png')} alt="" />
+            </div>
             }
             <div className="crypto-wallet__description">
             <h2 className="description__title">

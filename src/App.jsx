@@ -43,7 +43,7 @@ function App() {
     <>
       <Header openModalLogin={openModalLogin}/>
       <Routes>
-        <Route path="/" element={<Main openModalLogin={openModalLogin}/>} />
+        <Route path="/" element={<Main />} />
         <Route path="about" element={<About />} />
         <Route path="/roadmap" element={<Roadmap />} />
         <Route path="/faqs" element={<FAQs />} />

@@ -11,11 +11,11 @@ import Numbers from './Numbers/Numbers';
 
 import './Main.scss';
 
-function Main({openModalLogin}) {
+function Main() {
   return (
     <main className='main'>
       <Description/>
-      <PersonalAccount openModalLogin={openModalLogin}/>
+      <PersonalAccount/>
       <SocialOpportunities/>
       <CryptoWallet/>
       <Timeline/>

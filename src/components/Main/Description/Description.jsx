@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-import { motion } from "framer-motion";
 
 import arr from "./blocksArray";
 
@@ -13,41 +12,32 @@ function Description() {
 
     const [firstElRef, setFirstElRef] = useState({});
     const [translate, setTranslate] = useState(0);
-    const [blocks, setBlocks] = useState(arr)
+    const [blocks, setBlocks] = useState(arr);
+
+    const [ticker, setTicker] = useState(true)
 
     useEffect(() => {
-        const maxTranslate = firstElRef.clientWidth + 40 || 0;
-        let translate = 0;
-        const interval = setInterval(() => {
-            if (translate === maxTranslate) {
-                setTranslate(0);
-                const item = blocks[0];
-                const arr = blocks.slice(1);
-                setBlocks([...arr, item]);
-                clearInterval(interval);
-            } else {
-                translate++;
-                setTranslate((state) => state + 1);
-            }
-        }, 10);
-        return () => clearInterval(interval);
+        if (ticker) {
+            const maxTranslate = firstElRef.clientWidth + 40 || 0;
+            let translate = 0;
+            const interval = setInterval(() => {
+                if (translate === maxTranslate) {
+                    setTranslate(0);
+                    const item = blocks[0];
+                    const arr = blocks.slice(1);
+                    setBlocks([...arr, item]);
+                    clearInterval(interval);
+                } else {
+                    translate++;
+                    setTranslate((state) => state + 1);
+                }
+            }, 20);
+            return () => clearInterval(interval);
+        }
     }, [firstElRef]);
 
-    const imgAnimation = {
-        hidden : {
-            opacity: 0,
-            scale: 0,
-            transition: { duration: 0.7 },
-        },
-        visible : {
-            opacity: 1,
-            scale: 1,
-            transition: { duration: 0.7 },
-        }
-    }
-
     return(
-        <motion.section
+        <section
             initial="hidden"
             whileInView="visible"
             className={theme === "dark" ? "description description-dark" : "description description-light"}
@@ -82,12 +72,11 @@ function Description() {
                     <div className="block__download">
                         <button className="download__button download__app-store"></button>
                         <button className="download__button download__google-play"></button>
-                        <button className="download__button download__android"></button>
                     </div>
                 </div>
                 {theme === "dark" 
-                ? <motion.img variants={imgAnimation} className="block__image" src={require('./image/descriptionDark.png')} alt="" />
-                : <motion.img variants={imgAnimation} className="block__image" src={require('./image/descriptionLight.png')} alt="" />
+                ? <img className="block__image" src={require('./image/descriptionDark.png')} alt="" />
+                : <img className="block__image" src={require('./image/descriptionLight.png')} alt="" />
                 }
             </div>
             <div className="description__partners">
@@ -100,7 +89,9 @@ function Description() {
                 <div className="partners__line-wrapper">
                     <div 
                         className="partners__line"
-                        style={{ transform: `translateX(-${translate}px)` }}
+                        style={ticker ? { transform: `translateX(-${translate}px)` } : {transition: "1s"}}
+                        // onMouseEnter={()=>setTicker(false)}
+                        // onMouseLeave={()=>setTicker(true)}
                     >
                         {blocks.map((block, index)=>(
                             <div 
@@ -109,8 +100,8 @@ function Description() {
                                 className="partners__item"
                             >
                                 {theme === "dark"
-                                ? <img src={require(`${block.hrefDark}`)} alt="" />
-                                : <img src={require(`${block.hrefLight}`)} alt="" />
+                                ? <img className="partners__item-image" src={require(`${block.hrefDark}`)} alt="" />
+                                : <img className="partners__item-image" src={require(`${block.hrefLight}`)} alt="" />
                                 }
                             
                             </div>
@@ -118,7 +109,7 @@ function Description() {
                     </div>
                 </div>
             </div>
-        </motion.section>
+        </section>
     );
 }
 

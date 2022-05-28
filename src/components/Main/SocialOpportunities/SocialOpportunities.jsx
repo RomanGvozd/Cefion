@@ -15,20 +15,21 @@ function SocialOpportunities() {
             scale: 0,
             transition: { duration: 0.7 },
         },
-        visible : {
+        visible : custom => ({
             opacity: 1,
             scale: 1,
-            transition: { duration: 0.7 },
-        }
+            transition: { duration: 0.7, delay: custom * 0.3},
+            x: custom * 100,
+        })
     }
 
     return(
         <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{amount: 0.2}}
-        id="socialOpportunities" 
-        className={theme === "dark" ? "social-opportunities social-opportunities-dark" : "social-opportunities social-opportunities-light "}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{amount: 0.2}}
+            id="socialOpportunities" 
+            className={theme === "dark" ? "social-opportunities social-opportunities-dark" : "social-opportunities social-opportunities-light "}
         >
             <div className="social-opportunities__description">
                 <h2 className="description__title">
@@ -81,8 +82,16 @@ function SocialOpportunities() {
                 </p>
             </div>
             {theme === "dark" 
-            ? <motion.img variants={imgAnimation} className="social-opportunities__image" src={require('./image/SocialOpportunitiesDark.png')} alt="" />
-            : <motion.img variants={imgAnimation} className="social-opportunities__image" src={require('./image/SocialOpportunitiesLight.png')} alt="" />
+            ? <div className="social-opportunities__block-image">
+                <motion.img custom={3} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Dark.png')} alt="" />
+                <motion.img custom={2} variants={imgAnimation} className="social-opportunities__image opportunities__image-2" src={require('./image/block-2Dark.png')} alt="" />
+                <motion.img custom={1} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Dark.png')} alt="" />
+            </div>
+            : <div className="social-opportunities__block-image">
+                <motion.img custom={3} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Light.png')} alt="" />
+                <motion.img custom={2} variants={imgAnimation} className="social-opportunities__image opportunities__image-2" src={require('./image/block-2Light.png')} alt="" />
+                <motion.img custom={1} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Light.png')} alt="" />
+            </div>
             }
         </motion.section>
     );

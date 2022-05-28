@@ -2,9 +2,7 @@ import React, {useState} from 'react'
 
 import './SelectNav.scss';
 
-const SelectNav = ({selected, options, theme, language}) => {
-
-    const [isActive, setIsActive] = useState(false);
+const SelectNav = ({selected, options, theme, language, isActive, setIsActive}) => {
 
     const handleScroll = (id) => {
         setIsActive(false)

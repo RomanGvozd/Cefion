@@ -1,21 +1,22 @@
 .footer-dark {
     background-color: black;
     color: white;
+    border-bottom: 1px solid rgb(66, 66, 70);
 }
 
 .footer-light {
     background-color: white;
     color: black;
+    border-bottom: 1px solid #D6D6D6;
 }
 
 .footer {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 70px 14% 70px;
+    padding: 70px 18% 70px;
     transition: 0.5s;
 
     .footer__nav {
@@ -29,6 +30,10 @@
             color: white;
             margin-right: 40px;
 
+            &:hover {
+                color: #2E9C3E;
+            }
+
         }
 
         .nav__item-light {
@@ -38,16 +43,20 @@
             color: black;
             margin-right: 40px;
 
+            &:hover {
+                color: #2E9C3E;
+            }
+
         }
 
     }
 
     .footer__download {
         width: 100%;
-        border-bottom: 1px solid rgb(66, 66, 70);
         display: flex;
         align-items: center;
         padding: 40px 0;
+        transition: 0.5s;
 
         .download__title {
             font-weight: 500;
@@ -65,6 +74,17 @@
                 margin-left: 20px;
                 border-radius: 5px;
 
+            }
+
+            @media screen and (max-width: 400px) {
+                .download__button {
+                    width: 100px;
+                    height: 35px;
+                    margin-left: 20px;
+                    border-radius: 5px;
+    
+                }
+            
             }
 
             .download__app-store {
@@ -89,111 +109,10 @@
 
     }
 
-    .footer__social {
-        width: 100%;
-        border-bottom: 1px solid rgb(66, 66, 70);
-        display: flex;
-        align-items: center;
-        padding: 40px 0;
-
-        .social__title {
-            font-weight: 500;
-            font-size: 2rem;
-            line-height: 125%;
-
-        }
-
-        .block__social {
-            margin-left: 200px;
-            display: flex;
-
-            .social__button {
-                width: 55px;
-                height: 55px;
-                background: rgba(46, 156, 62, 0.05);
-                border: 1px solid #2E9C3E;
-                border-radius: 10px;
-                margin-right: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .social__button-image {
-                    width: 50%;
-                    height: 50%;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                }
-    
-                .social__button-faceboock-dark {
-                    background-image: url(./image/faceboockDark.svg);
-
-                }
-    
-                .social__button-faceboock-light {
-                    background-image: url(./image/faceboockLight.svg);
-
-                }
-
-                .social__button-twitter-dark {
-                    background-image: url(./image/twitterDark.svg);
-
-                }
-
-                .social__button-twitter-light {
-                    background-image: url(./image/twitterLight.svg);
-
-                }
-
-                .social__button-instagram-dark {
-                    background-image: url(./image/instagramDark.svg);
-                    
-                }
-    
-                .social__button-instagram-light {
-                    background-image: url(./image/instagramLight.svg);
-
-                }
-
-                .social__button-youtube-dark {
-                    background-image: url(./image/youtubeDark.svg);
-
-                }
-
-                .social__button-youtube-light {
-                    background-image: url(./image/youtubeLight.svg);
-
-                }
-
-                .social__button-telegram-dark {
-                    background-image: url(./image/telegramDark.svg);
-                    
-                }
-    
-                .social__button-telegram-light {
-                    background-image: url(./image/telegramLight.svg);
-
-                }
-
-                .social__button-discord-dark {
-                    background-image: url(./image/discordDark.svg);
-
-                }
-
-                .social__button-discord-light {
-                    background-image: url(./image/discordLight.svg);
-
-                }
-
-            }
-
-        }
-
-    }
-
     .footer__other {
         width: 100%;
         display: flex;
+        align-items: center;
         margin-top: 40px;
 
         .other__text-dark {
@@ -202,6 +121,11 @@
             line-height: 229%;
             color: rgba(255, 255, 255, 0.5);
             margin-right: 50px;
+            cursor: pointer;
+
+            &:hover {
+                color: #2E9C3E;
+            }
 
         }
 
@@ -211,7 +135,58 @@
             line-height: 229%;
             color: rgba(0, 0, 0, 0.5);
             margin-right: 50px;
+            cursor: pointer;
+
+            &:hover {
+                color: #2E9C3E;
+            }
             
+        }
+
+        .block__social {
+            display: flex;
+
+
+            .social__button {
+                width: 55px;
+                height: 55px;
+                background: rgba(46, 156, 62, 0.05);
+                border: 1px solid #2E9C3E;
+                border-radius: 10px;
+                margin: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                .social__button-image {
+                    width: 50%;
+                    height: 50%;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+    
+                .social__button-telegram-dark {
+                    background-image: url(./image/telegramDark.svg);
+                    
+                }
+    
+                .social__button-telegram-light {
+                    background-image: url(./image/telegramLight.svg);
+    
+                }
+    
+                .social__button-email-dark {
+                    background-image: url(./image/emailLight.svg);
+                    
+                }
+    
+                .social__button-email-light {
+                    background-image: url(./image/emailDark.svg);
+    
+                }
+    
+            }
+
         }
 
         @media screen and (max-width: 900px) {

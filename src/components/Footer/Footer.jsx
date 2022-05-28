@@ -58,13 +58,13 @@ function Footer() {
                         style={pathname === "/media" ? {color: "#2E9C3E"} : {}}
                     >
                         {language === "RU"
-                        ? "СМИ о нас"
-                        : "Mass Media about us"
+                        ? "Новости о нас"
+                        : "News about us"
                         }
                     </p>
                 </Link>
             </nav>
-            <div className="footer__download">
+            <div className={theme === "dark" ? "footer__download footer-dark" : "footer__download footer-light"}>
                 <h4 className="download__title">
                     {language === "RU"
                     ? "Скачать приложение"
@@ -75,34 +75,6 @@ function Footer() {
                     <button className="download__button download__app-store"></button>
                     <button className="download__button download__google-play"></button>
                     <button className="download__button download__android"></button>
-                </div>
-            </div>
-            <div className="footer__social">
-                <h4 className="social__title">
-                    {language === "RU"
-                    ? "Связаться с нами"
-                    : "Contact us"
-                    }
-                </h4>
-                <div className="block__social">
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-faceboock-dark" : "social__button-image social__button-faceboock-light"}></div>
-                    </button>
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-twitter-dark" : "social__button-image social__button-twitter-light"}></div>
-                    </button>
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-instagram-dark" : "social__button-image social__button-instagram-light"}></div>
-                    </button>
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-youtube-dark" : "social__button-image social__button-youtube-light"}></div>
-                    </button>
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-telegram-dark" : "social__button-image social__button-telegram-light"}></div>
-                    </button>
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-discord-dark" : "social__button-image social__button-discord-light"}></div>
-                    </button>                         
                 </div>
             </div>
             <div className="footer__other">
@@ -124,6 +96,14 @@ function Footer() {
                     : "Site Analytics"
                     }
                 </p>
+                <div className="block__social">
+                    <button className="social__button">
+                        <div className={theme === "dark" ? "social__button-image social__button-email-dark" : "social__button-image social__button-email-light"}></div>
+                    </button>
+                    <button className="social__button">
+                        <div className={theme === "dark" ? "social__button-image social__button-telegram-dark" : "social__button-image social__button-telegram-light"}></div>
+                    </button>
+                </div>
             </div>
         </footer>
     )
