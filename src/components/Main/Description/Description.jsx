@@ -17,23 +17,21 @@ function Description() {
     const [ticker, setTicker] = useState(true)
 
     useEffect(() => {
-        if (ticker) {
-            const maxTranslate = firstElRef.clientWidth + 40 || 0;
-            let translate = 0;
-            const interval = setInterval(() => {
-                if (translate === maxTranslate) {
-                    setTranslate(0);
-                    const item = blocks[0];
-                    const arr = blocks.slice(1);
-                    setBlocks([...arr, item]);
-                    clearInterval(interval);
-                } else {
-                    translate++;
-                    setTranslate((state) => state + 1);
-                }
-            }, 20);
-            return () => clearInterval(interval);
-        }
+        const maxTranslate = firstElRef.clientWidth + 40 || 0;
+        let translate = 0;
+        const interval = setInterval(() => {
+            if (translate === maxTranslate) {
+                setTranslate(0);
+                const item = blocks[0];
+                const arr = blocks.slice(1);
+                setBlocks([...arr, item]);
+                clearInterval(interval);
+            } else {
+                translate++;
+                setTranslate((state) => state + 1);
+            }
+        }, 20);
+        return () => clearInterval(interval);
     }, [firstElRef]);
 
     return(
@@ -87,11 +85,13 @@ function Description() {
                     }
                 </h2>
                 <div className="partners__line-wrapper">
+                    <div className={theme === "dark" ? "left-shadow-dark" : "left-shadow-light"}></div>
+                    <div className={theme === "dark" ? "right-shadow-dark" : "right-shadow-light"}></div>
                     <div 
                         className="partners__line"
-                        style={ticker ? { transform: `translateX(-${translate}px)` } : {transition: "1s"}}
-                        // onMouseEnter={()=>setTicker(false)}
-                        // onMouseLeave={()=>setTicker(true)}
+                        style={{ transform: `translateX(-${translate}px)` }}
+                        onMouseEnter={()=>setTicker(false)}
+                        onMouseLeave={()=>setTicker(true)}
                     >
                         {blocks.map((block, index)=>(
                             <div 

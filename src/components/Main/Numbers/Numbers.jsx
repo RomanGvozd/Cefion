@@ -41,6 +41,8 @@ function Numbers() {
     >
       <h2 className="description__title">{title}</h2>
       <div className="numbers__line-wrapper">
+        <div className={theme === "dark" ? "left-shadow-dark" : "left-shadow-light"}></div>
+        <div className={theme === "dark" ? "right-shadow-dark" : "right-shadow-light"}></div>
         <div
           className="numbers__line"
           style={{ transform: `translateX(-${translate}px)` }}
