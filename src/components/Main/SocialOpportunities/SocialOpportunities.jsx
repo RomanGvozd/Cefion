@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
 import './SocialOpportunities.scss';
-import './SocialOpportunitiesAdaptive.scss';
 
 function SocialOpportunities() {
     const theme = useSelector((store) => store.theme.theme);
@@ -19,7 +18,7 @@ function SocialOpportunities() {
             opacity: 1,
             scale: 1,
             transition: { duration: 0.7, delay: custom * 0.3},
-            x: custom * 100,
+            x: custom * 150,
         })
     }
 
@@ -83,9 +82,9 @@ function SocialOpportunities() {
             </div>
             {theme === "dark" 
             ? <div className="social-opportunities__block-image">
-                <motion.img custom={3} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Dark.png')} alt="" />
-                <motion.img custom={2} variants={imgAnimation} className="social-opportunities__image opportunities__image-2" src={require('./image/block-2Dark.png')} alt="" />
-                <motion.img custom={1} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Dark.png')} alt="" />
+                <motion.img custom={2} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Dark.png')} alt="" />
+                <motion.img custom={1} variants={imgAnimation} className="social-opportunities__image opportunities__image-2" src={require('./image/block-2Dark.png')} alt="" />
+                <motion.img custom={0} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Dark.png')} alt="" />
             </div>
             : <div className="social-opportunities__block-image">
                 <motion.img custom={3} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Light.png')} alt="" />

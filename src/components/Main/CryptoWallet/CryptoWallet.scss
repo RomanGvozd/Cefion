@@ -15,20 +15,23 @@
     height: auto;
     display: flex;
     justify-content: space-between;
-    padding: 150px 14% 150px;
+    padding: 0 18%;
+    padding-top: calc(50px + 100 * (100vw / 1920));
+    padding-bottom: calc(50px + 100 * (100vw / 1920));
     transition: 0.5s;
 
     .crypto-wallet__block-image {
-        width: 45%;
-        height: 500px;
+        width: calc(100% - 50% * (100vw / 1920));
+        height: calc(226px + 400 * (100vw / 1920));
         display: flex;
         justify-content: center;
+        margin: 0 10px;
 
         .crypto-wallet__image {
-            width: 50%;
+            width: 48%;
             height: 100%;
             object-fit: contain;
-            margin: 0 10px;
+            margin: 0 calc(10px + 10 * (100vw / 1920));
 
             &:nth-child(2) {
                 margin-top: 40px;
@@ -38,41 +41,22 @@
 
     }
 
-    @media screen and (max-width: 1155px) {
-        .crypto-wallet__block-image {
-            width: 45%;
-            margin-top: 50px;
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        .crypto-wallet__block-image {
-            width: 45%;
-            height: 300px;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .crypto-wallet__block-image {
-            width: 55%;
-            height: 200px;
-        }
-    }
-
     .crypto-wallet__description {
         width: 40%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
+        margin: 0 40px;
 
     }
 
-    @media screen and (max-width: 1155px) {
+    @media screen and (max-width: 1200px) {
         .crypto-wallet__description {
-            margin-top: 50px;
-            width: 60%;
-
+            margin: 0;
+            margin-top: calc(50px + 100 * (100vw / 1200));
+            width: 100%;
+            
         }
         
     }
@@ -85,4 +69,14 @@
         
     }
 
+}
+
+@media screen and (max-width: 1200px) {
+    .crypto-wallet {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    
 }

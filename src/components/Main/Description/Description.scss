@@ -13,13 +13,14 @@
 .description {
     width: 100%;
     height: auto;
-    padding: 200px 0 70px ;
+    padding-top: calc(180px + 100 * (100vw / 1920));
+    padding-bottom: calc(100px + 100 * (100vw / 1920));
     transition: 0.5s;
 
     .description__block {
         width: 100%;
         height: auto;
-        padding: 0px 18% 50px;
+        padding: 0px 18% 0px;
         display: flex;
         justify-content: space-between;
 
@@ -30,18 +31,17 @@
             .block__download {
                 margin-top: 60px;
                 display: flex;
-                justify-content: space-between;
     
                 .download__button {
                     width: 150px;
                     height: 50px;
                     border-radius: 5px;
+                    margin-right: 20px;
     
                 }
 
-                @media screen and (max-width: 1115px) {
+                @media screen and (max-width: 1200px) {
                     .download__button {
-                        border-radius: 5px;
                         margin: 0 20px;
         
                     }
@@ -52,8 +52,6 @@
                     .download__button {
                         width: 120px;
                         height: 40px;
-                        border-radius: 5px;
-                        margin: 0 20px;
         
                     }
                     
@@ -76,7 +74,7 @@
             
         }
 
-        @media screen and (max-width: 1115px) {
+        @media screen and (max-width: 1200px) {
             .block__information {
                 width: 100%;
                 display: flex;
@@ -89,12 +87,12 @@
         }
 
         .block__image {
-            width: 55%;
-            height: 500px;
+            width: 60%;
+            height: calc(400px + 200 * (100vw / 1920));
             object-fit: contain;
         }
 
-        @media screen and (max-width: 1115px) {
+        @media screen and (max-width: 1200px) {
             .block__image {
                 width: 100%;
             }
@@ -105,13 +103,14 @@
 
     .description__partners {
         width: 100%;
+        margin-top: calc(50px + 190 * (100vw / 1920));
         display: flex;
         flex-direction: column;
         align-items: center;
 
         .partners__title {
             font-weight: 500;
-            font-size: 2rem;
+            font-size: calc(28px + 20 * (100vw / 1920));
             line-height: 125%;
         }
 
@@ -177,8 +176,8 @@
                 margin-top: 40px;
     
                 .partners__item {
-                    min-width: 200px;
-                    height: 100px;
+                    min-width: 289px;
+                    height: 143px;
                     background: rgba(46, 156, 62, 0.05);
                     border: 1px solid #2E9C3E;
                     border-radius: 15px; 
@@ -202,7 +201,7 @@
 
     }
 
-    @media screen and (max-width: 1115px) {
+    @media screen and (max-width: 1200px) {
         .description__block {
             display: flex;
             flex-direction: column-reverse;

@@ -17,7 +17,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 150px 0 150px;
+    padding-top: calc(50px + 150 * (100vw / 1920));
+    padding-bottom: calc(50px + 150 * (100vw / 1920));
     transition: 0.5s;
     
 
@@ -79,12 +80,12 @@
         .numbers__line {
             width: 100%;
             height: auto;
-            margin-top: 50px;
+            margin-top: 70px;
             display: flex;
     
             .line-item {
-                min-width: 380px;
-                height: 125px;
+                min-width: 392px;
+                height: 123px;
                 background: rgba(46, 156, 62, 0.05);
                 border: 1px solid #2E9C3E;
                 border-radius: 15px;
@@ -96,7 +97,7 @@
     
                 .line-item__title {
                     font-weight: 500;
-                    font-size: 1.5rem;
+                    font-size: calc(16px + 20 * (100vw / 1920));
                     line-height: 43px;
                     color: #2E9C3E;
                     
@@ -104,7 +105,7 @@
     
                 .line-item__text-dark {
                     font-weight: 400;
-                    font-size: 1rem;
+                    font-size: calc(15px + 5 * (100vw / 1920));
                     line-height: 170%;
                     margin-top: 15px;
                     color: rgba(255, 255, 255, 0.5);
@@ -113,7 +114,7 @@
     
                 .line-item__text-light {
                     font-weight: 400;
-                    font-size: 0.9rem;
+                    font-size: calc(15px + 5 * (100vw / 1920));
                     line-height: 170%;
                     margin-top: 15px;
                     color: rgba(0, 0, 0, 0.5);
@@ -121,7 +122,6 @@
                 }
     
             }
-
     
         }
 

@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
 import './Briefly.scss';
-import './BrieflyAdaptive.scss';
 
 function Briefly() {
     const theme = useSelector((store) => store.theme.theme);

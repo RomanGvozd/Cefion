@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
 import './CryptoWallet.scss';
-import './CryptoWalletAdaptive.scss';
 
 function CryptoWallet() {
     const theme = useSelector((store) => store.theme.theme);

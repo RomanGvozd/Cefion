@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
 import './PersonalAccount.scss';
-import './PersonalAccountAdaptive.scss';
 
 
 function PersonalAccount() {

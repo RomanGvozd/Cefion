@@ -15,15 +15,17 @@
     height: auto;
     display: flex;
     justify-content: space-between;
-    padding: 150px 18% 150px;
+    padding: 0 18%;
+    padding-top: calc(100px + 100 * (100vw / 1920));
+    padding-bottom: calc(100px + 100 * (100vw / 1920));
     transition: 0.5s;
 
     .social-opportunities__description {
-        width: 54%;
+        width: 50%;
 
         .description__subtitle {
             font-weight: 400;
-            font-size: 1.5rem;
+            font-size: calc(15px + 15 * (100vw / 1920));
             line-height: 125%;
             position: relative;
             margin-left: 20px;
@@ -43,7 +45,7 @@
 
         }
 
-        @media screen and (max-width: 1155px) {
+        @media screen and (max-width: 1200px) {
             .description__subtitle  {
                 display: flex;
                 justify-content: center;
@@ -54,10 +56,10 @@
 
     }
 
-    @media screen and (max-width: 1155px) {
+    @media screen and (max-width: 1200px) {
         .social-opportunities__description {
             margin-top: 50px;
-            width: 50%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -67,25 +69,17 @@
         
     }
 
-    @media screen and (max-width: 900px) {
-        .social-opportunities__description {
-            width: 100%;
-
-        }
-        
-    }
-
     .social-opportunities__block-image {
-        width: 44%;
-        height: 500px;
+        width: 40%;
+        height: calc(326px + 300 * (100vw / 1920));
         display: flex;
         justify-content: center;
         align-items: center;
-        transform: translateX(-30%);
+        margin-right: 10%;
 
         .social-opportunities__image {
-            width: 50%;
-            height: 500px;
+            width: 60%;
+            height: 100%;
             object-fit: contain;
             
             &:first-child {
@@ -101,10 +95,9 @@
             }
         }
 
-        @media screen and (max-width: 1115px) {
+        @media screen and (max-width: 1200px) {
             .social-opportunities__-image {
                 width: 30%;
-                height: 300px;
         
             }
             
@@ -112,20 +105,11 @@
         
     }
 
-    @media screen and (max-width: 1155px) {
-        .social-opportunities__block-image {
-            width: 80%;
-            margin-top: 50px;
-    
-        }
-        
-    }
-
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1200px) {
         .social-opportunities__block-image {
             width: 100%;
-            transform: translateX(-33%);
-            padding: 5%;
+            margin-top: 50px;
+            margin-right: 40%;
     
         }
         
@@ -133,7 +117,7 @@
 
     @media screen and (max-width: 600px) {
         .social-opportunities__block-image {
-            transform: translateX(-43%);
+            margin-right: 70%;
     
         }
         
@@ -141,20 +125,28 @@
 
     @media screen and (max-width: 500px) {
         .social-opportunities__block-image {
-            width: 100%;
-            transform: translateX(-50%);
-    
+            margin-right: 100%;
+            width: 200%;
         }
         
     }
 
     @media screen and (max-width: 400px) {
         .social-opportunities__block-image {
-            width: 100%;
-            transform: translateX(-60%);
-    
+            margin-right: 120%;
+            width: 250%;
         }
         
     }
 
+}
+
+@media screen and (max-width: 1200px) {
+    .social-opportunities  {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+    }
+    
 }

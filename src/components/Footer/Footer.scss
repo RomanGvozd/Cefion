@@ -25,7 +25,7 @@
 
         .nav__item-dark {
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: calc(15px + 5 * (100vw / 1920));
             line-height: 229%;
             color: white;
             margin-right: 40px;
@@ -38,7 +38,7 @@
 
         .nav__item-light {
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: calc(15px + 5 * (100vw / 1920));
             line-height: 229%;
             color: black;
             margin-right: 40px;
@@ -54,24 +54,27 @@
     .footer__download {
         width: 100%;
         display: flex;
+        justify-content: space-between;
         align-items: center;
         padding: 40px 0;
         transition: 0.5s;
 
         .download__title {
             font-weight: 500;
-            font-size: 2rem;
+            font-size: calc(28px + 20 * (100vw / 1920));
             line-height: 125%;
 
         }
 
         .block__download {
-            margin-left: 50px;
+            width: 55%;
+            display: flex;
+            align-items: center;
 
             .download__button {
                 width: 120px;
                 height: 40px;
-                margin-left: 20px;
+                margin: 10px;
                 border-radius: 5px;
 
             }
@@ -109,43 +112,25 @@
 
     }
 
-    .footer__other {
+    .block__social {
         width: 100%;
         display: flex;
+        justify-content: space-between;
         align-items: center;
-        margin-top: 40px;
+        padding: 40px 0;
+        transition: 0.5s;
 
-        .other__text-dark {
-            font-weight: 300;
-            font-size: 0.8rem;
-            line-height: 229%;
-            color: rgba(255, 255, 255, 0.5);
-            margin-right: 50px;
-            cursor: pointer;
-
-            &:hover {
-                color: #2E9C3E;
-            }
+        .download__title {
+            font-weight: 500;
+            font-size: calc(28px + 20 * (100vw / 1920));
+            line-height: 125%;
 
         }
 
-        .other__text-light {
-            font-weight: 300;
-            font-size: 0.8rem;
-            line-height: 229%;
-            color: rgba(0, 0, 0, 0.5);
-            margin-right: 50px;
-            cursor: pointer;
-
-            &:hover {
-                color: #2E9C3E;
-            }
-            
-        }
-
-        .block__social {
+        .social__button-wrapper {
+            width: 55%;
             display: flex;
-
+            align-items: center;
 
             .social__button {
                 width: 55px;
@@ -187,6 +172,42 @@
     
             }
 
+        }
+
+    }
+
+    .footer__other {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+
+        .other__text-dark {
+            font-weight: 300;
+            font-size: 0.8rem;
+            line-height: 229%;
+            color: rgba(255, 255, 255, 0.5);
+            margin-right: 50px;
+            cursor: pointer;
+
+            &:hover {
+                color: #2E9C3E;
+            }
+
+        }
+
+        .other__text-light {
+            font-weight: 300;
+            font-size: calc(11px + 5 * (100vw / 1920));
+            line-height: 229%;
+            color: rgba(0, 0, 0, 0.5);
+            margin-right: 50px;
+            cursor: pointer;
+
+            &:hover {
+                color: #2E9C3E;
+            }
+            
         }
 
         @media screen and (max-width: 900px) {

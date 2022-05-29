@@ -77,6 +77,22 @@ function Footer() {
                     <button className="download__button download__android"></button>
                 </div>
             </div>
+            <div className={theme === "dark" ? "block__social footer-dark" : "block__social footer-light"}>
+                <h4 className="download__title">
+                    {language === "RU"
+                    ? "Связаться с нами"
+                    : "Connect with us"
+                    }
+                </h4>
+                <div className="social__button-wrapper">
+                    <a className="social__button">
+                        <div className={theme === "dark" ? "social__button-image social__button-email-dark" : "social__button-image social__button-email-light"}></div>
+                    </a>
+                    <a href="https://t.me/cefion" target="_blank" className="social__button">
+                        <div className={theme === "dark" ? "social__button-image social__button-telegram-dark" : "social__button-image social__button-telegram-light"}></div>
+                    </a>
+                </div>
+            </div>
             <div className="footer__other">
                 <p className={theme === "dark" ? "other__text-dark" : "other__text-light"}>
                     {language === "RU"
@@ -96,14 +112,6 @@ function Footer() {
                     : "Site Analytics"
                     }
                 </p>
-                <div className="block__social">
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-email-dark" : "social__button-image social__button-email-light"}></div>
-                    </button>
-                    <button className="social__button">
-                        <div className={theme === "dark" ? "social__button-image social__button-telegram-dark" : "social__button-image social__button-telegram-light"}></div>
-                    </button>
-                </div>
             </div>
         </footer>
     )

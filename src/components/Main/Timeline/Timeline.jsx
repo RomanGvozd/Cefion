@@ -4,8 +4,6 @@ import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
 
 import './Timeline.scss';
-import './TimelineAdaptive.scss';
-
 
 function Timeline() {
     const theme = useSelector((store) => store.theme.theme);

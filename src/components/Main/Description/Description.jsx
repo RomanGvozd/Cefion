@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 import arr from "./blocksArray";
 
 import './Description.scss';
-import './DescriptionAdaptive.scss';
 
 function Description() {
     const theme = useSelector((store) => store.theme.theme);
