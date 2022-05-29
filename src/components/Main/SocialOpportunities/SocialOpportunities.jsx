@@ -18,7 +18,7 @@ function SocialOpportunities() {
             opacity: 1,
             scale: 1,
             transition: { duration: 0.7, delay: custom * 0.3},
-            x: custom * 150,
+            x: custom * 100,
         })
     }
 

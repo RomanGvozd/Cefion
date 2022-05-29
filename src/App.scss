@@ -43,14 +43,14 @@ button {
 
 .description__title {
     font-weight: 500;
-    font-size: calc(15px + 30 * (100vw / 1920));
+    font-size: calc(12px + 33 * (100vw / 1920));
     line-height: 125%;
 
 }
 
 .description__text-dark {
     font-weight: 400;
-    font-size: calc(10px + 10 * (100vw / 1920));
+    font-size: calc(8px + 13 * (100vw / 1920));
     line-height: 170%;
     margin-top: 10px;
     color: rgba(255, 255, 255, 0.5);
@@ -59,14 +59,14 @@ button {
 
 .description__text-light {
     font-weight: 400;
-    font-size: calc(10px + 10 * (100vw / 1920));
+    font-size: calc(8px + 13 * (100vw / 1920));
     line-height: 170%;
     margin-top: 10px;
     color: rgba(0, 0, 0, 0.5);
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
     .description__title {
         text-align: center;
     
