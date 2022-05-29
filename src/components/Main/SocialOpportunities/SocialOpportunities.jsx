@@ -87,9 +87,9 @@ function SocialOpportunities() {
                 <motion.img custom={0} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Dark.png')} alt="" />
             </div>
             : <div className="social-opportunities__block-image">
-                <motion.img custom={3} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Light.png')} alt="" />
-                <motion.img custom={2} variants={imgAnimation} className="social-opportunities__image opportunities__image-2" src={require('./image/block-2Light.png')} alt="" />
-                <motion.img custom={1} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Light.png')} alt="" />
+                <motion.img custom={2} variants={imgAnimation} className="social-opportunities__image opportunities__image-1" src={require('./image/block-1Light.png')} alt="" />
+                <motion.img custom={1} variants={imgAnimation} className="social-opportunities__image opportunities__image-2" src={require('./image/block-2Light.png')} alt="" />
+                <motion.img custom={0} variants={imgAnimation} className="social-opportunities__image opportunities__image-3" src={require('./image/block-3Light.png')} alt="" />
             </div>
             }
         </motion.section>
