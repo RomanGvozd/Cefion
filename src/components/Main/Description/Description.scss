@@ -110,7 +110,7 @@
 
         .partners__title {
             font-weight: 500;
-            font-size: calc(28px + 20 * (100vw / 1920));
+            font-size: calc(20px + 28 * (100vw / 1920));
             line-height: 125%;
         }
 
@@ -176,8 +176,8 @@
                 margin-top: 40px;
     
                 .partners__item {
-                    min-width: 289px;
-                    height: 143px;
+                    min-width: calc(189px + 100 * (100vw / 1920));
+                    height: calc(73px + 70 * (100vw / 1920));
                     background: rgba(46, 156, 62, 0.05);
                     border: 1px solid #2E9C3E;
                     border-radius: 15px; 

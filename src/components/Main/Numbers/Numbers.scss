@@ -84,8 +84,8 @@
             display: flex;
     
             .line-item {
-                min-width: 392px;
-                height: 123px;
+                min-width: calc(292px + 100 * (100vw / 1920));
+                height: calc(83px + 40 * (100vw / 1920));
                 background: rgba(46, 156, 62, 0.05);
                 border: 1px solid #2E9C3E;
                 border-radius: 15px;
@@ -107,7 +107,7 @@
                     font-weight: 400;
                     font-size: calc(15px + 5 * (100vw / 1920));
                     line-height: 170%;
-                    margin-top: 15px;
+                    margin-top: calc(1px + 14 * (100vw / 1920));
                     color: rgba(255, 255, 255, 0.5);
     
                 }
