@@ -12,7 +12,9 @@
     width: 100%;
     height: auto;
     border-bottom: 1px solid rgb(66, 66, 70);
-    padding: 200px 14% 100px;
+    padding: 0 18%;
+    padding-top: calc(50px + 180 * (100vw / 1920));
+    padding-bottom: calc(50px + 150 * (100vw / 1920));
     transition: 0.5s;
 
     .news-block {
@@ -22,7 +24,7 @@
 
     }
 
-    @media only screen and (max-width: 1115px) {
+    @media only screen and (max-width: 1400px) {
         .news-block {
             display: flex;
             flex-direction: column;
@@ -34,7 +36,7 @@
     
 }
 
-@media only screen and (max-width: 1115px) {
+@media only screen and (max-width: 1400px) {
     .news {
         display: flex;
         flex-direction: column;
@@ -46,7 +48,9 @@
 
 @media only screen and (max-width: 600px) {
     .news {
-        padding: 200px 5% 100px;
+        padding: 0 5%;
+        padding-top: calc(130px + 200 * (100vw / 1920));
+        padding-bottom: calc(50px + 150 * (100vw / 1920));
 
     }
 

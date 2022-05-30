@@ -12,12 +12,14 @@
     width: 100%;
     height: auto;
     border-bottom: 1px solid rgb(66, 66, 70);
-    padding: 245px 14% 100px;
+    padding: 0 18%;
+    padding-top: calc(50px + 180 * (100vw / 1920));
+    padding-bottom: calc(50px + 150 * (100vw / 1920));
     transition: 0.5s;
 
     .find-question-description__title {
         font-weight: 500;
-        font-size: 2.25rem;
+        font-size: calc(15px + 33 * (100vw / 1920));
         line-height: 125%;
     }
 
@@ -34,10 +36,11 @@
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid #424246;
         border-radius: 10px;
-        padding: 10px 20px;
+        padding: 15px 20px;
         color: #2E9C3E;
         margin: 25px 0;
-        
+        font-size: calc(8px + 13 * (100vw / 1920));
+
         &:focus {
             outline: 1px solid #2E9C3E;
             
@@ -51,7 +54,7 @@
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid #424246;
         border-radius: 10px;
-        padding: 20px;
+        padding: 25px 30px;
         margin-top: 15px;
         cursor: pointer;
         transition: 0.5s;
@@ -65,7 +68,7 @@
 
             .block__title {
                 font-weight: 500;
-                font-size: 1rem;
+                font-size: calc(8px + 13 * (100vw / 1920));
                 line-height: 140%;
                 transition: 0.5s;
 
@@ -80,7 +83,7 @@
             @media only screen and (max-width: 900px) {
                 .block__title {
                     font-weight: 500;
-                    font-size: 1rem;
+                    font-size: calc(8px + 13 * (100vw / 1920));
                     line-height: 140%;
                     transition: 0.5s;
                     width: 80%;
@@ -117,7 +120,7 @@
 
         .block__text {
             font-weight: 400;
-            font-size: 0.75rem;
+            font-size: calc(8px + 13 * (100vw / 1920));
             line-height: 200%;
             margin-top: 20px;
 
@@ -135,7 +138,9 @@
 
 @media only screen and (max-width: 600px) {
     .find-question {
-        padding: 245px 5% 100px;
+        padding: 0 5%;
+        padding-top: calc(50px + 180 * (100vw / 1920));
+        padding-bottom: calc(50px + 150 * (100vw / 1920));
 
     }
 

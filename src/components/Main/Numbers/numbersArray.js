@@ -29,6 +29,12 @@ const numbersArray = [
         descriptionRU: 'Наименований криптовалют',
         descriptionEN: 'Cryptocurrencies',
     },
+    {
+        id: 6,
+        title: '500+',
+        descriptionRU: 'Групп пользователей',
+        descriptionEN: 'Groups of traders',
+    }, 
 ]
 
 export default numbersArray;

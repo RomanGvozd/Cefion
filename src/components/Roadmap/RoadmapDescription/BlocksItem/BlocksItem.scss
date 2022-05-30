@@ -9,7 +9,7 @@
 
     .goal__title {
         font-weight: 400;
-        font-size: 1.75rem;
+        font-size: calc(10px + 30 * (100vw / 1920));
         line-height: 125%;
         color: #2E9C3E;
         position: relative;
@@ -19,7 +19,7 @@
             position: absolute;
             content: '';
             width: 4px;
-            height: 20px;
+            height: 70%;
             background:  #2E9C3E;
             border-radius: 5px;
             left: -20px;
@@ -30,7 +30,7 @@
 
     .goal__list-text {
         font-weight: 400;
-        font-size: 1rem;
+        font-size: calc(8px + 13 * (100vw / 1920));
         line-height: 170%;
         margin-top: 20px;
         margin-left: 20px;

@@ -68,6 +68,10 @@ function NewsNavigation() {
                     GameFi
                 </button>
             </Link>
+            <input className={theme === 'dark' ? 'news-navigation__input' : 'news-navigation__input'}
+            placeholder={language === "dark" ? "Поиск по новостям" : "News search"}
+            type="text"
+            />
         </nav>
     );
 }

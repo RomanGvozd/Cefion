@@ -16,8 +16,8 @@
     display: flex;
     justify-content: space-between;
     padding: 0 18%;
-    padding-top: calc(100px + 100 * (100vw / 1920));
-    padding-bottom: calc(100px + 100 * (100vw / 1920));
+    padding-top: calc(20px + 180 * (100vw / 1920));
+    padding-bottom: calc(50px + 150 * (100vw / 1920));
     transition: 0.5s;
 
     .personal-account__block-image {

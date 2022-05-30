@@ -1,6 +1,6 @@
 .news-block {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 50px;
     display: flex;
     justify-content: space-between;
 
@@ -12,7 +12,7 @@
         border-radius: 10px;
     }
 
-    @media only screen and (max-width: 1115px) {
+    @media only screen and (max-width: 1200px) {
         .news-block__image {
             width: 80%;
             margin-top: 10px;
@@ -30,7 +30,7 @@
     }
 
     .news-block__aside {
-        width: 30%;
+        width: 33%;
 
         .aside__block-button {
             width: 100%;
@@ -38,29 +38,31 @@
 
             .aside__button-dark {
                 width: auto;
-                height: 45px;
+                height: auto;
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid #424246;
                 border-radius: 10px;
-                padding: 0 10px;
+                padding: 12px 22px;
                 color: white;
                 margin-right: 20px;
+                font-size: calc(8px + 10 * (100vw / 1920));
 
             }
 
             .aside__button-light {
                 width: auto;
-                height: 45px;
+                height: auto;
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid #424246;
                 border-radius: 10px;
-                padding: 0 10px;
+                padding: 12px 22px;
                 color: black;
                 margin-right: 20px;
+                font-size: calc(8px + 10 * (100vw / 1920));
 
             }
 
-            @media only screen and (max-width: 1115px) {
+            @media only screen and (max-width: 1200px) {
                 .aside__button-dark {
                     margin: 0 10px;
     
@@ -90,7 +92,7 @@
 
         }
 
-        @media only screen and (max-width: 1115px) {
+        @media only screen and (max-width: 1200px) {
             .aside__block-button {
                 display: flex;
                 justify-content: center;
@@ -120,7 +122,7 @@
 
                 .posts__text {
                     font-weight: 300;
-                    font-size: 1rem;
+                    font-size: calc(8px + 13 * (100vw / 1920));
                     line-height: 160%;
                 }
 
@@ -130,7 +132,7 @@
 
     }
 
-    @media only screen and (max-width: 1115px) {
+    @media only screen and (max-width: 1200px) {
         .news-block__aside {
             width: 80%;
             margin-top: 20px;

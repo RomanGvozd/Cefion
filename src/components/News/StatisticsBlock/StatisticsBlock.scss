@@ -1,6 +1,6 @@
 .statistics {
-    width: 48%;
-    height: 250px;
+    width: 49%;
+    height: 289px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #424246;
     border-radius: 10px;
@@ -17,7 +17,7 @@
 
         .statistics__title {
             font-weight: 300;
-            font-size: 1.5rem;
+            font-size: calc(20px + 10 * (100vw / 1920));
             line-height: 36px;
             color: #2E9C3E;
 
@@ -25,7 +25,7 @@
     
         .statistics__subtitle-dark {
             font-weight: 200;
-            font-size: 1rem;
+            font-size: calc(10px + 8 * (100vw / 1920));
             line-height: 21px;
             text-align: right;
             color: rgba(255, 255, 255, 0.5);
@@ -34,7 +34,7 @@
 
         .statistics__subtitle-light {
             font-weight: 200;
-            font-size: 1rem;
+            font-size: calc(10px + 8 * (100vw / 1920));
             line-height: 21px;
             text-align: right;
             color: rgba(0, 0, 0, 0.5);
@@ -60,16 +60,17 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            margin-top: 15px;
     
             .total-volume__title {
                 font-weight: 400;
-                font-size: 1rem;
+                font-size: calc(14px + 10 * (100vw / 1920));
                 line-height: 29px;
             }
     
             .total-volume__subtitle {
                 font-weight: 400;
-                font-size: 1rem;
+                font-size: calc(14px + 10 * (100vw / 1920));
                 line-height: 29px;
             }
     
@@ -79,21 +80,22 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
-    
+            margin-top: 10px;
+
             .subtotal-volume__block {
                 width: auto;
                 display: flex;
     
                 .subtotal-volume__title-dark {
                     font-weight: 300;
-                    font-size: 0.9rem;
+                    font-size: calc(10px + 8 * (100vw / 1920));
                     line-height: 21px;
                     color: rgba(255, 255, 255, 0.5);
                 }
     
                 .subtotal-volume__title-light {
                     font-weight: 300;
-                    font-size: 0.9rem;
+                    font-size: calc(10px + 8 * (100vw / 1920));
                     line-height: 21px;
                     color: rgba(0, 0, 0, 0.5);
                 }
@@ -102,7 +104,7 @@
     
             .subtotal-volume__subtitle-red {
                 font-weight: 300;
-                font-size: 1rem;
+                font-size: calc(10px + 8 * (100vw / 1920));
                 line-height: 21px;
                 color: #FE3B30; 
                 margin-left: 10px;
@@ -111,7 +113,7 @@
 
             .subtotal-volume__subtitle-green {
                 font-weight: 300;
-                font-size: 1rem;
+                font-size: calc(10px + 8 * (100vw / 1920));
                 line-height: 21px;
                 color: #00C900;
                 margin-left: 10px;
@@ -132,19 +134,11 @@
 
 }
 
-@media only screen and (max-width: 1115px) {
-    .statistics {
-        width: 80%;
-        margin-top: 30px;
-
-    }
-
-}
-
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1400px) {
     .statistics {
         width: 100%;
         height: auto;
+        margin-top: 30px;
 
     }
 

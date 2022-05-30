@@ -7,32 +7,75 @@
     margin-top: 50px;
 
     .news-navigation__button {
-        width: 15% ;
+        width: 10% ;
 
         .news-navigation__button-dark {
-            width: 100%;
+            width: 90%;
             height: 49px;
             background: rgba(255, 255, 255, 0.05);
             color: rgba(255, 255, 255, 0.5);
             border: 1px solid #424246;
             border-radius: 10px;
+            font-size: calc(13px + 8 * (100vw / 1920));
+
         }
     
         .news-navigation__button-light {
-            width: 100%;
+            width: 90%;
             height: 49px;
             background: rgba(255, 255, 255, 0.05);
             color: rgba(0, 0, 0, 0.5);
             border: 1px solid #424246;
             border-radius: 10px;
+            font-size: calc(13px + 8 * (100vw / 1920));
+
+        }
+
+        @media only screen and (max-width: 1400px) {
+            .news-navigation__button-dark {
+                width: 100%;
+
+            }
+        
+            .news-navigation__button-light {
+                width: 100%;
+
+            }
+        
         }
 
     }
 
-    @media only screen and (max-width: 1115px) {
+    .news-navigation__input {
+        width: 40%;
+        height: 49px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid #424246;
+        border-radius: 10px;
+        padding: 15px;
+        color: #2E9C3E;
+        font-size: calc(13px + 8 * (100vw / 1920));
+
+        &:focus {
+            border: 1px solid #2E9C3E;
+            outline: none;
+        }
+
+    }
+
+    @media only screen and (max-width: 1400px) {
+        .news-navigation__input {
+            min-width: 100%;
+            margin-top: 20px;
+    
+        }
+    
+    }
+
+    @media only screen and (max-width: 1400px) {
         .news-navigation__button {
-            min-width: 30%;
-            margin-top: 10px;
+            min-width: 48%;
+            margin-top: 15px;
     
         }
     
@@ -48,9 +91,9 @@
 
 }
 
-@media only screen and (max-width: 1115px) {
+@media only screen and (max-width: 1400px) {
     .news-navigation {
-        width: 80%;
+        width: 100%;
 
     }
 
