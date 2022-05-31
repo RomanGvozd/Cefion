@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 
@@ -7,6 +7,18 @@ import './SocialOpportunities.scss';
 function SocialOpportunities() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+
+    const [imageMargin, setImageMargin] = useState(150)
+
+    useEffect(()=>{
+        const width = window.innerWidth;
+        if (width <= 900) {
+            setImageMargin(100)
+        }
+    },[])
+
+
+
 
     const imgAnimation = {
         hidden : {
@@ -18,7 +30,7 @@ function SocialOpportunities() {
             opacity: 1,
             scale: 1,
             transition: { duration: 0.7, delay: custom * 0.3},
-            x: custom * 100,
+            x: custom * `${imageMargin}`,
         })
     }
 

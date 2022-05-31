@@ -115,6 +115,23 @@
 
         }
 
+        @media only screen and (max-width: 1400px) {
+            .modal__button {
+                margin-top: calc(50px + 100 * (100vw / 1920));
+    
+            }
+        
+        }
+
+    }
+
+    @media only screen and (max-width: 1400px) {
+        .modal-login {
+            width: 321px;
+            height: calc(281px + 220 * (100vw / 1920));
+
+        }
+    
     }
 
     @media only screen and (max-width: 600px) {

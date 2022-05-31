@@ -25,9 +25,10 @@
         height: calc(226px + 400 * (100vw / 1920));
         display: flex;
         justify-content: center;
+        padding-top: 5%;
 
         .block-image__image {
-            width: 49%;
+            width: 49.17%;
             height: 100%;
             object-fit: contain;
             margin: 0 10px;
@@ -78,7 +79,7 @@
     }
 
     .personal-account__description {
-        width: 40%;
+        width: 40.70%;
         margin-left: 50px;
 
         .description__button {
