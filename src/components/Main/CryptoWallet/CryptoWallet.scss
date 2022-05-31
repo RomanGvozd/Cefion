@@ -31,9 +31,9 @@
             width: 60%;
             height: 100%;
             object-fit: contain;
-            margin: 0 calc(10px + 10 * (100vw / 1920));
 
             &:nth-child(2) {
+                margin: 0 calc(10px + 10 * (100vw / 1920));
                 margin-top: 40px;
             }
     
