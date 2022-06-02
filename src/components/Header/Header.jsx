@@ -179,7 +179,7 @@ function Header({openModalLogin}) {
                     <button className='header__login' onClick={openModalLogin}>
                         {language === 'RU' ? 'Войти' : 'Log in'}
                     </button>
-                    <button className='setting__theme' onClick={handleTheme}>     
+                    <button className={theme === 'dark' ? 'setting__theme setting__theme-dark' : 'setting__theme setting__theme-light'} onClick={handleTheme}>     
                         <div 
                             className={theme === 'dark' ? 'setting__theme-icon-dark' : 'setting__theme-icon-light'}
                         >

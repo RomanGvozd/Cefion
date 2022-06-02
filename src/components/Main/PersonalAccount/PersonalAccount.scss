@@ -11,21 +11,20 @@
 }
 
 .personal-account {
-    width: 100%;
+    min-width: 76rem;
     height: auto;
     display: flex;
     justify-content: space-between;
-    padding: 0 18%;
-    padding-top: calc(20px + 180 * (100vw / 1920));
-    padding-bottom: calc(50px + 150 * (100vw / 1920));
+    padding: 12.5rem 0 12.5rem;
     transition: 0.5s;
 
     .personal-account__block-image {
-        width: calc(100% - 50% * (100vw / 1920));
-        height: calc(226px + 400 * (100vw / 1920));
+        width: 37.37rem;
+        height: 39.12rem;
         display: flex;
         justify-content: center;
-        padding-top: 5%;
+        margin-top: 4.25rem;
+        margin-right: 3.75rem;
 
         .block-image__image {
             width: 49.17%;
@@ -64,6 +63,8 @@
 
     @media screen and (max-width: 1200px) {
         .personal-account__block-image {
+            width: 50%;
+            margin: 0;
             margin-top: 50px;
             display: flex;
             justify-content: center;
@@ -71,27 +72,35 @@
         
     }
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 550px) {
         .personal-account__block-image {
-            // width: 60%;
+            width: 40%;
+            height: 30.12rem;
+        }
+        
+    }
+
+    @media screen and (max-width: 450px) {
+        .personal-account__block-image {
+            width: 33%;
+            height: 22.12rem;
         }
         
     }
 
     .personal-account__description {
-        width: 40.70%;
-        margin-left: 50px;
+        width: 30.93rem;
 
         .description__button {
             width: auto;
             height: auto;
-            padding: 21px 48px;
+            padding: 1.31rem 3rem;
             background: rgba(46, 156, 62, 0.05);
             border: 1px solid #2E9C3E;
             color: #2E9C3E;
-            border-radius: 10px;
-            margin-top: 30px;
-            font-size: calc(15px + 5 * (100vw / 1920));
+            border-radius: 0.62rem;
+            margin-top: 1.87rem;
+            font-size: 1.25rem;
 
         }
 
@@ -107,13 +116,29 @@
 
     @media screen and (max-width: 1200px) {
         .personal-account__description {
-            width: 100%;
+            width: 70%;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 0;
             margin-top: 50px;
     
+        }
+        
+    }
+
+    @media screen and (max-width: 700px) {
+        .personal-account__description {
+            width: 50%;
+
+        }
+        
+    }
+
+    @media screen and (max-width: 550px) {
+        .personal-account__description {
+            width: 30%;
+
         }
         
     }
@@ -129,3 +154,5 @@
     }
     
 }
+
+

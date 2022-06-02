@@ -1,60 +1,60 @@
 .description-dark {
     background-color: black;
     color: white;
-    border-bottom: 1px solid rgb(66, 66, 70);
 }
 
 .description-light {
     background-color: white;
     color: black;
-    border-bottom: 1px solid #D6D6D6;
 }
 
 .description {
-    width: 100%;
+    max-width: 76rem;
     height: auto;
-    padding-top: calc(150px + 100 * (100vw / 1920));
-    padding-bottom: calc(100px + 100 * (100vw / 1920));
+    padding-top: 14.62rem;
+    padding-bottom: 12.5rem;
     transition: 0.5s;
 
     .description__block {
         width: 100%;
         height: auto;
-        padding: 0px 18% 0px;
+        padding: 0px 0 0px;
         display: flex;
         justify-content: space-between;
 
         .block__information {
-            width: 40.70%;
+            width: 32.19rem;
             height: auto;
+
+            .description__h2 {
+                width: 32.19rem;
+            }
+
+            .description__p {
+                width: 30.94rem;
+            }
+
+            @media screen and (max-width: 1200px) {
+                .description__h2 {
+                    width: 100%;
+                }
+    
+                .description__p {
+                    width: 100%;
+                }
+                
+            }
         
             .block__download {
                 margin-top: 60px;
                 display: flex;
     
                 .download__button {
-                    width: 150px;
-                    height: 50px;
-                    border-radius: 5px;
-                    margin-right: 20px;
+                    width: 7.5rem;
+                    height: 2.5rem;
+                    border-radius: 0.31rem;
+                    margin-right: 1.25rem;
     
-                }
-
-                @media screen and (max-width: 1200px) {
-                    .download__button {
-                        margin: 0 20px;
-        
-                    }
-                    
-                }
-
-                @media screen and (max-width: 600px) {
-                    .download__button {
-                        width: 120px;
-                        height: 40px;
-        
-                    }
-                    
                 }
 
                 .download__app-store {
@@ -76,7 +76,7 @@
 
         @media screen and (max-width: 1200px) {
             .block__information {
-                width: 100%;
+                min-width: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -86,11 +86,26 @@
             
         }
 
+        @media screen and (max-width: 700px) {
+            .block__information {
+                width: 50%;
+    
+            }
+            
+        }
+    
+        @media screen and (max-width: 550px) {
+            .block__information {
+                width: 30%;
+    
+            }
+            
+        }
+        
         .block__image {
-            width: 57.64%;
-            height: calc(400px + 200 * (100vw / 1920));
+            width: 43.81rem;
+            height: 40rem;
             object-fit: contain;
-            padding-top: 5%;
         }
 
         @media screen and (max-width: 1200px) {
@@ -98,112 +113,6 @@
                 width: 100%;
             }
             
-        }
-
-    }
-
-    .description__partners {
-        width: 100%;
-        margin-top: calc(50px + 190 * (100vw / 1920));
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        .partners__title {
-            font-weight: 500;
-            font-size: calc(20px + 28 * (100vw / 1920));
-            line-height: 125%;
-        }
-        
-        @media only screen and (max-width: 1400px) {
-            .partners__title {
-                font-weight: 500;
-                font-size: calc(17px + 20 * (100vw / 1920));
-            }
-        }
-
-        .partners__line-wrapper {
-            width: 100%;
-            height: auto;
-            overflow: hidden;
-            margin-top: 40px;
-            position: relative;
-
-            .left-shadow-dark {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 20%;
-                height: 100%;
-                background: linear-gradient(to right, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-                z-index: 20;
-                transition: 0.5s;
-
-            }
-
-            .left-shadow-light {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 20%;
-                height: 100%;
-                background: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0));
-                z-index: 20;
-                transition: 0.5s;
-
-            }
-
-            .right-shadow-dark {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 20%;
-                height: 100%;
-                background: linear-gradient(to left, rgb(0, 0, 0), rgba(0, 0, 0, 0));
-                z-index: 20;
-                transition: 0.5s;
-
-            }
-
-            .right-shadow-light {
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 20%;
-                height: 100%;
-                background: linear-gradient(to left, rgb(255, 255, 255), rgba(0, 0, 0, 0));
-                z-index: 20;
-                transition: 0.5s;
-
-            }
-
-            .partners__line {
-                width: 100%;
-                height: auto;
-                display: flex;
-    
-                .partners__item {
-                    min-width: calc(189px + 100 * (100vw / 1920));
-                    height: calc(73px + 60 * (100vw / 1920));
-                    background: rgba(46, 156, 62, 0.05);
-                    border: 1px solid #2E9C3E;
-                    border-radius: 15px; 
-                    margin: 0 10px;
-                    padding: calc(15px + 25 * (100vw / 1920));
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-
-                    .partners__item-image {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: contain;
-                    }
-    
-                }
-    
-            }
-
         }
 
     }
@@ -217,18 +126,14 @@
         
     }
 
-    
-    @media screen and (max-width: 900px) {
-        .description__block {
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            padding: 0px 5% 50px;
-        }
-        
-    }
-
 } 
+
+@media screen and (max-width: 1200px) {
+    .description {
+        width: 70%;
+    }
+    
+}
 
 
 

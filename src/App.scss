@@ -5,6 +5,46 @@
     font-family: 'SF UI Display', sans-serif;
 }
 
+@mixin responsive-font($responsive, $min, $max: false, $fallback: false) {
+    $responsive-unitless: $responsive / ($responsive - $responsive + 1);
+    $dimension: if(unit($responsive) == "vh", "height", "width");
+    $min-breakpoint: $min / $responsive-unitless * 100;
+  
+    @media (max-#{$dimension}: #{$min-breakpoint}) {
+      font-size: $min;
+    }
+  
+    @if $max {
+      $max-breakpoint: $max / $responsive-unitless * 100;
+  
+      @media (min-#{$dimension}: #{$max-breakpoint}) {
+        font-size: $max;
+      }
+    }
+  
+    @if $fallback {
+      font-size: $fallback;
+    }
+  
+    font-size: $responsive;
+  }
+
+body,
+html {
+  @include responsive-font(0.835vw, 0.8rem);
+
+  @media (max-width: 1199.98px) {
+    font-size: 0.8rem;
+  }
+
+  margin: 0;
+  font-family: "SF UI Display", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 li {
     list-style: none;
 }
@@ -43,44 +83,27 @@ button {
 
 .description__title {
     font-weight: 500;
-    font-size: calc(12px + 33 * (100vw / 1920));
-    line-height: 125%;
+    font-size: 2.81rem;
+    line-height: 3.75rem;
 
 }
 
 .description__text-dark {
     font-weight: 400;
-    font-size: calc(8px + 13 * (100vw / 1920));
-    line-height: 170%;
-    margin-top: 20px;
+    font-size: 1.25rem;
+    line-height: 2.13rem;
+    margin-top: 1.75rem;
     color: rgba(255, 255, 255, 0.5);
 
 }
 
 .description__text-light {
     font-weight: 400;
-    font-size: calc(8px + 13 * (100vw / 1920));
-    line-height: 170%;
-    margin-top: 20px;
+    font-size: 1.25rem;
+    line-height: 2.13rem;
+    margin-top: 1.75rem;
     color: rgba(0, 0, 0, 0.5);
 
-}
-
-@media only screen and (max-width: 1400px) {
-    .description__title {
-        font-weight: 400;
-        font-size: calc(15px + 17 * (100vw / 1920));
-    }
-    
-    .description__text-dark {
-        font-weight: 300;
-        font-size: calc(12px + 7 * (100vw / 1920));
-    }
-    
-    .description__text-light {
-        font-weight: 300;
-        font-size: calc(12px + 7 * (100vw / 1920));
-    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -98,4 +121,16 @@ button {
         text-align: center;
     
     }
+}
+
+.line-dark {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid rgb(66, 66, 70);
+}
+
+.line-light {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #D6D6D6;
 }

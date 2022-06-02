@@ -13,7 +13,7 @@
 .header {
     width: 100%;
     height: auto;
-    padding: 30px 5%;
+    padding: 1.63rem 6.25rem 1.63rem 4.44rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,8 +29,8 @@
         align-items: center;
 
         .header__logo {
-            width: 200px;
-            height: 80px;
+            width: 13.44rem;
+            height: 5.75rem;
             background-image: url(./images/title.svg);
             background-size: contain;
             background-repeat: no-repeat;
@@ -153,11 +153,13 @@
             }
 
             .list__item-dark {
-                font-weight: 300;
-                font-size: calc(15px + 5 * (100vw / 1920));
+                margin-right: 40px;
+                font-weight: 400;
+                font-size: calc(8px + 10 * (100vw / 1920));
                 line-height: 138%;
+                font-size: 1.13rem;
+                line-height: 1.56rem;
                 color: white;
-                margin: 0 15px;
 
                 &:hover {
                     color: #2E9C3E;
@@ -166,32 +168,19 @@
             }
 
             .list__item-light {
-                font-weight: 300;
-                font-size: calc(15px + 5 * (100vw / 1920));
+                margin-right: 40px;
+                font-weight: 400;
+                font-size: calc(8px + 10 * (100vw / 1920));
                 line-height: 138%;
+                font-size: 1.13rem;
+                line-height: 1.56rem;
                 color: black;
-                margin: 0 15px;
 
                 &:hover {
                     color: #2E9C3E;
                 }
 
             }
-
-            @media only screen and (max-width: 1400px) {
-                .list__item-dark {
-                    font-weight: 300;
-                    font-size: calc(12px + 5 * (100vw / 1920));
-    
-                }
-    
-                .list__item-light {
-                    font-weight: 300;
-                    font-size: calc(12px + 5 * (100vw / 1920));
-    
-                }
-            }
-
 
         }
 
@@ -210,7 +199,7 @@
                 border-bottom: 1px solid rgb(66, 66, 70);
                     
                 .list__item-dark {
-                    margin: 20px 0;
+                    margin: 20px;
 
                     &:hover {
                         color: #2E9C3E;
@@ -219,7 +208,7 @@
                 }
 
                 .list__item-light {
-                    margin: 20px 0;
+                    margin: 20px;
 
                     &:hover {
                         color: #2E9C3E;
@@ -241,37 +230,49 @@
         display: flex;
 
         .header__login {
-            width: 109px;
-            height: 50px;
+            height: 3.13rem;
+            padding: 0px 1.38rem;
             background: rgba(46, 156, 62, 0.05);
             border: 1px solid #2E9C3E;
-            border-radius: 10px;
+            border-radius: 0.63rem;
             color: #2E9C3E;
             margin-left: 15px;
+            font-weight: 400;
+            font-size: calc(8px + 10 * (100vw / 1920));
+            font-size: 1.13rem;
+            line-height: 100%;
 
+        }
+        
+        .setting__theme-dark {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #424246;
+        }
+
+        .setting__theme-light {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid #D6D6D6;
         }
 
         .setting__theme {
-            width: 55px;
-            height: 50px;
-            background: rgba(0, 0, 0, 0.05);
-            border: 1px solid #D6D6D6;
-            border-radius: 10px;
+            width: 3.44rem;
+            height: 3.13rem;
+            border-radius: 0.63rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-left: 15px;
+            margin-left: 0.94rem;
 
             .setting__theme-icon-dark {
-                width: 25px;
-                height: 25px;
+                width: 1rem;
+                height: 1rem;
                 background-image: url(./images/themeDark.svg);
                 background-size: cover;
             }
 
             .setting__theme-icon-light {
-                width: 25px;
-                height: 25px;
+                width: 1rem;
+                height: 1rem;
                 background-image: url(./images/themeLight.svg);
                 background-size: cover;
             }
@@ -285,7 +286,7 @@
 
 @media only screen and (max-width: 1400px) {
     .header {
-        padding: 20px 5%;
+        // padding: 20px 5%;
     }
 
 }

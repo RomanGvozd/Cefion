@@ -22,41 +22,44 @@ function Briefly() {
     }
 
     return(
-        <motion.section 
-        initial="hidden"
-        whileInView="visible"
-        viewport={{amount: 0.2}}
-        className={theme === "dark" ? "briefly briefly-dark" : "briefly briefly-light"}
-        >
-            {theme === "dark" 
-            ? <motion.img variants={imgAnimation} className="briefly__image" src={require('./image/brieflyDark.png')} alt="" />
-            : <motion.img variants={imgAnimation} className="briefly__image" src={require('./image/brieflyLight.png')} alt="" />
-            }
-            <div className="briefly__description">
-                <h2 className="description__title">
-                    {language === "RU"
-                    ? "Конфиденциально. Легко. Социально"
-                    : "Confidential. Easy. Social"
-                    }
-                </h2>
-                <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>
-                    {language === "RU"
-                    ? "Прокачайте навыки инвестирования и вступайте в финансовую игру с другими пользователями! Превратите смартфон в эффективное и безопасное рабочее место, скачав приложение Cefion!"
-                    : "Upgrade your investing skills and play the financial game with other users! Turn your smartphone into an efficient and safe workplace by downloading the Cefion app!"
-                    }
-                </p>
-                <div className="wrapper-line">
-                    <div className="line-progress"></div>
-                    <div className="line"></div>
+        <>
+            <motion.section 
+                initial="hidden"
+                whileInView="visible"
+                viewport={{amount: 0.2}}
+                className="briefly"
+            >
+                {theme === "dark" 
+                ? <motion.img variants={imgAnimation} className="briefly__image" src={require('./image/brieflyDark.png')} alt="" />
+                : <motion.img variants={imgAnimation} className="briefly__image" src={require('./image/brieflyLight.png')} alt="" />
+                }
+                <div className="briefly__description">
+                    <h2 className="description__title">
+                        {language === "RU"
+                        ? "Конфиденциально. Легко. Социально"
+                        : "Confidential. Easy. Social"
+                        }
+                    </h2>
+                    <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>
+                        {language === "RU"
+                        ? "Прокачайте навыки инвестирования и вступайте в финансовую игру с другими пользователями! Превратите смартфон в эффективное и безопасное рабочее место, скачав приложение Cefion!"
+                        : "Upgrade your investing skills and play the financial game with other users! Turn your smartphone into an efficient and safe workplace by downloading the Cefion app!"
+                        }
+                    </p>
+                    <div className="wrapper-line">
+                        <div className="line-progress"></div>
+                        <div className="line"></div>
+                    </div>
+                    <p className="line-text">
+                        {language === "RU"
+                        ? "72% завершенно"
+                        : "72% completed"
+                        }
+                    </p>
                 </div>
-                <p className="line-text">
-                    {language === "RU"
-                    ? "72% завершенно"
-                    : "72% completed"
-                    }
-                </p>
-            </div>
-        </motion.section>
+            </motion.section>
+            <div className={theme === "dark" ? "line-dark" : "line-light"}></div>
+        </>
     );
 }
 
