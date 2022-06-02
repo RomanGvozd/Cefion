@@ -1,44 +1,47 @@
 .news-navigation {
-    width: 100%;
+    width: 76rem;
     height: auto;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 3.12rem;
 
-    .news-navigation__button {
-        width: 10% ;
+    .news-navigation__button-wrapper {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
 
         .news-navigation__button-dark {
-            width: 90%;
-            height: 49px;
+            width: 100%;
+            height: auto;
             background: rgba(255, 255, 255, 0.05);
             color: rgba(255, 255, 255, 0.5);
             border: 1px solid #424246;
-            border-radius: 10px;
-            font-size: calc(13px + 8 * (100vw / 1920));
+            border-radius: 0.62rem;
+            padding: 0.75rem 1rem;
+            font-size: 1.12rem;
 
         }
     
         .news-navigation__button-light {
-            width: 90%;
-            height: 49px;
+            width: 100%;
+            height: auto;
             background: rgba(255, 255, 255, 0.05);
             color: rgba(0, 0, 0, 0.5);
             border: 1px solid #424246;
-            border-radius: 10px;
-            font-size: calc(13px + 8 * (100vw / 1920));
+            border-radius: 0.62rem;
+            padding: 0.75rem 1rem;
+            font-size: 1.12rem;
 
         }
 
-        @media only screen and (max-width: 1400px) {
+        @media only screen and (max-width: 800px) {
             .news-navigation__button-dark {
-                width: 100%;
-
+                height: 4.5rem;
+    
             }
         
             .news-navigation__button-light {
-                width: 100%;
+                height: 4.5rem;
 
             }
         
@@ -46,15 +49,33 @@
 
     }
 
+    @media only screen and (max-width: 1200px) {
+        .news-navigation__button-wrapper {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 16% 16% 16% 16% 16% 16%;
+        }
+    
+    }
+
+    @media only screen and (max-width: 600px) {
+        .news-navigation__button-wrapper {
+            display: grid;
+            grid-template-columns: 48% 48%;
+            grid-gap: 10px;
+        }
+    
+    }
+
     .news-navigation__input {
-        width: 40%;
-        height: 49px;
+        width: 38%;
+        height: auto;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid #424246;
-        border-radius: 10px;
-        padding: 15px;
+        border-radius: 0.62rem;
+        padding: 0.75rem;
         color: #2E9C3E;
-        font-size: calc(13px + 8 * (100vw / 1920));
+        font-size: 1.12rem;
 
         &:focus {
             border: 1px solid #2E9C3E;
@@ -63,47 +84,28 @@
 
     }
 
-    @media only screen and (max-width: 1400px) {
+    @media only screen and (max-width: 1200px) {
         .news-navigation__input {
-            min-width: 100%;
-            margin-top: 20px;
-    
-        }
-    
-    }
-
-    @media only screen and (max-width: 1400px) {
-        .news-navigation__button {
-            min-width: 48%;
-            margin-top: 15px;
-    
-        }
-    
-    }
-    
-    @media only screen and (max-width: 900px) {
-        .news-navigation__button {
-            min-width: 48%;
-    
+            width: 100%;
+            margin-top: 2rem;
         }
     
     }
 
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     .news-navigation {
-        width: 100%;
+        width: 90%;
 
     }
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .news-navigation {
-        width: 100%;
-        height: auto;
-
+        display: flex;
+        flex-direction: column;
     }
 
 }

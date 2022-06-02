@@ -9,17 +9,15 @@
 }
 
 .about-description {
-    width: 100%;
+    width: 76rem;
     height: auto;
-    border-bottom: 1px solid #D6D6D6;
-    padding: 0 18%;
-    padding-top: calc(30px + 190 * (100vw / 1920));
-    padding-bottom: calc(50px + 150 * (100vw / 1920));
+    padding-top: 14.62rem;
+    margin-bottom: 9.37rem;
     transition: 0.5s;
 
     .about-description__title {
         font-weight: 500;
-        font-size: calc(12px + 33 * (100vw / 1920));
+        font-size: 3rem;
         line-height: 125%;
     }
 
@@ -43,7 +41,7 @@
 
     }
 
-    @media screen and (max-width: 1155px) {
+    @media screen and (max-width: 1200px) {
 
         .about-description__title {
             display: flex;
@@ -76,12 +74,9 @@
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .about-description {
-        padding: 0 5%;
-        padding-top: calc(20px + 180 * (100vw / 1920));
-        padding-bottom: calc(50px + 150 * (100vw / 1920));
-
+        width: 90%;
     }
 
 }

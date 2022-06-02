@@ -17,57 +17,59 @@ function NewsNavigation() {
 
     return (
         <nav className='news-navigation'>
-            <Link className='news-navigation__button' to="/news" onClick={scrollTop}>
-                <button 
-                    className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
-                    style={pathname === "/news" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
-                >
-                    {language === "RU"
-                    ? "ВСЕ новости"
-                    : "All news"
-                    }
-                </button>
-            </Link>
-            <Link className='news-navigation__button' to="/news/blockchain" onClick={scrollTop}>
-                <button 
-                    className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
-                    style={pathname === "/news/blockchain" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
-                >
-                    Blockchain
-                </button>
-            </Link>
-            <Link className='news-navigation__button' to="/news/nft" onClick={scrollTop}>
-                <button 
-                    className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
-                    style={pathname === "/news/nft" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
-                >
-                    NFT
-                </button>
-            </Link>
-            <Link className='news-navigation__button' to="/news/defi" onClick={scrollTop}>
-                <button 
-                    className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
-                    style={pathname === "/news/defi" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
-                >
-                    DeFI
-                </button>
-            </Link>
-            <Link className='news-navigation__button' to="/news/business" onClick={scrollTop}>
-                <button 
-                    className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
-                    style={pathname === "/news/business" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
-                >
-                    Business
-                </button>
-            </Link>
-            <Link className='news-navigation__button' to="/news/gamefi" onClick={scrollTop}>
-                <button 
-                    className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
-                    style={pathname === "/news/gamefi" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
-                >
-                    GameFi
-                </button>
-            </Link>
+            <div className='news-navigation__button-wrapper'>
+                <Link className='news-navigation__button' to="/news" onClick={scrollTop}>
+                    <button 
+                        className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
+                        style={pathname === "/news" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
+                    >
+                        {language === "RU"
+                        ? "ВСЕ новости"
+                        : "All news"
+                        }
+                    </button>
+                </Link>
+                <Link className='news-navigation__button' to="/news/blockchain" onClick={scrollTop}>
+                    <button 
+                        className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
+                        style={pathname === "/news/blockchain" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
+                    >
+                        Blockchain
+                    </button>
+                </Link>
+                <Link className='news-navigation__button' to="/news/nft" onClick={scrollTop}>
+                    <button 
+                        className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
+                        style={pathname === "/news/nft" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
+                    >
+                        NFT
+                    </button>
+                </Link>
+                <Link className='news-navigation__button' to="/news/defi" onClick={scrollTop}>
+                    <button 
+                        className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
+                        style={pathname === "/news/defi" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
+                    >
+                        DeFI
+                    </button>
+                </Link>
+                <Link className='news-navigation__button' to="/news/business" onClick={scrollTop}>
+                    <button 
+                        className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
+                        style={pathname === "/news/business" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
+                    >
+                        Business
+                    </button>
+                </Link>
+                <Link className='news-navigation__button' to="/news/gamefi" onClick={scrollTop}>
+                    <button 
+                        className={theme === 'dark' ? 'news-navigation__button-dark' : 'news-navigation__button-light'}
+                        style={pathname === "/news/gamefi" ? {color: "#2E9C3E", border: '1px solid #2E9C3E'} : {}}
+                    >
+                        GameFi
+                    </button>
+                </Link>
+            </div>
             <input className={theme === 'dark' ? 'news-navigation__input' : 'news-navigation__input'}
             placeholder={language === "dark" ? "Поиск по новостям" : "News search"}
             type="text"

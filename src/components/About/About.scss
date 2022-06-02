@@ -1,0 +1,17 @@
+.about-main-dark {
+    background-color: black;
+    color: white;
+}
+
+.about-main-light {
+    background-color: white;
+    color: black;
+}
+
+.about-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.5s;
+}

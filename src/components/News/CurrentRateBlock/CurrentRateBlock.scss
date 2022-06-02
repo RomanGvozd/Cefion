@@ -1,10 +1,10 @@
 .current-rate {
     width: 49%;
-    height: 289px;
+    height: 18.06rem;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #424246;
-    border-radius: 10px;
-    padding: 30px;
+    border-radius: 0.62rem;
+    padding: 1.87rem;
 
     .current-rate__header {
         width: 100%;
@@ -13,16 +13,16 @@
         align-items: center;
 
         .current-rate__title {
-            font-weight: 300;
-            font-size: calc(20px + 10 * (100vw / 1920));
+            font-weight: 400;
+            font-size: 1.87rem;
             line-height: 36px;
             color: #2E9C3E;
 
         }
     
         .current-rate__subtitle-dark {
-            font-weight: 200;
-            font-size: calc(10px + 8 * (100vw / 1920));
+            font-weight: 400;
+            font-size: 1.12rem;
             line-height: 21px;
             text-align: right;
             color: rgba(255, 255, 255, 0.5);
@@ -30,8 +30,8 @@
         }
 
         .current-rate__subtitle-light {
-            font-weight: 200;
-            font-size: calc(10px + 8 * (100vw / 1920));
+            font-weight: 400;
+            font-size: 1.12rem;
             line-height: 21px;
             text-align: right;
             color: rgba(0, 0, 0, 0.5);
@@ -55,27 +55,27 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 15px;
+        margin-top: 1.43rem;
 
         .block-hour {
             width: 23%;
-            height: 87px;
+            height: 5.43rem;
             border: 1px solid #424246;
-            border-radius: 10px;
-            padding: 10px;
+            border-radius: 0.62rem;
+            padding: 0.62rem;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
 
             .block-hour__title {
                 font-weight: 400;
-                font-size: calc(10px + 8 * (100vw / 1920));
+                font-size: 1.12rem;
                 line-height: 138%;
             }
 
             .block-hour__text {
                 font-weight: 400;
-                font-size: calc(10px + 8 * (100vw / 1920));
+                font-size: 1.12rem;
                 line-height: 138%;
                 color: #00C900;
             }
@@ -110,7 +110,7 @@
 
         .block-prise__title {
             font-weight: 300;
-            font-size: calc(14px + 10 * (100vw / 1920));
+            font-size: 1.5rem;
             line-height: 29px;
             color: rgba(0, 0, 0, 0.5);
             position: relative;
@@ -119,12 +119,12 @@
             &::after {
                 position: absolute;
                 content: '';
-                width: 40px;
-                height: 40px;
+                width: 2.81rem;
+                height: 2.81rem;
                 background: #C4C4C4;
                 border-radius: 50%;
                 left: -70px;
-                top: -5px;
+                top: -10px;
             }
 
         }
@@ -142,7 +142,7 @@
 
         .block-prise__subtitle {
             font-weight: 500;
-            font-size: calc(28px + 20 * (100vw / 1920));
+            font-size: 3rem;
             line-height: 57px;
         }
 
@@ -160,7 +160,7 @@
 
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     .current-rate {
         width: 100%;
         height: auto;

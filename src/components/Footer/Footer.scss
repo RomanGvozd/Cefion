@@ -72,33 +72,10 @@
             align-items: center;
 
             .download__button {
-                width: 120px;
-                height: 40px;
+                width: 7.5rem;
+                height: 2.75rem;
                 margin: 10px;
                 border-radius: 5px;
-
-            }
-
-            @media screen and (max-width: 400px) {
-                .download__button {
-                    width: 100px;
-                    height: 35px;
-                    margin-left: 20px;
-                    border-radius: 5px;
-    
-                }
-            
-            }
-
-            .download__app-store {
-                background-image: url(./image/app-store.svg);
-                background-size: cover;
-
-            }
-
-            .download__google-play {
-                background-image: url(./image/google-play.svg);
-                background-size: cover;
 
             }
 
@@ -107,6 +84,14 @@
                 background-size: cover;
                 
             }
+
+            .download__google-play {
+                background-image: url(./image/google-play.svg);
+                background-size: cover;
+
+            }
+
+
 
         }
 

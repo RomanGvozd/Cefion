@@ -72,9 +72,8 @@ function Footer() {
                     }
                 </h4>
                 <div className="block__download">
-                    <button className="download__button download__app-store"></button>
-                    <button className="download__button download__google-play"></button>
                     <button className="download__button download__android"></button>
+                    <button className="download__button download__google-play"></button>
                 </div>
             </div>
             <div className={theme === "dark" ? "block__social footer-dark" : "block__social footer-light"}>

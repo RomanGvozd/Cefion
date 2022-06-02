@@ -10,22 +10,24 @@
 
 .news {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
-    padding: 0 18%;
-    padding-top: calc(50px + 180 * (100vw / 1920));
-    padding-bottom: calc(50px + 150 * (100vw / 1920));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 14.62rem;
+    padding-bottom: 12.5rem;
     transition: 0.5s;
 
     .news-block {
-        width: 100%;
+        width: 76rem;
+        height: auto;
         display: flex;
         justify-content: space-between;
 
     }
 
-    @media only screen and (max-width: 1400px) {
+    @media only screen and (max-width: 1200px) {
         .news-block {
+            width: 90%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -36,21 +38,11 @@
     
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1200px) {
     .news {
         display: flex;
         flex-direction: column;
         align-items: center;
-
-    }
-
-}
-
-@media only screen and (max-width: 600px) {
-    .news {
-        padding: 0 5%;
-        padding-top: calc(130px + 200 * (100vw / 1920));
-        padding-bottom: calc(50px + 150 * (100vw / 1920));
 
     }
 

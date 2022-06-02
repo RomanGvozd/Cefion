@@ -9,23 +9,21 @@
 }
 
 .about-command {
-    width: 100%;
+    width: 76rem;
     height: auto;
-    border-bottom: 1px solid #D6D6D6;
-    padding: 0 18%;
-    padding-top: calc(30px + 150 * (100vw / 1920));
-    padding-bottom: calc(50px + 150 * (100vw / 1920));
+    padding-top: 9.37rem;
+    margin-bottom: 12.5rem;
     transition: 0.5s;
 
     .about-command__block-title {
         width: 100%;
-        font-size: calc(12px + 33 * (100vw / 1920));
+        font-size: 3rem;
         display: flex;
         align-items: center;
 
         .block-title__text {
             font-weight: 500;
-            font-size: calc(8px + 13 * (100vw / 1920));
+            font-size: 1.5rem;
             line-height: 125%;
             color: #2E9C3E;
             margin-left: 100px;
@@ -52,12 +50,12 @@
     .about-command__block-command {
         width: 100%;
         height: auto;
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
         margin-top: 30px;
 
         .block-command__card {
-            width: 289px;
+            // width: 289px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -97,31 +95,40 @@
 
         }
 
-        @media only screen and (max-width: 1000px) {
-            .block-command__card  {
-                width: 50%;
-        
-            }
-        
-        }
+    }
 
-        @media only screen and (max-width: 600px) {
-            .block-command__card  {
-                width: 100%;
-        
-            }
-        
+    @media only screen and (max-width: 1000px) {
+        .about-command__block-command  {
+            display: grid;
+            grid-template-columns: 33% 33% 33%;
+    
         }
+    
+    }
 
+    @media only screen and (max-width: 700px) {
+        .about-command__block-command  {
+            display: grid;
+            grid-template-columns: 50% 50%;
+    
+        }
+    
+    }
+
+    @media only screen and (max-width: 400px) {
+        .about-command__block-command  {
+            display: grid;
+            grid-template-columns: 100%;
+    
+        }
+    
     }
 
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .about-command {
-        padding: 0 5%;
-        padding-top: calc(30px + 150 * (100vw / 1920));
-        padding-bottom: calc(50px + 150 * (100vw / 1920));
+        width: 90%;
 
     }
 

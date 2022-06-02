@@ -41,7 +41,7 @@ function Description() {
                         }
                     </p>
                     <div className="block__download">
-                        <button className="download__button download__app-store"></button>
+                        <button className="download__button download__android"></button>
                         <button className="download__button download__google-play"></button>
                     </div>
                 </div>
