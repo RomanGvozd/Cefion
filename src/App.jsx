@@ -15,8 +15,6 @@ import ModalLogin from './components/ModalLogin/ModalLogin';
 import ModalRegister from './components/ModalRegister/ModalRegister';
 import ModaForgotPassword from './components/ModaForgotPassword/ModaForgotPassword';
 
-import Admin from './AdminPanel/Admin';
-
 import './App.scss';
 
 function App() {

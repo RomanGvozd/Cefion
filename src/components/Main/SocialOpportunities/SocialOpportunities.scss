@@ -12,7 +12,7 @@
 
 
 .social-opportunities {
-    min-width: 76rem;
+    width: 76rem;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -92,27 +92,11 @@
     @media screen and (max-width: 1200px) {
         .social-opportunities__description {
             margin-top: 50px;
-            width: 70%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-
-        }
-        
-    }
-
-    @media screen and (max-width: 700px) {
-        .social-opportunities__description {
-            width: 50%;
-
-        }
-        
-    }
-
-    @media screen and (max-width: 550px) {
-        .social-opportunities__description {
-            width: 30%;
 
         }
         
@@ -176,7 +160,7 @@
 
 @media screen and (max-width: 1200px) {
     .social-opportunities  {
-        max-width: 70%;
+        width: 90%;
         display: flex;
         flex-direction: column-reverse;
         align-items: center;

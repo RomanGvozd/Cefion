@@ -10,17 +10,27 @@
 
 .media {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid rgb(66, 66, 70);
-    padding: 0 18%;
-    padding-top: calc(50px + 180 * (100vw / 1920));
-    padding-bottom: calc(50px + 150 * (100vw / 1920));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 14.62rem;
+    padding-bottom: 12.5rem;
     transition: 0.5s;
 
     .media-description__title {
         font-weight: 500;
-        font-size: calc(15px + 33 * (100vw / 1920));
+        font-size: 3rem;
         line-height: 125%;
+    }
+
+    .media-description__button {
+        width: 11.62rem;
+        height: 4.43rem;
+        margin-top: 3.12rem;
+        background: rgba(46, 156, 62, 0.05);
+        border: 1px solid #2E9C3E;
+        color: #2E9C3E;
+        border-radius: 0.62rem;
     }
 
     @media only screen and (max-width: 600px) {
@@ -32,14 +42,4 @@
     
     }
     
-}
-
-@media only screen and (max-width: 600px) {
-    .media {
-        padding: 0 5%;
-        padding-top: calc(20px + 180 * (100vw / 1920));
-        padding-bottom: calc(50px + 150 * (100vw / 1920));
-
-    }
-
 }

@@ -1,11 +1,11 @@
 .media__block {
-    width: 100%;
+    width: 76rem;
     height: auto;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid #424246;
-    border-radius: 10px;
-    padding: 30px;
-    margin-top: 25px;
+    border-radius: 0.62rem;
+    padding: 1.87rem 6.43rem 1.87rem 1.87rem;
+    margin-top: 2.5rem;
     display: flex;
     justify-content: space-between;
 
@@ -30,7 +30,7 @@
 
         .content__title {
             font-weight: 500;
-            font-size: 1.5rem;
+            font-size: 1.87rem;
             line-height: 160%;
 
         }

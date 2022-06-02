@@ -11,7 +11,7 @@
 }
 
 .crypto-wallet {
-    min-width: 76rem;
+    width: 76rem;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -86,33 +86,18 @@
         .crypto-wallet__description {
             margin: 0;
             margin-top: calc(50px + 100 * (100vw / 1200));
-            width: 70%;
+            width: 100%;
             
         }
         
     }
 
-    @media screen and (max-width: 700px) {
-        .crypto-wallet__description {
-            width: 50%;
-
-        }
-        
-    }
-
-    @media screen and (max-width: 550px) {
-        .crypto-wallet__description {
-            width: 30%;
-
-        }
-        
-    }
 
 }
 
 @media screen and (max-width: 1200px) {
     .crypto-wallet {
-        width: 100%;
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;

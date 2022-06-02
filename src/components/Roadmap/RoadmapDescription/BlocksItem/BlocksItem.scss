@@ -4,12 +4,12 @@
     background: rgba(46, 156, 62, 0.05);
     border: 1px solid #2E9C3E;
     border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 1.87rem;
+    margin: 1.56rem 0;
 
     .goal__title {
         font-weight: 400;
-        font-size: calc(10px + 30 * (100vw / 1920));
+        font-size: 1.87rem;
         line-height: 125%;
         color: #2E9C3E;
         position: relative;
@@ -30,10 +30,10 @@
 
     .goal__list-text {
         font-weight: 400;
-        font-size: calc(8px + 13 * (100vw / 1920));
+        font-size: 1.12rem;
         line-height: 170%;
-        margin-top: 20px;
-        margin-left: 20px;
+        margin-top: 1.56rem;
+        margin-left: 1.56rem;
 
     }
 

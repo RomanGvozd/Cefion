@@ -11,19 +11,25 @@ function Media() {
     const media = useSelector((store) => store.media);
     const language = useSelector((store) => store.language.language);
 
-    const {title}  =content[language]
+    const {title, button} = content[language]
 
     return (
-        <section className={theme === 'dark' ? 'media media-dark' : 'media media-light'}>
-            <h2 className='media-description__title'>
-                {title}
-            </h2>
-            <div>
-                {media.map((block)=>(
-                    <BlocksItem key={block.id} block={block}/>
-                ))} 
-            </div>
-        </section>
+        <>
+            <section className={theme === 'dark' ? 'media media-dark' : 'media media-light'}>
+                <h2 className='media-description__title'>
+                    {title}
+                </h2>
+                <div>
+                    {media.map((block)=>(
+                        <BlocksItem key={block.id} block={block}/>
+                    ))} 
+                </div>
+                <button className='media-description__button'>
+                    {button}
+                </button>
+            </section>
+            <div className={theme === "dark" ? "line-dark" : "line-light"}></div>
+        </>
     );
 }
 

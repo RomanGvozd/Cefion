@@ -33,7 +33,7 @@ function RoadmapDescription() {
                     ))}
                 </div>
             </section>
-            
+            <div className={theme === "dark" ? "line-dark" : "line-light"}></div>
         </>
     );
 }

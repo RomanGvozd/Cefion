@@ -11,7 +11,7 @@
 }
 
 .personal-account {
-    min-width: 76rem;
+    width: 76rem;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -24,7 +24,7 @@
         display: flex;
         justify-content: center;
         margin-top: 4.25rem;
-        margin-right: 3.75rem;
+        margin-right: 7.75rem;
 
         .block-image__image {
             width: 49.17%;
@@ -64,8 +64,8 @@
     @media screen and (max-width: 1200px) {
         .personal-account__block-image {
             width: 50%;
+            height: 30.12rem;
             margin: 0;
-            margin-top: 50px;
             display: flex;
             justify-content: center;
         }
@@ -74,7 +74,7 @@
 
     @media screen and (max-width: 550px) {
         .personal-account__block-image {
-            width: 40%;
+            width: 90%;
             height: 30.12rem;
         }
         
@@ -82,8 +82,8 @@
 
     @media screen and (max-width: 450px) {
         .personal-account__block-image {
-            width: 33%;
-            height: 22.12rem;
+            width: 100%;
+            height: 20.12rem;
         }
         
     }
@@ -116,7 +116,7 @@
 
     @media screen and (max-width: 1200px) {
         .personal-account__description {
-            width: 70%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -127,26 +127,11 @@
         
     }
 
-    @media screen and (max-width: 700px) {
-        .personal-account__description {
-            width: 50%;
-
-        }
-        
-    }
-
-    @media screen and (max-width: 550px) {
-        .personal-account__description {
-            width: 30%;
-
-        }
-        
-    }
-
 }
 
 @media screen and (max-width: 1200px) {
     .personal-account {
+        width: 90%;
         display: flex;
         flex-direction: column;
         align-items: center;
