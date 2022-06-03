@@ -12,7 +12,9 @@ function NewsBlock() {
 
     const [posts, setPosts] = useState(arr);
 
-  const { title, text1, text2, text3, button1, button2 } = content[language];
+    const [show, setShow] = useState(false);
+
+    const { title, text1, text2, text3, button1, button2 } = content[language];
 
     
     return (
@@ -31,10 +33,18 @@ function NewsBlock() {
             </div>
             <div className="news-block__aside">
                 <div className='aside__block-button'>
-                    <button className={theme === 'dark' ? 'aside__button-dark' : 'aside__button-light'}>
+                    <button 
+                        className={theme === 'dark' ? 'aside__button-dark' : 'aside__button-light'}
+                        style={!show ? {border: `1px solid #2E9C3E`, color: `#2E9C3E`} : {}}
+                        onClick={()=>setShow(false)}
+                    >
                         {button1}
                     </button>
-                    <button className={theme === 'dark' ? 'aside__button-dark' : 'aside__button-light'}>
+                    <button 
+                        className={theme === 'dark' ? 'aside__button-dark' : 'aside__button-light'}
+                        style={show ? {border: `1px solid #2E9C3E`, color: `#2E9C3E`} : {}}
+                        onClick={()=>setShow(true)}
+                    >
                         {button2}
                     </button>
                 </div>
@@ -42,8 +52,19 @@ function NewsBlock() {
                     {posts.map((post)=>(
                         <div className='posts__block'>
                             {language === "RU"
-                            ? <p className='posts__text'>{post.descriptionRU}</p>
-                            : <p className='posts__text'>{post.descriptionEN}</p>
+                            ? <>
+                                <p className='posts__text'>{post.descriptionRU}</p>
+                                {show && <p className='posts__subtext'>
+                                    <div className={theme === 'dark' ? 'posts__subtext-image-dark' : 'posts__subtext-image-light'}></div>{post.peopleSearch}
+                                </p>}
+                            </>
+
+                            : <>
+                                <p className='posts__text'>{post.descriptionEN}</p>
+                                {show && <p className='posts__subtext'>
+                                    <div className={theme === 'dark' ? 'posts__subtext-image-dark' : 'posts__subtext-image-light'}></div>{post.peopleSearch}
+                                </p>}
+                            </>
                             }
                         </div>
                     ))}

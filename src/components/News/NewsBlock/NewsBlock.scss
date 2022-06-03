@@ -149,7 +149,7 @@
             .posts__block {
                 width: 100%;
                 border-bottom: 1px solid rgb(66, 66, 70);
-                padding: 10px 0;
+                padding: 1.25rem 0;
 
                 .posts__text {
                     font-weight: 300;
@@ -157,9 +157,39 @@
                     line-height: 160%;
                 }
 
+                .posts__subtext {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 130%;
+                    margin-top: 1.25rem;
+                    display: flex;
+
+                    .posts__subtext-image-dark {
+                        width: 1rem;
+                        height: 1rem;
+                        background-image: url(./image/searchDark.svg);
+                        background-size: cover;
+                        margin-right: 0.62rem;
+                    }
+
+                    .posts__subtext-image-light {
+                        width: 1rem;
+                        height: 1rem;
+                        background-image: url(./image/searchLight.svg);
+                        background-size: cover;
+                        margin-right: 0.62rem;
+                    }
+
+                }
+
                 @media only screen and (max-width: 1200px) {
                     .posts__text {
                         text-align: center;
+                    }
+
+                    .posts__subtext {
+                        display: flex;
+                        justify-content: center;
                     }
                 
                 }
