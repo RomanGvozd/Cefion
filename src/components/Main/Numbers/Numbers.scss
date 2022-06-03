@@ -24,7 +24,7 @@
     .numbers__line-wrapper {
         width: 100%;
         height: auto;
-        margin-top: 4.56rem;
+        margin-top: 2.5rem;
         overflow: hidden;
         position: relative;
 
@@ -82,8 +82,8 @@
             display: flex;
     
             .line-item {
-                min-width: 24.5rem;
-                height: 7.68rem;
+                min-width: 18.06rem;
+                height: 8.93rem;
                 background: rgba(46, 156, 62, 0.05);
                 border: 1px solid #2E9C3E;
                 border-radius: 0.93rem;
@@ -91,7 +91,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                margin: 0 0.62rem;
+                margin: 0 10px;
     
                 .line-item__title {
                     font-weight: 500;

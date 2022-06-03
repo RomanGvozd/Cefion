@@ -30,7 +30,8 @@
     width: 100%;
     height: auto;
     overflow: hidden;
-    padding: 2.5rem 0 12.5rem;
+    margin-top: 2.5rem;
+    padding: 0 0 12.5rem;
     position: relative;
     transition: 0.5s;
 
@@ -86,6 +87,7 @@
         width: 100%;
         height: auto;
         display: flex;
+        cursor: pointer;
 
         .partners__item {
             min-width: 18.06rem;
@@ -93,7 +95,7 @@
             background: rgba(46, 156, 62, 0.05);
             border: 1px solid #2E9C3E;
             border-radius: 0.93rem; 
-            margin: 0 0.62rem;
+            margin: 0 10px;
             padding: 2.5rem;
             display: flex;
             justify-content: center;

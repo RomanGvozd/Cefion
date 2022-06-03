@@ -1,29 +1,22 @@
 .news-block {
-    width: 100%;
-    margin-top: 50px;
+    width: 76rem;
+    height: auto;
+    margin-top: 3.12rem;
     display: flex;
     justify-content: space-between;
 
     .news-block__image {
         width: 60%;
-        height: 500px;
+        height: 36.25rem;
         background-image: url(./image/NewsBlockImage.png);
         background-size: cover;
-        border-radius: 10px;
+        border-radius: 0.62rem;
     }
 
     @media only screen and (max-width: 1200px) {
         .news-block__image {
-            width: 80%;
-            margin-top: 10px;
-    
-        }
-    
-    }
-
-    @media only screen and (max-width: 800px) {
-        .news-block__image {
             width: 100%;
+            margin-top: 10px;
     
         }
     
@@ -41,11 +34,11 @@
                 height: auto;
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid #424246;
-                border-radius: 10px;
-                padding: 12px 22px;
+                border-radius: 0.62rem;
+                padding: 0.75rem 1.37rem;
                 color: white;
                 margin-right: 20px;
-                font-size: calc(8px + 10 * (100vw / 1920));
+                font-size: 1.12rem;
 
             }
 
@@ -54,11 +47,11 @@
                 height: auto;
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid #424246;
-                border-radius: 10px;
-                padding: 12px 22px;
+                border-radius: 0.62rem;
+                padding: 0.75rem 1.37rem;
                 color: black;
                 margin-right: 20px;
-                font-size: calc(8px + 10 * (100vw / 1920));
+                font-size: 1.12rem;
 
             }
 
@@ -122,8 +115,15 @@
 
                 .posts__text {
                     font-weight: 300;
-                    font-size: calc(8px + 13 * (100vw / 1920));
+                    font-size: 1.25rem;
                     line-height: 160%;
+                }
+
+                @media only screen and (max-width: 1200px) {
+                    .posts__text {;
+                        text-align: center;
+                    }
+                
                 }
 
             }
@@ -134,7 +134,7 @@
 
     @media only screen and (max-width: 1200px) {
         .news-block__aside {
-            width: 80%;
+            width: 100%;
             margin-top: 20px;
     
         }
@@ -147,6 +147,14 @@
     
         }
     
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .news-block {
+        width: 90%;
+
     }
 
 }

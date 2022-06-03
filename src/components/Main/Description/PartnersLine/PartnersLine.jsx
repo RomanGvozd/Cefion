@@ -16,22 +16,24 @@ function PartnersLine() {
     const [ticker, setTicker] = useState(true)
 
     useEffect(() => {
-        const maxTranslate = firstElRef.clientWidth + 40 || 0;
-        let translate = 0;
-        const interval = setInterval(() => {
-            if (translate === maxTranslate) {
-                setTranslate(0);
-                const item = blocks[0];
-                const arr = blocks.slice(1);
-                setBlocks([...arr, item]);
-                clearInterval(interval);
-            } else {
-                translate++;
-                setTranslate((state) => state + 1);
-            }
-        }, 20);
-        return () => clearInterval(interval);
-    }, [firstElRef]);
+        if (ticker) {
+            const maxTranslate = firstElRef.clientWidth + 20 || 0;
+            let count = 0;
+            const interval = setInterval(() => {
+                if (count === maxTranslate) {
+                    setTranslate(0);
+                    const item = blocks[0];
+                    const arr = blocks.slice(1);
+                    setBlocks([...arr, item]);
+                    clearInterval(interval);
+                } else {
+                    count++;
+                    setTranslate((state) => state + 1); 
+                }
+            }, 20);
+            return () => clearInterval(interval);
+        }
+    }, [firstElRef, ticker]);
 
     return(
         <>
@@ -53,7 +55,9 @@ function PartnersLine() {
                     onMouseLeave={()=>setTicker(true)}
                 >
                     {blocks.map((block, index)=>(
-                        <div 
+                        <a
+                            href={block.href}
+                            target="_blank"
                             key={block.id}
                             ref={index === 0 ? setFirstElRef : undefined}
                             className="partners__item"
@@ -63,7 +67,7 @@ function PartnersLine() {
                             : <img className="partners__item-image" src={require(`${block.hrefLight}`)} alt="" />
                             }
                                 
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>

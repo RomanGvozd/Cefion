@@ -13,8 +13,8 @@ function BlocksItem({block}) {
     return (
         <div className='media__block'>
             {theme === "dark"
-            ? <img className='block__image' src={require('./image/SocPullDark.png')} alt="" />
-            : <img className='block__image' src={require('./image/SocPullLight.png')} alt="" />
+            ? <a href={block.href} target="_blank" className='block__image'><img  src={require('./image/SocPullDark.png')} alt="" /></a>
+            : <a href={block.href} target="_blank" className='block__image'><img  src={require('./image/SocPullLight.png')} alt="" /></a>
             }
             <div className='block__content'>
                 <h4 className='content__title'>

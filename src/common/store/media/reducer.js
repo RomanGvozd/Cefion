@@ -7,6 +7,7 @@ const INITIAL_STATE = [
         titleEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
+        href: "https://socpull.com/",
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ const INITIAL_STATE = [
         titleEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
+        href: "https://socpull.com/",
     },
 ]
 
