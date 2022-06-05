@@ -1,30 +1,112 @@
 .landing-faqs {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
 
-    .landing-faqs__header {
-        width: 100%;
-        height: auto;
-    
-        .header__button-dark {
-            color: white;
-            background: #1C1C1E;
-            border: 1px solid #424246;
+    .landing-faqs__aside {
+        width: 30%;
+        height: 100%;
+
+        .aside__input {
+            width: 100%;
+            height: 3rem;
+            padding: 1rem 1.56rem;
+            border-radius: 0.62rem;
+            margin-top: 1.25rem;
+
+        }
+
+        .aside__textarea {
+            width: 100%;
+            height: 7rem;
+            padding: 1rem 1.56rem;
+            border-radius: 0.62rem;
+            margin-top: 1.25rem;
+
         }
     
-        .header__button-light {
-            color: black;
-            background: #F5F5F5;
-            border: 1px solid #D6D6D6;
-        }
-    
-        .header__button {
-            width: auto;
+        .aside__button {
+            width: 100%;
             height: auto;
-            padding: 15px 25px;
-            border-radius: 10px;
-            margin-right: 20px;
+            padding: 1rem 1.56rem;
+            border-radius: 0.62rem;
+            margin-top: 1.25rem;
+
             
         }
     
+    }
+
+    .landing-faqs__aside-faqs {
+        width: 70%;
+        height: 100%;
+        padding: 0 1.5rem;
+        min-height: 100%;
+        overflow-y: auto;
+
+        .find-question__block {
+            width: 100%;
+            height: auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #424246;
+            border-radius: 10px;
+            padding: 1.56rem 1.87rem;
+            margin-top: 1.25rem;
+            cursor: pointer;
+            transition: 0.5s;
+            position: relative;
+
+            .button-delete {
+                width: 20px;
+                height: 20px;
+                background-image: url(./image/VectorDelete.svg);
+                background-size: cover;
+                transform: rotate(45deg);
+                position: absolute;
+                cursor: pointer;
+                top: 15px;
+                right: 15px;
+            }
+    
+            .block__header {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: space-between;
+    
+                .block__title {
+                    font-weight: 500;
+                    font-size: 1.12rem;
+                    line-height: 140%;
+                    transition: 0.5s;
+    
+                }
+    
+                .block__title-active {
+                    color: #2E9C3E;
+                    transition: 0.5s;
+    
+                }
+    
+            }
+    
+            .block__text {
+                font-weight: 400;
+                font-size: 1.12rem;
+                line-height: 200%;
+                margin-top: 20px;
+    
+            }
+    
+        }
+    
+        .find-question__block-active {
+            border: 1px solid #2E9C3E;
+            transition: 0.5s;
+    
+        }
+
     }
 
 }

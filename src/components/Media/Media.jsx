@@ -19,11 +19,11 @@ function Media() {
                 <h2 className='media-description__title'>
                     {title}
                 </h2>
-                <div>
+
                     {media.map((block)=>(
                         <BlocksItem key={block.id} block={block}/>
                     ))} 
-                </div>
+
                 <button className='media-description__button'>
                     {button}
                 </button>

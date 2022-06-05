@@ -1,4 +1,4 @@
-import { ACTION_ADD, ACTION_DELETE } from "./actions";
+import { ACTION_ADD_MEDIA, ACTION_DELETE_MEDIA } from "./actions";
 
 const INITIAL_STATE = [
     {
@@ -22,7 +22,7 @@ const INITIAL_STATE = [
 export default function reducer(state = INITIAL_STATE, { type, payload }) {
 
     switch (type) {
-        case ACTION_ADD:
+        case ACTION_ADD_MEDIA:
             return [ ...state, {
                 id: Date.now(), 
                 titleRU: payload.titleRU, 
@@ -30,7 +30,7 @@ export default function reducer(state = INITIAL_STATE, { type, payload }) {
                 descriptionRU: payload.descriptionRU,
                 descriptionEN: payload.descriptionEN,
             } ]; 
-        case ACTION_DELETE:
+        case ACTION_DELETE_MEDIA:
             return state.filter(el => el.id !== payload ? true : false); 
         default:
             return state;

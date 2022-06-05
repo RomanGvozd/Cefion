@@ -7,6 +7,7 @@ import CurrentRateBlock from './CurrentRateBlock/CurrentRateBlock';
 import StatisticsBlock from './StatisticsBlock/StatisticsBlock';
 import MarketNews from './MarketNews/MarketNews';
 import NewsBlock from './NewsBlock/NewsBlock';
+import NewsPage from './NewsPage/NewsPage';
 
 import './News.scss'
 
@@ -16,20 +17,28 @@ function News() {
     
     return (
         <section className={theme === 'dark' ? 'news news-dark' : 'news news-light'}>
-            <div className='news-block'>
-                <CurrentRateBlock/>
-                <StatisticsBlock/>
-            </div>
-            <NewsNavigation/>
             <Routes>
-                <Route path="/blockchain" element={<></>} />
-                <Route path="/nft" element={<></>} />
-                <Route path="/defi" element={<></>} />
-                <Route path="/business" element={<></>} />
-                <Route path="/gamefi" element={<></>} />
+                <Route path="/" element={
+                    <>
+                        <div className='news-block'>
+                            <CurrentRateBlock/>
+                            <StatisticsBlock/>
+                        </div>
+                        <NewsNavigation/>
+                        <Routes>
+                            <Route path="/blockchain" element={<></>} />
+                            <Route path="/nft" element={<></>} />
+                            <Route path="/defi" element={<></>} />
+                            <Route path="/business" element={<></>} />
+                            <Route path="/gamefi" element={<></>} />
+                        </Routes>
+                        <NewsBlock/>
+                        <MarketNews/>
+                    </>
+                } />
+                <Route path="/1" element={<NewsPage />} />
             </Routes>
-            <NewsBlock/>
-            <MarketNews/>
+
         </section>
     );
 }

@@ -1,23 +1,20 @@
 import React, {useState} from 'react';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-import arr from './questions';
+import {showItem} from '../../../common/store/faqs/actions';
 
 import './FindQuestion.scss';
 
 function FindQuestion() {
+    const faqs = useSelector((store) => store.faqs);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
-    const [questions, setQuestions] = useState(arr)
+    const dispatch = useDispatch();
 
     const handleOpen = (id) => {
-        setQuestions(questions.map( question=> {
-            if (question.id === id) {
-                question.isShow = !question.isShow
-            }
-            return question
-        }))
+        dispatch(showItem(id))
+
     }
 
     return (
@@ -27,7 +24,7 @@ function FindQuestion() {
                     FAQs
                 </h2>
                 <input className='find-question__input' type="text" placeholder={language === 'RU' ? 'Найдите ответы на вопросы' : 'Find answers to questions'} />
-                {questions.map((question)=>(
+                {faqs.map((question)=>(
                     <div className={question.isShow ? 'find-question__block find-question__block-active' : 'find-question__block'} key={question.id} onClick={()=>handleOpen(question.id)}>
                         <div className='block__header'>
                             {language === "RU"

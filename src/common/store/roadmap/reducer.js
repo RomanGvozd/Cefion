@@ -1,4 +1,4 @@
-import { ACTION_ADD, ACTION_DELETE } from "./actions";
+import { ACTION_ADD_ROADMAP, ACTION_DELETE_ROADMAP } from "./actions";
 
 const INITIAL_STATE = [
     {
@@ -24,14 +24,14 @@ const INITIAL_STATE = [
 export default function reducer(state = INITIAL_STATE, { type, payload }) {
 
     switch (type) {
-        case ACTION_ADD:
+        case ACTION_ADD_ROADMAP:
             return [ ...state, {
                 id: Date.now(), 
                 title: payload.title, 
                 descriptionRU: payload.descriptionRU, 
                 descriptionEN: payload.descriptionEN,
             } ]; 
-        case ACTION_DELETE:
+        case ACTION_DELETE_ROADMAP:
             return state.filter(el => el.id !== payload ? true : false); 
         default:
             return state;

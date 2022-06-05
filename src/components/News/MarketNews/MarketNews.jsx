@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
+import {Link, useLocation} from "react-router-dom";
 
 import arr from './marketNevsCards';
 import './MarketNews.scss'
@@ -9,6 +10,10 @@ function MarketNews() {
     const language = useSelector((store) => store.language.language);
 
     const [cards, setCards] = useState(arr)
+
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    }
     
     return (
         <>
@@ -23,27 +28,29 @@ function MarketNews() {
                 </div>
                 <div className='market-news__content'>
                     {cards.map((card)=>(
-                        <div className={theme === 'dark' ? 'content__card content__card-dark' : 'content__card content__card-light'}>
-                            <div className='card__image'>
-    
-                            </div>
-                            <div className='card__header'>
+                        <Link to="/news/1" onClick={scrollTop}>
+                            <div className={theme === 'dark' ? 'content__card content__card-dark' : 'content__card content__card-light'}>
+                                <div className='card__image'>
+        
+                                </div>
+                                <div className='card__header'>
+                                    {language === "RU"
+                                    ? <p className='card__header__title'>{card.titleRU}</p>
+                                    : <p className='card__header__title'>{card.titleEN}</p>
+                                    }
+                                    <p className='card__header__user'>
+                                        {card.avtor}
+                                    </p>
+                                </div>
                                 {language === "RU"
-                                ? <p className='card__header__title'>{card.titleRU}</p>
-                                : <p className='card__header__title'>{card.titleEN}</p>
+                                ? <p className='card__description'>{card.descriptionRU}</p>
+                                : <p className='card__description'>{card.descriptionEN}</p>
                                 }
-                                <p className='card__header__user'>
-                                    {card.avtor}
-                                </p>
-                            </div>
-                            {language === "RU"
-                            ? <p className='card__description'>{card.descriptionRU}</p>
-                            : <p className='card__description'>{card.descriptionEN}</p>
-                            }
-                            <div className='card__footer'>
+                                <div className='card__footer'>
 
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>         
             </section>
