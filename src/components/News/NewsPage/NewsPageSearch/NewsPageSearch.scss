@@ -1,0 +1,118 @@
+.news-page-search {
+    width: 76rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 6.25rem 0 12.5rem;
+
+    .news-page-search__title {
+        font-weight: 500;
+        font-size: 2.25rem;
+        line-height: 125%;
+        margin-bottom: 1.87rem;
+    }
+
+    .news-page-search__list {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+
+        .list__card {
+            min-width: 24.5rem;
+            height: auto;
+            margin-right: 1.25rem;
+
+            .card__image {
+                width: 100%;
+                object-fit: contain;
+            }
+
+            .card__title {
+                font-weight: 500;
+                font-size: 1.25rem;
+                line-height: 155%;
+                margin: 1.25rem 0;
+            }
+
+            .card__user {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                .user__image {
+                    width: 4.06rem;
+                    height: 4.06rem;
+                    object-fit: contain;
+                }
+
+                .user__info {
+                    margin-right: 3rem;
+                    padding-bottom: 1rem;
+
+                    .info__name-dark {
+                        font-weight: 400;
+                        font-size: 1rem;
+                        line-height: 19px;                   
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    .info__name-light {
+                        font-weight: 400;
+                        font-size: 1rem;
+                        line-height: 19px;                   
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+
+                    .info__email {
+                        font-weight: 400;
+                        font-size: 1.25rem;
+                        line-height: 130%;
+                    }
+
+                }
+
+                .user__text {
+                    padding-bottom: 1rem;
+                    font-weight: 300;
+                    font-size: 1rem;
+                    line-height: 19px;
+                    text-align: right;
+                    color: #2E9C3E;
+                }
+
+            }
+
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .list__card{
+                min-width: 32%;
+            }
+            
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .list__card{
+                min-width: 49%;
+            }
+            
+        }
+
+        @media only screen and (max-width: 700px) {
+            .list__card{
+                min-width: 100%;
+            }
+            
+        }
+
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .news-page-search{
+        width: 90%;
+    }
+    
+}

@@ -1,0 +1,199 @@
+.news-page__footer {
+    width: 76rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 6.25rem 0;
+
+    .footer__user {
+        width: 50%;
+        display: flex;
+        align-items: flex-end;
+
+        .user__image {
+            width: 5.18rem;
+            height: 5.18rem;
+            object-fit: contain;
+        }
+
+        .user__info {
+            width: auto;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            margin-left: 1.25rem;
+            margin-bottom: 1rem;
+
+            .user__name {
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 19px;
+            }
+
+            .user__email {
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 130%;
+            }
+
+        }
+
+        .user__time {
+            margin-left: 2.87rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 130%;
+
+        }
+
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .footer__user{
+            width: 100%;
+        }
+        
+    }
+
+    .footer__social {
+        width: 50%;
+        padding: 4.37rem 0;
+        display: flex;
+        align-items: center;
+
+        .footer__social-block {
+            display: flex;
+
+            .social__search {
+                display: flex;
+    
+                .social__search-icon-dark {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background-image: url(./image/searchDark.svg);
+                    background-size: contain;
+                }
+    
+                .social__search-icon-light {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    background-image: url(./image/searchLight.svg);
+                    background-size: contain;
+                }
+        
+                .social__search-text {
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    line-height: 130%;
+                    margin-left: 0.68rem;
+                }
+    
+            }
+    
+            .social__tags {
+                display: flex;
+                align-items: center;
+                margin-left: 3.37rem;
+    
+                .social__tags-icon-dark {
+                    width: 1.12rem;
+                    height: 1.12rem;
+                    background-image: url(./image/tagsDark.svg);
+                    background-size: contain;
+                }
+    
+                .social__tags-icon-light {
+                    width: 1.12rem;
+                    height: 1.12rem;
+                    background-image: url(./image/tagsLight.svg);
+                    background-size: contain;
+                }
+    
+                .social__tags-text {
+                    font-weight: 400;
+                    font-size: 1.25rem;
+                    line-height: 130%;
+                    margin-left: 0.68rem;
+                }
+    
+            }
+    
+        }
+
+        .social-block {
+            margin-left: 4rem;
+
+            .social__button {
+                width: 2.5rem;
+                height: 2.5rem;
+                background: rgba(46, 156, 62, 0.05);
+                border: 1px solid #2E9C3E;
+                border-radius: 50%;
+                margin: 0 5px;
+            }
+
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .social-block{
+                margin: 4rem 0 0 0;
+            }
+            
+        }
+
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .footer__social{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+    }
+
+    .footer__tags-title {
+        font-weight: 500;
+        font-size: 1.87rem;
+        line-height: 125%;
+        margin-bottom: 1.25rem;
+    }
+
+    .footer__tags {
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .tag {
+            width: auto;
+            padding: 0.68rem 1.81rem;
+            margin: 0.43rem;
+            background: rgba(46, 156, 62, 0.05);
+            border: 1px solid #2E9C3E;
+            border-radius: 0.62rem;
+            font-weight: 400;
+            font-size: 1.12rem;
+            line-height: 138%;
+            color: #2E9C3E;
+        }
+
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .footer__tags{
+            width: 100%;
+        }
+        
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .news-page__footer{
+        width: 90%;
+    }
+    
+}
