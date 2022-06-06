@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import {content} from './Header.config';
+import optionsNav from './optionsNav.array';
 
 import Select from '../Select/Select';
 import SelectNav from '../SelectNav/SelectNav';
@@ -45,33 +47,7 @@ function Header({openModalLogin}) {
         titleEN: "Application Features",
     },)
 
-    const optionsNav = [
-        {
-            id: "personalAccount",
-            titleRU: "Личный аккаунт",
-            titleEN: "Personal account",
-        },
-        {
-            id: "socialOpportunities",
-            titleRU: "Социальные возможности",
-            titleEN: "Social Opportunities",
-        },
-        {
-            id: "cryptoWallet",
-            titleRU: "Криптокошелек",
-            titleEN: "Crypto wallet",
-        },
-        {
-            id: "timeline",
-            titleRU: "Лента новостей",
-            titleEN: "Timeline",
-        },
-        {
-            id: "otherFeatures",
-            titleRU: "Другие функции",
-            titleEN: "Other features",
-        },
-    ];
+    const {Roadmap, News, AboutUs} = content[language]
 
     const handleTheme = () => {
         if (theme === "dark") {
@@ -140,10 +116,7 @@ function Header({openModalLogin}) {
                                 scrollTop()}
                             }
                             >
-                                {language === "RU"
-                                ? "Дорожная карта"
-                                : "Roadmap"
-                                }
+                                {Roadmap}
                             </Link>
                             <Link 
                             className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
@@ -154,10 +127,7 @@ function Header({openModalLogin}) {
                                 scrollTop()}
                             }
                             >
-                                {language === "RU"
-                                ? "Новости"
-                                : "News"
-                                }
+                                {News}
                             </Link>
                             <Link 
                             className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
@@ -168,10 +138,7 @@ function Header({openModalLogin}) {
                                 scrollTop()}
                             }
                             >
-                                {language === "RU"
-                                ? "О нас"
-                                : "About Us"
-                                }
+                                {AboutUs}
                             </Link>   
                     </div>
                 </nav>

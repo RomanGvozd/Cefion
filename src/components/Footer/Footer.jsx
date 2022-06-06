@@ -1,6 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Link, useLocation} from "react-router-dom";
+import {content} from './Footer.config';
 
 import './Footer.scss';
 
@@ -13,6 +14,17 @@ function Footer() {
     const scrollTop = () => {
         window.scrollTo(0, 0);
     }
+    const {
+        AboutUs,
+        Roadmap,
+        NewsAboutUs,
+        FAQs,
+        DownloadTheApp,
+        ConnectWithUs,
+        PrivacyPolicy,
+        TermsOfUse,
+        SiteAnalytics
+    } = content[language]
 
     return(
         <footer className={theme === "dark" ? "footer footer-dark" : "footer footer-light"}>
@@ -23,10 +35,7 @@ function Footer() {
                         className={ theme === "dark" ? "nav__item-dark" : "nav__item-light"}
                         style={pathname === "/about" ? {color: "#2E9C3E"} : {}}
                     >
-                        {language === "RU"
-                        ? "О нас"
-                        : "About Us"
-                        }
+                        {AboutUs}
                     </p>
                 </Link>
                 <Link to="/Roadmap" onClick={scrollTop}>
@@ -34,10 +43,7 @@ function Footer() {
                         className={ theme === "dark" ? "nav__item-dark" : "nav__item-light"}
                         style={pathname === "/Roadmap" ? {color: "#2E9C3E"} : {}}
                     >
-                        {language === "RU"
-                        ? "Дорожная карта"
-                        : "Roadmap"
-                        }
+                        {Roadmap}
                     </p>
                 </Link>
                 <Link to="/faqs" onClick={scrollTop}>
@@ -45,10 +51,7 @@ function Footer() {
                         className={ theme === "dark" ? "nav__item-dark" : "nav__item-light"}
                         style={pathname === "/faqs" ? {color: "#2E9C3E"} : {}}
                     >
-                        {language === "RU"
-                        ? "FAQs"
-                        : "FAQs"
-                        }
+                        {FAQs}
                     </p>
                 </Link>
                 <Link to="/media" onClick={scrollTop}>
@@ -56,19 +59,13 @@ function Footer() {
                         className={ theme === "dark" ? "nav__item-dark" : "nav__item-light"}
                         style={pathname === "/media" ? {color: "#2E9C3E"} : {}}
                     >
-                        {language === "RU"
-                        ? "Новости о нас"
-                        : "News about us"
-                        }
+                        {NewsAboutUs}
                     </p>
                 </Link>
             </nav>
             <div className={theme === "dark" ? "footer__download footer-dark" : "footer__download footer-light"}>
                 <h4 className="download__title">
-                    {language === "RU"
-                    ? "Скачать приложение"
-                    : "Download the app"
-                    }
+                    {DownloadTheApp}
                 </h4>
                 <div className="block__download">
                     <button className="download__button download__android"></button>
@@ -77,10 +74,7 @@ function Footer() {
             </div>
             <div className={theme === "dark" ? "block__social footer-dark" : "block__social footer-light"}>
                 <h4 className="download__title">
-                    {language === "RU"
-                    ? "Связаться с нами"
-                    : "Connect with us"
-                    }
+                    {ConnectWithUs}
                 </h4>
                 <div className="social__button-wrapper">
                     <a className="social__button">
@@ -93,22 +87,13 @@ function Footer() {
             </div>
             <div className="footer__other">
                 <p className={theme === "dark" ? "other__text-dark" : "other__text-light"}>
-                    {language === "RU"
-                    ? "Политика конфиденциальности"
-                    : "Privacy Policy"
-                    }
+                    {PrivacyPolicy}
                 </p>
                 <p className={theme === "dark" ? "other__text-dark" : "other__text-light"}>
-                    {language === "RU"
-                    ? "Условия использования"
-                    : "Terms of Use"
-                    }
+                    {TermsOfUse}
                 </p>
                 <p className={theme === "dark" ? "other__text-dark" : "other__text-light"}>
-                    {language === "RU"
-                    ? "Аналитика сайта"
-                    : "Site Analytics"
-                    }
+                    {SiteAnalytics}
                 </p>
             </div>
             </div>
