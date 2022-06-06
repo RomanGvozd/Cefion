@@ -18,7 +18,7 @@ function News() {
     return (
         <section className={theme === 'dark' ? 'news news-dark' : 'news news-light'}>
             <Routes>
-                <Route path="/" element={
+                <Route path="/*" element={
                     <>
                         <div className='news-block'>
                             <CurrentRateBlock/>
@@ -35,7 +35,7 @@ function News() {
                         <NewsBlock/>
                         <MarketNews/>
                     </>
-                } />
+                }/>
                 <Route path="/1" element={<NewsPage />} />
             </Routes>
 

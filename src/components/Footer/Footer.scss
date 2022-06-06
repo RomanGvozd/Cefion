@@ -13,201 +13,330 @@
 .footer {
     width: 100%;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 5.25rem 22rem 3.5rem;
     transition: 0.5s;
+    display: flex;
+    justify-content: center;
 
-    .footer__nav {
-        width: 100%;
+    .footer-wrapper {
+        width: 76rem;
+        padding: 5.25rem 0 3.5rem;
         display: flex;
-
-        .nav__item-dark {
-            font-weight: 400;
-            font-size: 1.25rem;
-            line-height: 229%;
-            color: white;
-            margin-right: 3.43rem;
-
-            &:hover {
-                color: #2E9C3E;
-            }
-
-        }
-
-        .nav__item-light {
-            font-weight: 400;
-            font-size: 1.25rem;
-            line-height: 229%;
-            color: black;
-            margin-right: 3.43rem;
-
-            &:hover {
-                color: #2E9C3E;
-            }
-
-        }
-
-    }
-
-    .footer__download {
-        width: 100%;
-        display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
-        padding: 2.5rem 0;
         transition: 0.5s;
 
-        .download__title {
-            font-weight: 500;
-            font-size: 3rem;
-            line-height: 125%;
-
-        }
-
-        .block__download {
-            width: 55%;
+        .footer__nav {
+            width: 100%;
             display: flex;
-            align-items: center;
-
-            .download__button {
-                width: 7.5rem;
-                height: 2.75rem;
-                margin: 10px;
-                border-radius: 5px;
-
+    
+            .nav__item-dark {
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 229%;
+                color: white;
+                margin-right: 3.43rem;
+    
+                &:hover {
+                    color: #2E9C3E;
+                }
+    
+            }
+    
+            .nav__item-light {
+                font-weight: 400;
+                font-size: 1.25rem;
+                line-height: 229%;
+                color: black;
+                margin-right: 3.43rem;
+    
+                &:hover {
+                    color: #2E9C3E;
+                }
+    
             }
 
-            .download__android {
-                background-image: url(./image/android.svg);
-                background-size: cover;
-                
+            @media screen and (max-width: 600px) {
+                .nav__item-dark {
+                    margin: 0;
+        
+                }
+        
+                .nav__item-light {
+                    margin: 0;
+        
+                }
+            
             }
-
-            .download__google-play {
-                background-image: url(./image/google-play.svg);
-                background-size: cover;
-
-            }
-
-
-
+    
         }
 
-    }
-
-    .block__social {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 2.5rem 0;
-        transition: 0.5s;
-
-        .download__title {
-            font-weight: 500;
-            font-size: 3rem;
-            line-height: 125%;
-
-        }
-
-        .social__button-wrapper {
-            width: 55%;
-            display: flex;
-            align-items: center;
-
-            .social__button {
-                width: 3.5rem;
-                height: 3.5rem;
-                background: rgba(46, 156, 62, 0.05);
-                border: 1px solid #2E9C3E;
-                border-radius: 0.62rem;
-                margin: 0.62rem;
+        @media screen and (max-width: 1200px) {
+            .footer__nav {
+                width: 100%;
                 display: flex;
                 justify-content: center;
-                align-items: center;
     
-                .social__button-image {
-                    width: 50%;
-                    height: 50%;
-                    background-size: contain;
-                    background-repeat: no-repeat;
-                }
-    
-                .social__button-telegram-dark {
-                    background-image: url(./image/telegramDark.svg);
-                    
-                }
-    
-                .social__button-telegram-light {
-                    background-image: url(./image/telegramLight.svg);
-    
-                }
-    
-                .social__button-email-dark {
-                    background-image: url(./image/emailLight.svg);
-                    
-                }
-    
-                .social__button-email-light {
-                    background-image: url(./image/emailDark.svg);
-    
-                }
-    
-            }
-
-        }
-
-    }
-
-    .footer__other {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        margin-top: 40px;
-
-        .other__text-dark {
-            font-weight: 300;
-            font-size: 1rem;
-            line-height: 229%;
-            color: rgba(255, 255, 255, 0.5);
-            margin-right: 3.12rem;
-            cursor: pointer;
-
-            &:hover {
-                color: #2E9C3E;
-            }
-
-        }
-
-        .other__text-light {
-            font-weight: 300;
-            font-size: 1rem;
-            line-height: 229%;
-            color: rgba(0, 0, 0, 0.5);
-            margin-right: 3.12rem;
-            cursor: pointer;
-
-            &:hover {
-                color: #2E9C3E;
-            }
-            
-        }
-
-        @media screen and (max-width: 900px) {
-            .other__text-dark {
-                margin: 0;
-    
-            }
-    
-            .other__text-light {
-                margin: 0;
-                
             }
         
         }
 
+        @media screen and (max-width: 600px) {
+            .footer__nav {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+            }
+        
+        }
+    
+        .footer__download {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0;
+            transition: 0.5s;
+    
+            .download__title {
+                font-weight: 500;
+                font-size: 3rem;
+                line-height: 125%;
+    
+            }
+
+            @media screen and (max-width: 600px) {
+                .download__title {
+                    text-align: center;
+        
+                }
+            
+            }
+    
+            .block__download {
+                width: 55%;
+                display: flex;
+                align-items: center;
+    
+                .download__button {
+                    width: 7.5rem;
+                    height: 2.75rem;
+                    margin: 10px;
+                    border-radius: 5px;
+    
+                }
+    
+                .download__android {
+                    background-image: url(./image/android.svg);
+                    background-size: cover;
+                    
+                }
+    
+                .download__google-play {
+                    background-image: url(./image/google-play.svg);
+                    background-size: cover;
+    
+                }
+    
+            }
+
+            @media screen and (max-width: 1200px) {
+                .block__download {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 1rem;
+        
+                }
+            
+            }
+    
+        }
+
+        @media screen and (max-width: 1200px) {
+            .footer__download {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+            }
+        
+        }
+    
+        .block__social {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 0;
+            transition: 0.5s;
+    
+            .download__title {
+                font-weight: 500;
+                font-size: 3rem;
+                line-height: 125%;
+    
+            }
+
+            @media screen and (max-width: 600px) {
+                .download__title {
+                    text-align: center;
+        
+                }
+            
+            }
+    
+            .social__button-wrapper {
+                width: 55%;
+                display: flex;
+                align-items: center;
+    
+                .social__button {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    background: rgba(46, 156, 62, 0.05);
+                    border: 1px solid #2E9C3E;
+                    border-radius: 0.62rem;
+                    margin: 0.62rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+        
+                    .social__button-image {
+                        width: 50%;
+                        height: 50%;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+        
+                    .social__button-telegram-dark {
+                        background-image: url(./image/telegramDark.svg);
+                        
+                    }
+        
+                    .social__button-telegram-light {
+                        background-image: url(./image/telegramLight.svg);
+        
+                    }
+        
+                    .social__button-email-dark {
+                        background-image: url(./image/emailLight.svg);
+                        
+                    }
+        
+                    .social__button-email-light {
+                        background-image: url(./image/emailDark.svg);
+        
+                    }
+        
+                }
+    
+            }
+
+            @media screen and (max-width: 1200px) {
+                .social__button-wrapper {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 1rem;
+        
+                }
+            
+            }
+    
+        }
+
+        @media screen and (max-width: 1200px) {
+            .block__social {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+    
+            }
+        
+        }
+    
+        .footer__other {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            margin-top: 40px;
+    
+            .other__text-dark {
+                font-weight: 300;
+                font-size: 1rem;
+                line-height: 229%;
+                color: rgba(255, 255, 255, 0.5);
+                margin-right: 3.12rem;
+                cursor: pointer;
+    
+                &:hover {
+                    color: #2E9C3E;
+                }
+    
+            }
+    
+            .other__text-light {
+                font-weight: 300;
+                font-size: 1rem;
+                line-height: 229%;
+                color: rgba(0, 0, 0, 0.5);
+                margin-right: 3.12rem;
+                cursor: pointer;
+    
+                &:hover {
+                    color: #2E9C3E;
+                }
+                
+            }
+    
+            @media screen and (max-width: 600px) {
+                .other__text-dark {
+                    margin: 0;
+        
+                }
+        
+                .other__text-light {
+                    margin: 0;
+                    
+                }
+            
+            }
+    
+        }
+
+        @media screen and (max-width: 1200px) {
+            .footer__other {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+    
+            }
+        
+        }
+
+        @media screen and (max-width: 600px) {
+            .footer__other {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+    
+            }
+        
+        }
+
+    }
+
+    @media screen and (max-width: 1200px) {
+        .footer-wrapper {
+            width: 90%;
+
+        }
+    
     }
     
 }

@@ -3,8 +3,6 @@ import {useSelector} from "react-redux";
 import {Link, useLocation} from "react-router-dom";
 
 import './Footer.scss';
-import './FooterAdaptive.scss';
-
 
 function Footer() {
     const theme = useSelector((store) => store.theme.theme);
@@ -18,6 +16,7 @@ function Footer() {
 
     return(
         <footer className={theme === "dark" ? "footer footer-dark" : "footer footer-light"}>
+            <div className="footer-wrapper">
             <nav className="footer__nav">
                 <Link to="/about" onClick={scrollTop}>
                     <p 
@@ -111,6 +110,7 @@ function Footer() {
                     : "Site Analytics"
                     }
                 </p>
+            </div>
             </div>
         </footer>
     )

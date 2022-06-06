@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import arr from "./tags.array";
+import buttons from "./button.array";
 import {content} from './NewsPageFooter.config';
 
 import './NewsPageFooter.scss'
@@ -36,10 +37,14 @@ function NewsPageFooter() {
                         </div>
                     </div>
                     <div className='social-block'>
-                        <button className='social__button'>
-                        </button>
-                        <button className='social__button'>
-                        </button>
+                        {buttons.map((button)=>(
+                            <button className='social__button'>
+                                {theme === "dark"
+                                ? <img className='button__image' src={require(`${button.imageDark}`)} alt="" />
+                                : <img className='button__image' src={require(`${button.imageLight}`)} alt="" />
+                                }
+                            </button>
+                        ))}
                     </div>
                 </div>
                 <h4 className="footer__tags-title">{title}</h4>
