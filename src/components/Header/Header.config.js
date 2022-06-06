@@ -8,7 +8,7 @@ export const content = {
     RU:{
         Roadmap:"Дорожная карта",
         News:"Новости",
-        AboutUs:"О на",
+        AboutUs:"О нас",
 
     }
 }

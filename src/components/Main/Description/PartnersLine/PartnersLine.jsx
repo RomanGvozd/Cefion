@@ -1,19 +1,21 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-
-import arr from '../blocksArray'
+import { content } from "./PartnerlLine.config";
 
 import './PartnersLine.scss'
 
 function PartnersLine() {
+    const partnerLine = useSelector((store) => store.partnerLine);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
     const [firstElRef, setFirstElRef] = useState({});
     const [translate, setTranslate] = useState(0);
-    const [blocks, setBlocks] = useState(arr);
+    const [blocks, setBlocks] = useState(partnerLine);
 
-    const [ticker, setTicker] = useState(true)
+    const [ticker, setTicker] = useState(true);
+
+    const {title} = content[language];
 
     useEffect(() => {
         if (ticker) {
@@ -39,10 +41,7 @@ function PartnersLine() {
         <>
             <div className="description__partners">
                 <h2 className="partners__title">
-                    {language === "RU"
-                    ?"Наши партнеры:"
-                    :"Our partners:"
-                    }
+                    {title}
                 </h2>
             </div>
             <div className={theme === "dark" ? "partners__line-wrapper partners__line-dark" : "partners__line-wrapper partners__line-light"}>

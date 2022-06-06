@@ -1,14 +1,16 @@
 .landing-about {
     width: 100%;
+    height: 100%;
 
     .landing-about__header {
         width: 100%;
+        height: 10%;
         display: flex;
         justify-content: space-between;
 
         .header__about {
             width: 34%;
-            padding: 15px;
+            padding: 1rem;
             font-weight: 400;
             font-size: 1rem;
             line-height: 21px;
@@ -16,10 +18,130 @@
 
         .header__team {
             width: 64%;
-            padding: 15px;
+            padding: 1rem;
             font-weight: 400;
             font-size: 1rem;
             line-height: 21px;
+        }
+
+    }
+
+    .landing-about__main {
+        width: 100%;
+        height: 90%;
+
+        .block-about {
+            width: 34%;
+            height: 100%;
+            padding: 1rem;
+        }
+
+        display: flex;
+        justify-content: space-between;
+
+        .block-team {
+            width: 64%;
+            height: 100%;
+            padding: 1rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+
+            .block-command__card-input {
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+
+                .input-file {
+                    width: 100%;
+                    height: 12.5rem;
+                    cursor: pointer;
+                    position: relative;
+                    
+                    .input-file-vector {
+                        position: absolute;
+                        left: 45%;
+                        top: 45%;
+                        width: 1rem;
+                        height: 1rem;
+                        background-image: url(./image/VectorDelete.svg);
+                        background-size: contain;
+                    }
+
+                }
+
+                .input {
+                    width: 100%;
+                    height: auto;
+                    padding: 0.5rem;
+                    margin-top: 1rem;
+                }
+
+                .button {
+                    width: 100%;
+                    height: auto;
+                    padding: 0.5rem;
+                    margin-top: 1rem;
+                }
+
+            }
+
+            .block-command__card {
+                width: 25%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 10px;
+                position: relative;
+
+                .button-delete {
+                    width: 1rem;
+                    height: 1rem;
+                    background-image: url(./image/VectorDelete.svg);
+                    background-size: cover;
+                    transform: rotate(45deg);
+                    position: absolute;
+                    cursor: pointer;
+                    top: 15px;
+                    right: 15px;
+                }
+    
+                .image {
+                    width: 100%;
+                    height: 12.5rem;
+                    object-fit: cover;
+                    
+                }
+    
+                .title {
+                    font-weight: 500;
+                    font-size: calc(8px + 16 * (100vw / 1920));
+                    line-height: 125%;
+                    margin-top: 15px;
+    
+                }
+                
+                .text-dark {
+                    font-weight: 400;
+                    font-size: calc(8px + 10 * (100vw / 1920));
+                    line-height: 170%;
+                    margin-top: 5px;
+                    color: rgba(255, 255, 255, 0.5);
+                }
+    
+                .text-light {
+                    font-weight: 400;
+                    font-size: calc(8px + 10 * (100vw / 1920));
+                    line-height: 170%;
+                    margin-top: 5px;
+                    color: rgba(0, 0, 0, 0.5);
+    
+                }
+    
+            }
+
         }
 
     }

@@ -44,6 +44,21 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+  background: rgba(0, 0, 0, 0);
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: rgba(126, 126, 126, 0.596);
+}
+
 li {
     list-style: none;
 }
@@ -79,14 +94,14 @@ button {
 .background-dark {
     background: #1C1C1E;
     border: 1px solid #424246;
-    border-radius: 10px;
+    border-radius: 0.62rem;
     color: white;
 }
 
 .background-light {
     background: #F5F5F5;
     border: 1px solid #D6D6D6;
-    border-radius: 10px;
+    border-radius: 0.62rem;
     color: black;
 }
 

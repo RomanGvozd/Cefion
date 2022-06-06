@@ -1,54 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useSelector} from "react-redux";
 
 import './AboutCommand.scss';
 
 function AboutCommand() {
+    const team = useSelector((store) => store.team);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
-
-    const [users, setUsers] = useState([
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        },
-        {
-            nameRU: "Имя Фамилия",
-            nameEN: "NAme Surname",
-            specialization: "CEO"
-        }
-    ])
 
     return(
         <>
@@ -68,7 +26,7 @@ function AboutCommand() {
                     </p>
                 </div>
                 <div className='about-command__block-command'>
-                    {users.map((user, index)=>(
+                    {team.map((user, index)=>(
                         <div className='block-command__card' key={index}>
                             <img className='image' src={require('./image/person.png')} alt="" />
                             {language === "RU"
