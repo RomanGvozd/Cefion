@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import { content } from "./PartnerlLine.config";
+import {numbersArray} from './PartnerLine.array';
 
 import './PartnersLine.scss'
 
 function PartnersLine() {
-    const partnerLine = useSelector((store) => store.partnerLine);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
     const [firstElRef, setFirstElRef] = useState({});
     const [translate, setTranslate] = useState(0);
-    const [blocks, setBlocks] = useState(partnerLine);
+    const [blocks, setBlocks] = useState(numbersArray);
 
     const [ticker, setTicker] = useState(true);
 

@@ -1,6 +1,4 @@
-import { ACTION_ADD_PARTNER_LINE, ACTION_DELETE_PARTNER_LINE } from "./actions";
-
-const INITIAL_STATE = [
+export const numbersArray = [
     {
         id: 1,
         hrefDark: "./imagesPartnersDark/SocPull.png",
@@ -50,19 +48,3 @@ const INITIAL_STATE = [
         href: "https://socpull.com",
     },
 ]
-
-export default function reducer(state = INITIAL_STATE, { type, payload }) {
-
-    switch (type) {
-        case ACTION_ADD_PARTNER_LINE:
-            return [ ...state, {
-                id: Date.now(), 
-                href: payload.href,
-            } ]; 
-        case ACTION_DELETE_PARTNER_LINE:
-            return state.filter(el => el.id !== payload ? true : false); 
-        default:
-            return state;
-    }
-
-}

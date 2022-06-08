@@ -1,6 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import { Link, useLocation } from "react-router-dom";
+import { content } from "./AdminNav.config";
 
 import './AdminNav.scss';
 
@@ -10,6 +11,8 @@ function AdminNav() {
 
     const {pathname} = useLocation();
 
+    const {CefionManagement, Roles, Landing, Groups, Newc, Calendar, Statistics, EndSession} = content[language];
+
     return(
         <aside className={theme === "dark" ? "admin__nav admin__nav-dark" : "admin__nav admin__nav-light"}>
             <div className="nav__header">
@@ -18,10 +21,7 @@ function AdminNav() {
             </div>
             <div className="nav__management">
                 <h4 className="management__title">
-                    {language === "RU"
-                    ? "Управление Cefion"
-                    : "Cefion Management"
-                    }
+                    {CefionManagement}
                 </h4>
                 <nav className="management__nav">
                     <Link to="/admin/roles">
@@ -29,10 +29,7 @@ function AdminNav() {
                             className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
                             style={pathname === "/admin/roles" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                         >
-                            {language === "RU"
-                            ? "Роли"
-                            : "Roles"
-                            }
+                            {Roles}
                         </button>
                     </Link>
                     <Link to="/admin/landing">
@@ -40,7 +37,7 @@ function AdminNav() {
                             className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
                             style={pathname === "/admin/landing" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                         >
-                            Landing
+                            {Landing}
                         </button>
                     </Link>
                     <Link to="/admin/groups">
@@ -48,21 +45,15 @@ function AdminNav() {
                             className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
                             style={pathname === "/admin/groups" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                         >
-                            {language === "RU"
-                            ? "Группы"
-                            : "Groups"
-                            }
+                            {Groups}
                         </button>
                     </Link>
-                    <Link to="/admin/newc">
+                    <Link to="/admin/news">
                         <button 
                             className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
-                            style={pathname === "/admin/newc" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
+                            style={pathname === "/admin/news" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                         >
-                            {language === "RU"
-                            ? "Новости"
-                            : "Newc"
-                            }
+                            {Newc}
                         </button>
                     </Link>
                     <Link to="/admin/calendar">
@@ -70,10 +61,7 @@ function AdminNav() {
                             className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
                             style={pathname === "/admin/calendar" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                         >
-                            {language === "RU"
-                            ? "Календарь"
-                            : "Calendar"
-                            }
+                            {Calendar}
                         </button>
                     </Link>
                     <Link to="/admin/Statistics">
@@ -81,19 +69,15 @@ function AdminNav() {
                             className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
                             style={pathname === "/admin/Statistics" ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                         >
-                            {language === "RU"
-                            ? "Статистика"
-                            : "Statistics"
-                            }
+                            {Statistics}
                         </button>
                     </Link>
                 </nav>
-                <button className={theme === "dark" ? "button__end button__end-dark" : "button__end button__end-light"}>
-                    {language === "RU"
-                    ? "Завершить сессию"
-                    : "End session"
-                    }
-                </button>
+                <Link to="/">
+                    <button className={theme === "dark" ? "button__end button__end-dark" : "button__end button__end-light"}>
+                        {EndSession}
+                    </button>
+                </Link>
             </div>
         </aside>
     )

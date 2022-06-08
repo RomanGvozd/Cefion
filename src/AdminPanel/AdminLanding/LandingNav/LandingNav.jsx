@@ -9,13 +9,7 @@ function LandingNav() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
-    const {SiteHeader,
-    SiteFooter,
-    Roadmap,
-    MediaAboutUs,
-    AboutUs,
-    FAQs,
-    OurPartners,} = content[language]
+    const {SiteHeader, SiteFooter, Roadmap, MediaAboutUs, AboutUs, FAQs} = content[language]
 
     return(
         <div className="admin-landing__header">
@@ -47,11 +41,6 @@ function LandingNav() {
                 <Link to="/admin/landing/faqs">
                     <button className={theme === "dark" ? "header__button header__button-dark" : "header__button header__button-light"}>
                         {FAQs}
-                    </button>
-                </Link>
-                <Link to="/admin/landing/partners">
-                    <button className={theme === "dark" ? "header__button header__button-dark" : "header__button header__button-light"}>
-                        {OurPartners}
                     </button>
                 </Link>
         </div>

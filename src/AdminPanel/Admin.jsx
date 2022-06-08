@@ -8,6 +8,7 @@ import AdminNav from "./AdminNav/AdminNav";
 import Roles from "./Roles/Roles";
 import AdminLanding from "./AdminLanding/AdminLanding";
 import AdminGroups from "./AdminGroups/AdminGroups";
+import AdminNews from "./AdminNews/AdminNews";
 
 import './Admin.scss';
 
@@ -71,6 +72,7 @@ function Admin() {
                                 <Route path="/roles" element={<Roles />} />
                                 <Route path="/landing*" element={<AdminLanding />} />
                                 <Route path="/groups*" element={<AdminGroups />} />
+                                <Route path="/news*" element={<AdminNews />} />
                             </Routes>
                         </section>
                     </div>

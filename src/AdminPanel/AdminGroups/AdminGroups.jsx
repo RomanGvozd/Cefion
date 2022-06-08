@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 import { Link, Routes, Route, useLocation } from "react-router-dom";
 
 import GroupsCreate from "./GroupsCreate/GroupsCreate";
+import GroupList from "./GroupList/GroupList";
 
 import './AdminGroups.scss';
 
@@ -37,12 +38,11 @@ function AdminGroups() {
                         }
                     </button>
                 </Link>
-                <Routes>
-                    <Route path="/" element={<GroupsCreate />} />
-                    <Route path="/edit" element={<>edit</>} />
-                </Routes>
             </div>
-
+            <Routes>
+                <Route path="/" element={<GroupsCreate />} />
+                <Route path="/edit" element={<GroupList />} />
+            </Routes>
         </section>
     )
 }

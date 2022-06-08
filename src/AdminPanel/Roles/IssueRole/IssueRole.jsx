@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
+import { content } from "./IssueRole.config";
 
 import arr from './rolesArray';
 
@@ -8,6 +9,8 @@ import './IssueRole.scss';
 function IssueRole() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+
+    const {IssueArole, EnterName, Apply} = content[language];
 
     const [roles, setRoles] = useState(arr)
 
@@ -23,15 +26,12 @@ function IssueRole() {
     return(
         <div className="issue-role">
             <h5 className="issue-role__title">
-                {language === "RU"
-                ? "Выдать роль"
-                : "Issue a role"
-                }
+                {IssueArole}
             </h5>
             <input 
                 className={theme === "dark" ? "issue-role__input issue-role__input-dark" : "issue-role__input issue-role__input-light"} 
                 type="text" 
-                placeholder={language === "RU" ? "Ввести имя" : "Enter name"}
+                placeholder={EnterName}
             />
             <div className={theme === "dark" ? "issue-role__wrapper-checkbox wrapper-checkbox-dark" : "issue-role__wrapper-checkbox wrapper-checkbox-light"}>
                 {roles.map((role)=>(
@@ -47,10 +47,7 @@ function IssueRole() {
                 ))}
             </div>
             <button className="issue-role__button">
-                {language === "RU"
-                ? "Применить"
-                : "Apply"
-                }
+                {Apply}
             </button>
         </div>
     )

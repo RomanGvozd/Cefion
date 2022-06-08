@@ -1,11 +1,41 @@
 import React, {useState} from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+
+import {addItem} from '../../../common/store/groups/actions';
+
+import { content } from "./GroupsCreate.config";
 
 import './GroupsCreate.scss';
 
 function GroupsCreate() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+    const dispatch = useDispatch();
+
+    const [inputTitle, setInputTitle] = useState('');
+    const [inputDescription, setInputDescription] = useState('');
+
+    const {
+        Download,
+        GroupName,
+        GroupDescription,
+        WalletAdress,
+        GroupInviteLink,
+        textToken,
+        RemoveRestrictions,
+        Save,
+        Cancel
+    } = content[language];
+
+    const handleAdd = () => {
+        dispatch(addItem(inputTitle, inputDescription))
+        handleCancel()
+    }
+
+    const handleCancel = () => {
+        setInputTitle('')
+        setInputDescription('')
+    }
 
     return(
         <section className="groups-create">
@@ -13,24 +43,25 @@ function GroupsCreate() {
                 <label className={theme === "dark" ? "groups-download__block-file background-dark" : "groups-download__block-file background-light"}>
                     <input 
                         className="block-file__input" 
-                        type="file" 
+                        type="file"
                     />
                     <p className="block-file__text">
-                        {language === "RU"
-                        ? "Загрузить"
-                        : "Download"
-                        }
+                        {Download}
                     </p>
                 </label>
                 <div className="groups-inputs">
                     <input 
                         className={theme === "dark" ? "groups-inputs__input background-dark " : "groups-inputs__input background-light"} 
-                        placeholder={language === "RU" ? "Название группы" : "Group name"}
-                        type="text" 
+                        placeholder={GroupName}
+                        type="text"
+                        value={inputTitle}
+                        onChange={(e)=>setInputTitle(e.target.value)}
                     />
                     <textarea 
                         className={theme === "dark" ? "groups-inputs__texarea background-dark " : "groups-inputs__texarea background-light"} 
-                        placeholder={language === "RU" ? "Описание группы" : "Group description"}
+                        placeholder={GroupDescription}
+                        value={inputDescription}
+                        onChange={(e)=>setInputDescription(e.target.value)}
                     >
                     </textarea>
                 </div>
@@ -41,42 +72,36 @@ function GroupsCreate() {
                 <div className="wallet-block__wrapper-input">
                     <input 
                         className={theme === "dark" ? "wrapper-input__input background-dark " : "wrapper-input__input background-light"} 
-                        placeholder={language === "RU" ? "Адрес кошелька" : "Wallet adress"}
+                        placeholder={WalletAdress}
                         type="text" 
                     />
                     <input 
                         className={theme === "dark" ? "wrapper-input__input background-dark " : "wrapper-input__input background-light"} 
-                        placeholder={language === "RU" ? "Пригласительная ссылка на группу" : "Group invite link"}
+                        placeholder={GroupInviteLink}
                         type="text" 
                     />
                     <div className="restrictions-block">
                         <p className="restrictions-block__text">
-                            {language === "RU"
-                            ? "Необходимое количество Cefion токенов для снятия ограничений (50)"
-                            : "The required number of Cefion tokens to remove restrictions (50)"
-                            }
+                            {textToken}
                         </p>
                         <button className="restrictions-block__button">
-                            {language === "RU"
-                            ? "Снять ограничения"
-                            : "Remove restrictions"
-                            }
+                            {RemoveRestrictions}
                         </button>
                     </div> 
                 </div>
             </div>
             <div className="groups-create__submit-block">
-                <button className="submit-block__button">
-                    {language === "RU"
-                    ? "Сохранить"
-                    : "Save"
-                    }
+                <button 
+                    className="submit-block__button"
+                    onClick={handleAdd}
+                >
+                    {Save}
                 </button>
-                <button className="submit-block__button">
-                    {language === "RU"
-                    ? "Отменить"
-                    : "Cancel"
-                    }
+                <button 
+                    className="submit-block__button"
+                    onClick={handleCancel}
+                >
+                    {Cancel}
                 </button>
             </div>
 

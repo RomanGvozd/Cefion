@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
+import { content } from "./CreateAccount.config";
 
 import arr from './rolesArray';
 
@@ -8,6 +9,8 @@ import './CreateAccount.scss';
 function CreateAccount() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+
+    const {CreateAccount, EnterName, EnterPassword} = content[language];
 
     const [roles, setRoles] = useState(arr)
 
@@ -23,20 +26,17 @@ function CreateAccount() {
     return(
         <div className="create-account">
             <h5 className="create-account__title">
-                {language === "RU"
-                ? "Создать аккаунт"
-                : "Create account"
-                }
+                {CreateAccount}
             </h5>
             <input 
                 className={theme === "dark" ? "create-account__input create-account__input-dark" : "create-account__input create-account__input-light"} 
                 type="text" 
-                placeholder={language === "RU" ? "Ввести имя" : "Enter name"}
+                placeholder={EnterName}
             />
             <input 
                 className={theme === "dark" ? "create-account__input create-account__input-dark" : "create-account__input create-account__input-light"} 
                 type="text" 
-                placeholder={language === "RU" ? "Ввести пароль" : "Enter password"}
+                placeholder={EnterPassword}
             />
             <div className={theme === "dark" ? "create-account__wrapper-checkbox wrapper-checkbox-dark" : "create-account__wrapper-checkbox wrapper-checkbox-light"}>
                 {roles.map((role)=>(
@@ -50,14 +50,9 @@ function CreateAccount() {
                         }
                     </div>
                 ))}
-
-
             </div>
             <button className="create-account__button">
-                {language === "RU"
-                ? "Создать аккаунт"
-                : "Create account"
-                }
+                {CreateAccount}
             </button>
         </div>
     )
