@@ -3,31 +3,31 @@ const roles = [
         id: 1,
         titleRU: "Суперадмин",
         titleEN: "Superadmin",
-        completed: "false",
+        completed: false,
     },
     {
         id: 2,
         titleRU: "Админ",
         titleEN: "Admin",
-        completed: "false",
+        completed: false,
     },
     {
         id: 3,
         titleRU: "Редактор",
         titleEN: "Redactor",
-        completed: "false",
+        completed: false,
     },
     {
         id: 4,
         titleRU: "Копирайтер",
         titleEN: "Copywriter",
-        completed: "false",
+        completed: false,
     },
     {
         id: 5,
         titleRU: "Пользователь",
         titleEN: "User",
-        completed: "false",
+        completed: false,
     },
 ]
 

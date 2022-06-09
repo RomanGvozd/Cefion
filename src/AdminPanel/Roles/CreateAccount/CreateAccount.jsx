@@ -14,6 +14,9 @@ function CreateAccount() {
 
     const [roles, setRoles] = useState(arr)
 
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
+
     const handleChecket = (id) => {
         setRoles(roles.map(role => {
             if (role.id === id) {
@@ -21,6 +24,23 @@ function CreateAccount() {
             }
             return role
         }))
+    }
+
+    const handleCreate = () => {
+        const resutRoles = []
+        roles.forEach(item => {
+            if (item.completed === true) {
+                resutRoles.push(item.titleEN)
+            }
+        })
+
+        const result = {
+            name: name,
+            password: password,
+            roles: resutRoles,
+        }
+
+        console.log(result)
     }
 
     return(
@@ -32,26 +52,33 @@ function CreateAccount() {
                 className={theme === "dark" ? "create-account__input create-account__input-dark" : "create-account__input create-account__input-light"} 
                 type="text" 
                 placeholder={EnterName}
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
             />
             <input 
                 className={theme === "dark" ? "create-account__input create-account__input-dark" : "create-account__input create-account__input-light"} 
                 type="text" 
                 placeholder={EnterPassword}
+                value={password}
+                onChange={(e)=>setPassword(e.target.value)}
             />
             <div className={theme === "dark" ? "create-account__wrapper-checkbox wrapper-checkbox-dark" : "create-account__wrapper-checkbox wrapper-checkbox-light"}>
                 {roles.map((role)=>(
-                    <div className="checkbox__item" onClick={()=>handleChecket(role.id)}>
-                        <div className={role.completed ? "item__checkbox" : "item__checkbox-active"}>
-                            {role.completed ? <></> : <div className="item__checkbox-vector"></div>}
+                    <div className="checkbox__item" onClick={()=>handleChecket(role.id)} key={role.id}>
+                        <div className={!role.completed ? "item__checkbox" : "item__checkbox-active"}>
+                            {!role.completed ? <></> : <div className="item__checkbox-vector"></div>}
                         </div>
                         {language === "RU"
-                        ? <p className={role.completed ? "item__text" : "item__text item__text-active"}>{role.titleRU}</p>
-                        : <p className={role.completed ? "item__text" : "item__text item__text-active"}>{role.titleEN}</p>
+                        ? <p className={!role.completed ? "item__text" : "item__text item__text-active"}>{role.titleRU}</p>
+                        : <p className={!role.completed ? "item__text" : "item__text item__text-active"}>{role.titleEN}</p>
                         }
                     </div>
                 ))}
             </div>
-            <button className="create-account__button">
+            <button 
+                className="create-account__button"
+                onClick={handleCreate}
+            >
                 {CreateAccount}
             </button>
         </div>

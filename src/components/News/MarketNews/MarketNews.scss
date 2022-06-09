@@ -1,3 +1,11 @@
+.market-news-dark {
+    color: white;
+}
+
+.market-news-light {
+    color: black;
+}
+
 .market-news {
     width: 76rem;
     height: auto;
@@ -103,11 +111,18 @@
                 justify-content: space-between;
                 margin-top: 10px;
 
-                .card__header__title {
+                .card__header__title-dark {
                     font-weight: 400;
                     font-size: 1rem;
                     line-height: 160%;
                     color: rgba(255, 255, 255, 0.5);
+                }
+
+                .card__header__title-light {
+                    font-weight: 400;
+                    font-size: 1rem;
+                    line-height: 160%;
+                    color: rgba(0, 0, 0, 0.5);
                 }
 
                 .card__header__user {
@@ -120,12 +135,20 @@
 
             }
 
-            .card__description {
+            .card__description-dark {
                 font-weight: 500;
                 font-size: 1.25rem;
                 line-height: 160%;
                 margin-top: 15px;
                 color: white;
+            }
+
+            .card__description-light {
+                font-weight: 500;
+                font-size: 1.25rem;
+                line-height: 160%;
+                margin-top: 15px;
+                color: black;
             }
 
             .card__footer {

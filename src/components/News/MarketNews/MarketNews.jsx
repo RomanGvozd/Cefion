@@ -19,7 +19,7 @@ function MarketNews({setNewsID}) {
     
     return (
         <>
-            <section className='market-news'>
+            <section className={theme === 'dark' ? 'market-news market-news-dark' : 'market-news market-news-light'}>
                 <div className='market-news__header'>
                     <h2 className={theme === 'dark' ? 'header__title-dark' : 'header__title-light'}>
                         {language === "RU"
@@ -36,16 +36,16 @@ function MarketNews({setNewsID}) {
                                 </div>
                                 <div className='card__header'>
                                     {language === "RU"
-                                    ? <p className='card__header__title'>5 часов назад</p>
-                                    : <p className='card__header__title'>5 hours ago</p>
+                                    ? <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>5 часов назад</p>
+                                    : <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>5 hours ago</p>
                                     }
                                     <p className='card__header__user'>
                                         by {card.author}
                                     </p>
                                 </div>
                                 {language === "RU"
-                                ? <p className='card__description'>{card.titleRU}</p>
-                                : <p className='card__description'>{card.titleEN}</p>
+                                ? <p className={theme === 'dark' ? 'card__description-dark' : 'card__description-light'}>{card.titleRU}</p>
+                                : <p className={theme === 'dark' ? 'card__description-dark' : 'card__description-light'}>{card.titleEN}</p>
                                 }
                                 <div className='card__footer'>
 
