@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import { Routes, Route} from "react-router-dom"
 
@@ -14,6 +14,8 @@ import './News.scss'
 function News() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+
+    const [newsID, setNewsID] = useState('');
     
     return (
         <section className={theme === 'dark' ? 'news news-dark' : 'news news-light'}>
@@ -32,11 +34,11 @@ function News() {
                             <Route path="/business" element={<></>} />
                             <Route path="/gamefi" element={<></>} />
                         </Routes>
-                        <NewsBlock/>
-                        <MarketNews/>
+                        <NewsBlock setNewsID={setNewsID}/>
+                        <MarketNews setNewsID={setNewsID}/>
                     </>
                 }/>
-                <Route path="/1" element={<NewsPage />} />
+                <Route path={`/page/${newsID}`} element={<NewsPage newsID={newsID}/>} />
             </Routes>
 
         </section>

@@ -6,11 +6,11 @@ import NewsPageSearch from './NewsPageSearch/NewsPageSearch';
 
 import './NewsPage.scss'
 
-function News() {
+function News({newsID}) {
     
     return (
         <>
-            <NewsPageContent/>
+            <NewsPageContent newsID={newsID}/>
             <NewsPageFooter/>
             <NewsPageSearch/>
         </>

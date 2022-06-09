@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 import { content } from "./newsBlock.config";
+import {Link} from "react-router-dom";
 
 import arr from './newsBlockPosts';
 
 import './NewsBlock.scss'
 
-function NewsBlock() {
+function NewsBlock({setNewsID}) {
+    const newsPublish = useSelector((store) => store.newsPublish)
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+
+    let news = newsPublish[0]
 
     const [posts, setPosts] = useState(arr);
 
@@ -19,18 +23,21 @@ function NewsBlock() {
     
     return (
         <section className="news-block">
-            <div className='news-block__image'>
-                <div className='image__top'>
-                    <h4 className='image__top-title'>
-                        {title}
-                    </h4>
+            <Link to={`/news/page/${news.id}`} onClick={()=>setNewsID(news.id)}>
+                <div className='news-block__image'>
+                    <div className='image__top'>
+                        {language === "RU"
+                        ? <h4 className='image__top-title'>{news.titleRU}</h4>
+                        : <h4 className='image__top-title'>{news.titleEN}</h4>
+                        }
+                    </div>
+                    <div className='image__bottom'>
+                        <p className='image__bottom-text'>{text1}</p>
+                        <p className='image__bottom-text'>{text2}</p>
+                        <p className='image__bottom-text'>{text3}</p>
+                    </div>
                 </div>
-                <div className='image__bottom'>
-                    <p className='image__bottom-text'>{text1}</p>
-                    <p className='image__bottom-text'>{text2}</p>
-                    <p className='image__bottom-text'>{text3}</p>
-                </div>
-            </div>
+            </Link>
             <div className="news-block__aside">
                 <div className='aside__block-button'>
                     <button 

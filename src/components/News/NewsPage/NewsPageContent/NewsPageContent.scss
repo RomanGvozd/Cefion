@@ -105,6 +105,7 @@
 
         .section__content {
             width: 56.68rem;
+            padding-left: 1rem;
 
             .content__title {
                 font-weight: 500;
@@ -160,6 +161,8 @@
             .section__content{
                 width: 100%;
                 margin-top: 3rem;
+                padding-left: 0rem;
+
             }
             
         }
@@ -169,6 +172,7 @@
     @media only screen and (max-width: 1200px) {
         .news-page-section{
             width: 90%;
+
         }
         
     }
