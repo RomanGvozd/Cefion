@@ -16,13 +16,15 @@ function NewsEditDraft({newsID}) {
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
 
-    const { DownloadCover, Input, Button, Clear, Save, textarea} = content[language];
+    const { DownloadCover, InputRU, InputEN, Button, Clear, Save, textareaRU, textareaEN} = content[language];
 
     let page = newsPage.filter((item)=> item.id === newsID)
     page = page[0]
 
-    const [inputValue, setInputValue] = useState(page.titleRU);
-    const [textareaValue, setTextareaValue] = useState(page.descriptionRU);
+    const [ titleValueRU, setTitleValueRU ] = useState(page.titleRU);
+    const [ titleValueEN, setTitleValueEN ] = useState(page.titleEN);
+    const [ descriptionValueRU, setDescriptionValueRU ] = useState(page.descriptionRU);
+    const [ descriptionValueEN, setDescriptionValueEN ] = useState(page.descriptionEN);
 
     const newDate = () => {
         let today = new Date()
@@ -38,17 +40,19 @@ function NewsEditDraft({newsID}) {
 
     const handleAddReview = () => {
         let date = newDate()
-        dispatch(addItemReview(inputValue, inputValue, textareaValue, textareaValue, date))
+        dispatch(addItemReview(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date))
         dispatch(deleteItem(newsID))
     }
 
     const handleCancel = () => {
-        setInputValue('')
-        setTextareaValue('')
+        setTitleValueRU('')
+        setTitleValueEN('')
+        setDescriptionValueRU('')
+        setDescriptionValueEN('')
     }
 
     const handleEdit = () => {
-        dispatch(editItemDrafts(newsID, inputValue, inputValue, textareaValue, textareaValue))
+        dispatch(editItemDrafts(newsID, titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN))
     }
     
     return(
@@ -65,9 +69,16 @@ function NewsEditDraft({newsID}) {
                 <input 
                     className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
                     type="text" 
-                    placeholder={Input}
-                    value={inputValue}
-                    onChange={(e)=>setInputValue(e.target.value)}
+                    placeholder={InputRU}
+                    value={titleValueRU}
+                    onChange={(e)=>setTitleValueRU(e.target.value)}
+                />
+                <input 
+                    className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
+                    type="text" 
+                    placeholder={InputEN}
+                    value={titleValueEN}
+                    onChange={(e)=>setTitleValueEN(e.target.value)}
                 />
                 <Link to={`/admin/news/drafts`} >
                     <button 
@@ -86,22 +97,25 @@ function NewsEditDraft({newsID}) {
                     </button>
                     <Link to={`/admin/news/drafts`} className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"} onClick={handleEdit}>
                         {Save}
-                        {/* <button 
-                            className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"}
-                            onClick={handleEdit}
-                        >
-                            {Save}
-                        </button> */}
                     </Link>
                 </div> 
             </div>
-            <textarea 
-                className={theme === "dark" ? "news-edit__textarea background-dark" : "news-edit__textarea background-light"}
-                placeholder={textarea}
-                value={textareaValue}
-                onChange={(e)=>setTextareaValue(e.target.value)}
-            >
-            </textarea>
+            <div className="news-create__textarea-wrapper">
+                <textarea 
+                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
+                    placeholder={textareaRU}
+                    value={descriptionValueRU}
+                    onChange={(e)=>setDescriptionValueRU(e.target.value)}
+                >
+                </textarea>
+                <textarea 
+                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
+                    placeholder={textareaEN}
+                    value={descriptionValueEN}
+                    onChange={(e)=>setDescriptionValueEN(e.target.value)}
+                >
+                </textarea>
+            </div>
         </section>
     )
 }

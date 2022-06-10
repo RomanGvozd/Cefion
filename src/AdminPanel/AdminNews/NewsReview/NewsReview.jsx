@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { Link, Routes, Route, useLocation } from "react-router-dom";
-import { diffDate } from "../../../diff.date";
+import moment from "moment";
 
 import { deleteItem } from "../../../common/store/newsReview/actions";
 
@@ -11,15 +11,7 @@ function NewsReview({setNewsID, setNewsEditReviewID}) {
     const [endtime, setEndtime] = useState()
 
     useEffect(() => {
-        let date = new Date()
-
-        let year = date.getFullYear()
-        let month = String(date.getMonth() + 1).padStart(2, '0'); 
-        let day = String(date.getDate()).padStart(2, '0');
-        let hour = date.getHours()
-        let minutes = date.getMinutes()
-
-        setEndtime(`${year}-${month}-${day} ${hour}:${minutes}`);
+        setEndtime(Date.now());
 
     },[])
 
@@ -57,9 +49,15 @@ function NewsReview({setNewsID, setNewsEditReviewID}) {
                         <img className="news__image" src={require('./image/newsImage.png')} alt="" />
                     </Link>
                     <div className="news__info">
-                        <p className={theme === "dark" ? "info__time-dark": "info__time-light"}>
-                            {`${diffDate(endtime, item.date)} ago`}
+                        {language === "RU"
+                        ?<p className={theme === "dark" ? "info__time-dark": "info__time-light"}>
+                            {moment(item.date, "YYYYMMDD h:mm:ss").locale('ru').fromNow()}
                         </p>
+                        :<p className={theme === "dark" ? "info__time-dark": "info__time-light"}>
+                            {moment(item.date, "YYYYMMDD h:mm:ss").locale('en').fromNow()}
+                        </p>
+                        }
+
                         <p className="info__author">
                             by {item.author}
                         </p>

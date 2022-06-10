@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { content } from "./NewsCreate.config";
 
+import SelectNewsGroup from "../SelectNewsGroup/SelectNewsGroup";
+
 import { addItemDrafts } from "../../../common/store/newsDrafts/actions";
 import { addItemReview } from "../../../common/store/newsReview/actions";
 
@@ -12,14 +14,24 @@ function NewsCreate() {
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
 
-    const { DownloadCover, Input, Button, Cancle, Draft, textarea} = content[language];
+    const { DownloadCover, InputRU, InputEN, Button, Cancle, Draft, textareaRU, textareaEN, AddHashtag} = content[language];
 
-    const [ titleValue, setTitleValue ] = useState('');
-    const [ descriptionValue, setDescriptionValue ] = useState('');
+    const [ titleValueRU, setTitleValueRU ] = useState('');
+    const [ titleValueEN, setTitleValueEN ] = useState('');
+    const [ descriptionValueRU, setDescriptionValueRU ] = useState('');
+    const [ descriptionValueEN, setDescriptionValueEN ] = useState('');
+
+    const [selected, setSelected] = useState("Blockchain");
+    const options = ["Blockchain", "NFT", "DeFI", "Business", "GameFi"];
+
+    const [inputTagsValue, setInputTagsValue] = useState('')
+    const [tags, setTags] = useState([])
 
     const handleCancel = () => {
-        setTitleValue('')
-        setDescriptionValue('')
+        setTitleValueRU('')
+        setTitleValueEN('')
+        setDescriptionValueRU('')
+        setDescriptionValueEN('')
     }
 
     const newDate = () => {
@@ -32,16 +44,25 @@ function NewsCreate() {
         let minutes = today.getMinutes()
 
         return (`${year}-${month}-${day} ${hour}:${minutes}`);
+        // return Date.now()
     }
 
     const handleAddDraft = () => {
         let date = newDate()
-        dispatch(addItemDrafts(titleValue, titleValue, descriptionValue, descriptionValue, date))
+        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
     }
     
     const handleAddReview = () => {
         let date = newDate()
-        dispatch(addItemReview(titleValue, titleValue, descriptionValue, descriptionValue, date))
+        dispatch(addItemReview(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+    }
+
+    const handleAddTag = () => {
+        setTags([...tags, `#${inputTagsValue}`])
+    }
+
+    const handleDeleteTag = (id) => {
+        setTags(tags.filter(tag => tag !== id ))
     }
 
     return(
@@ -58,9 +79,16 @@ function NewsCreate() {
                 <input 
                     className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
                     type="text" 
-                    placeholder={Input}
-                    value={titleValue}
-                    onChange={(e)=>setTitleValue(e.target.value)}
+                    placeholder={InputRU}
+                    value={titleValueRU}
+                    onChange={(e)=>setTitleValueRU(e.target.value)}
+                />
+                <input 
+                    className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
+                    type="text" 
+                    placeholder={InputEN}
+                    value={titleValueEN}
+                    onChange={(e)=>setTitleValueEN(e.target.value)}
                 />
                 <button 
                     className="form__button"
@@ -83,13 +111,60 @@ function NewsCreate() {
                     </button>
                 </div> 
             </div>
-            <textarea 
-                className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                placeholder={textarea}
-                value={descriptionValue}
-                onChange={(e)=>setDescriptionValue(e.target.value)}
-            >
-            </textarea>
+            <div className="news-create__tags-wrapper">
+                <div className="tags-wrapper__input-wrapper">
+                    <input 
+                        className={theme === "dark" ? "tags-wrapper__input background-dark" : "tags-wrapper__input background-light"}
+                        type="text"
+                        placeholder={AddHashtag}
+                        value={inputTagsValue}
+                        onChange={(e)=>setInputTagsValue(e.target.value)}
+                    >
+
+                    </input>
+                    <button 
+                        className={theme === "dark" ? "input__button background-dark" : "input__button background-light"}
+                        onClick={handleAddTag}
+                    >
+                        +
+                    </button>
+                </div>
+                <div className="tags-wrapper">
+                    {tags.map((tag)=>(
+                        <div 
+                            key={tag} 
+                            className={theme === "dark" ? "tags background-dark" : "tags background-light"}
+                            onDoubleClick={()=>handleDeleteTag(tag)}
+                        >
+                            {tag}
+                        </div>
+                    ))}
+                </div>
+                <SelectNewsGroup 
+                    selected={selected} 
+                    setSelected={setSelected}
+                    options={options}
+                    theme={theme}
+                    language={language}
+                />
+            </div>
+            <div className="news-create__textarea-wrapper">
+                <textarea 
+                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
+                    placeholder={textareaRU}
+                    value={descriptionValueRU}
+                    onChange={(e)=>setDescriptionValueRU(e.target.value)}
+                >
+                </textarea>
+                <textarea 
+                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
+                    placeholder={textareaEN}
+                    value={descriptionValueEN}
+                    onChange={(e)=>setDescriptionValueEN(e.target.value)}
+                >
+                </textarea>
+            </div>
+
         </section>
     )
 }

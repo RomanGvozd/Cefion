@@ -28,14 +28,13 @@ function NewsPageContent({newsID}) {
                 <section className='news-page-section'>
                     <aside className='section__aside'>
                         {language === "RU"
-                        ?<h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>
-                            {`${numberDate} ${mounsRU} ${years}`}
-                        </h6>
-                        :<h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>
-                            {`${mounsEN} ${numberDate}th ${years}`}
-                        </h6>
+                            ?<h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>
+                                {`${numberDate} ${mounsRU} ${years}`}
+                            </h6>
+                            :<h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>
+                                {`${mounsEN} ${numberDate}th ${years}`}
+                            </h6>
                         }
-
                         <div className='aside__user'>
                             <img className='user__image' src={require('./image/user.png')} alt="" />
                             <p className={theme === 'dark' ? 'user__name-dark' : 'user__name-light'}>{news.author}</p>
@@ -43,13 +42,25 @@ function NewsPageContent({newsID}) {
                         </div>
                     </aside>
                     <div className='section__content'>
-                        <h2 className='content__title'>
+                        {language === "RU"
+                        ?<h2 className='content__title'>
                             {news.titleRU}
                         </h2>
+                        :<h2 className='content__title'>
+                            {news.titleEN}
+                        </h2>
+                        }
+
                         <img className='content__image' src={require('./image/newsPageImage.png')} alt="" />
-                        <p className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}>
+                        {language === "RU"
+                        ?<p className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}>
                             {news.descriptionRU}
                         </p>
+                        :<p className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}>
+                            {news.descriptionEN}
+                        </p>
+                        }
+
                     </div>
                 </section>
             </section>

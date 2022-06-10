@@ -30,15 +30,14 @@ function News() {
                         <Routes>
                             <Route path="/" element={<>
                                 <NewsBlock setNewsID={setNewsID}/>
-                                <MarketNews setNewsID={setNewsID}/>
+                                <MarketNews setNewsID={setNewsID} type="AllNews"/>
                             </>} />
-                            <Route path="/blockchain" element={<></>} />
-                            <Route path="/nft" element={<></>} />
-                            <Route path="/defi" element={<></>} />
-                            <Route path="/business" element={<></>} />
-                            <Route path="/gamefi" element={<></>} />
+                            <Route path="/blockchain" element={<MarketNews setNewsID={setNewsID} type="Blockchain"/>} />
+                            <Route path="/nft" element={<MarketNews setNewsID={setNewsID} type="NFT"/>} />
+                            <Route path="/defi" element={<MarketNews setNewsID={setNewsID} type="DeFI"/>} />
+                            <Route path="/business" element={<MarketNews setNewsID={setNewsID} type="Business"/>} />
+                            <Route path="/gamefi" element={<MarketNews setNewsID={setNewsID} type="GameFi"/>} />
                         </Routes>
-
                     </>
                 }/>
                 <Route path={`/page/${newsID}`} element={<NewsPage newsID={newsID}/>} />

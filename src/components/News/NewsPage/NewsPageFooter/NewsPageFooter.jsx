@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import arr from "./tags.array";
 import buttons from "./button.array";
 import {content} from './NewsPageFooter.config';
-import { diffDate } from "../../../../diff.date";
+import moment from "moment";
 
 import './NewsPageFooter.scss'
 
@@ -11,23 +11,13 @@ function NewsPageFooter({newsID}) {
     const [endtime, setEndtime] = useState()
 
     useEffect(() => {
-        let date = new Date()
-
-        let year = date.getFullYear()
-        let month = String(date.getMonth() + 1).padStart(2, '0'); 
-        let day = String(date.getDate()).padStart(2, '0');
-        let hour = date.getHours()
-        let minutes = date.getMinutes()
-
-        setEndtime(`${year}-${month}-${day} ${hour}:${minutes}`);
+        setEndtime(Date.now());
 
     },[])
 
     const newsPublish = useSelector((srote) => srote.newsPublish)
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
-
-    const [tags, setTags] = useState(arr)
 
     const {title} = content[language]
 
@@ -43,7 +33,14 @@ function NewsPageFooter({newsID}) {
                         <p className='user__name'>{news.authorybk}</p>
                         <p className='user__email'>@marcelosalomao</p>
                     </div>
-                    <p className='user__time'>{`${diffDate(endtime, news.date)} ago`}</p>
+                    {language === "RU"
+                        ?<p className='user__time'>
+                            {moment(news.date, "YYYYMMDD h:mm:ss").locale('ru').fromNow()}
+                        </p>
+                        :<p className='user__time'>
+                            {moment(news.date, "YYYYMMDD h:mm:ss").locale('en').fromNow()}
+                        </p>
+                    }
                 </div>
                 <div className='footer__social'>
                     <div className="footer__social-block">
@@ -69,9 +66,9 @@ function NewsPageFooter({newsID}) {
                 </div>
                 <h4 className="footer__tags-title">{title}</h4>
                 <div className='footer__tags'>
-                    {tags.map((tag)=>(
-                        <div className='tag'>
-                            {tag.title}
+                    {news.hashtags.map((tag, index)=>(
+                        <div key={index} className='tag'>
+                            {tag}
                         </div>
                     ))}
                 </div>

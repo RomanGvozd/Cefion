@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useSelector} from "react-redux";
 import { content } from "./newsBlock.config";
 import {Link} from "react-router-dom";
-import { diffDate } from '../../../diff.date';
+import moment from 'moment';
 
 import arr from './newsBlockPosts';
 
@@ -12,16 +12,7 @@ function NewsBlock({setNewsID}) {
     const [endtime, setEndtime] = useState()
 
     useEffect(() => {
-        let date = new Date()
-
-        let year = date.getFullYear()
-        let month = String(date.getMonth() + 1).padStart(2, '0'); 
-        let day = String(date.getDate()).padStart(2, '0');
-        let hour = date.getHours()
-        let minutes = date.getMinutes()
-
-        setEndtime(`${year}-${day}-${month} ${hour}:${minutes}`);
-
+        setEndtime(Date.now());
     },[])
 
     const newsPublish = useSelector((store) => store.newsPublish)
@@ -50,7 +41,15 @@ function NewsBlock({setNewsID}) {
                     <div className='image__bottom'>
                         <p className='image__bottom-text'>{text1}</p>
                         <p className='image__bottom-text'>{news.author}</p>
-                        <p className='image__bottom-text'>{`${diffDate(endtime, news.date)} ago`}</p>
+                        {language === "RU"
+                        ?<p className='image__bottom-text'>
+                            {moment(news.date, "YYYYMMDD h:mm:ss").locale('ru').fromNow()}
+                        </p>
+                        :<p className='image__bottom-text'>
+                            {moment(news.date, "YYYYMMDD h:mm:ss").locale('en').fromNow()}
+                        </p>
+                        }
+
                     </div>
                 </div>
             </Link>

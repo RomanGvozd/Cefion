@@ -2,10 +2,10 @@ export const ACTION_ADD_NEWS_PUBLISH = "ACTION_ADD_NEWS_PUBLISH";
 export const ACTION_DELETE_NEWS_PUBLISH = "ACTION_DELETE_NEWS_PUBLISH";
 export const ACTION_EDIT_NEWS_PUBLISH = "ACTION_EDIT_NEWS_PUBLISH";
 
-export function addItemPublish(titleRU, titleEN, descriptionRU, descriptionEN, date) {
+export function addItemPublish(titleRU, titleEN, descriptionRU, descriptionEN, date, type, hashtags) {
   return {
     type: ACTION_ADD_NEWS_PUBLISH,
-    payload: { titleRU, titleEN, descriptionRU, descriptionEN, date}
+    payload: { titleRU, titleEN, descriptionRU, descriptionEN, date, type, hashtags}
   };
 }
 

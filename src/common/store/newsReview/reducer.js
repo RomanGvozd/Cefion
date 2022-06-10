@@ -9,6 +9,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-03-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 22,
@@ -18,6 +20,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-04-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 33,
@@ -27,6 +31,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-01-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 44,
@@ -36,6 +42,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-05-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 55,
@@ -45,6 +53,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-06-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 66,
@@ -54,6 +64,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-06-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 77,
@@ -63,6 +75,8 @@ const INITIAL_STATE = [
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
         date: "2022-06-06 10:08",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
     {
         id: 88,
@@ -71,7 +85,9 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
-        date: "2022-05-06 10:08",
+        date: "2022-06-10 14:30",
+        type: "Blockchain",
+        hashtags: ["#data", "#microsoft", "#excel", "#python"],
     },
 ]
 
@@ -86,6 +102,8 @@ export default function reducer(state = INITIAL_STATE, { type, payload }) {
                 descriptionRU: payload.descriptionRU,
                 descriptionEN: payload.descriptionEN,
                 date: payload.date,
+                type: payload.type,
+                hashtags: payload.hashtags,
             } ]; 
         case ACTION_DELETE_NEWS_REVIEW:
             return state.filter(el => el.id !== payload ? true : false); 

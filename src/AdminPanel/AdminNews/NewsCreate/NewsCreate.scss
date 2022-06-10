@@ -6,13 +6,11 @@
     padding: 1rem 0;
 
     .news-create__form {
-        width: 44%;
+        width: 32%;
         height: 100%;
         display: flex;
         flex-direction: column;
-        padding-right: 1rem;
         
-
         .form__input-file {
             width: 100%;
             height: 16.56rem;
@@ -56,10 +54,76 @@
 
     }
 
-    .news-create__textarea {
-        width: 64%;
+    .news-create__tags-wrapper {
+        width: 25%;
         height: 100%;
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .tags-wrapper__input-wrapper {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+
+            .tags-wrapper__input {
+                width: 79%;
+                padding: 1rem;
+                font-weight: 400;
+                font-size: 1rem;
+                line-height: 21px;
+    
+            }
+    
+            .input__button {
+                width: 19%;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+        }
+
+        .tags-wrapper {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            padding: 1rem 0;
+
+            .tags{
+                width: auto;
+                padding: 0.68rem 1.81rem;
+                margin: 0.43rem;
+                background: rgba(46, 156, 62, 0.05);
+                border: 1px solid #2E9C3E;
+                border-radius: 0.62rem;
+                font-weight: 400;
+                font-size: 1.12rem;
+                line-height: 138%;
+                color: #2E9C3E;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+            }
+
+        }
+
+    }
+
+    .news-create__textarea-wrapper {
+        width: 41%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        .news-create__textarea {
+            width: 100%;
+            height: 49%;
+            padding: 1rem;
+        }
     }
 
 }

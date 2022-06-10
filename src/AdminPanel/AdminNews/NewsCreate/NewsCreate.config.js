@@ -1,18 +1,24 @@
 export const content = {
     EN: {
         DownloadCover: "Download cover",
-        Input: "Title for your news",
+        InputRU: "Title for your news in Russian",
+        InputEN: "Title for your news in English",
         Button: "Submit for review",
         Cancle: "Cancle",
         Draft: "Draft",
-        textarea: "Enter a description of the news",
+        AddHashtag: 'Add hashtag',
+        textareaRU: "Enter a description of the news in Russian",
+        textareaEN: "Enter a description of the news in English",
     },
     RU: {
         DownloadCover: "Загрузить обложку",
-        Input: "Название для вашей новости",
+        InputRU: "Название для вашей новости на русском",
+        InputEN: "Название для вашей новости на английском",
         Button: "Отправить на проверку",
         Cancle: "Отменить",
         Draft: "В черновик",
-        textarea: "Введите описание новости",
+        AddHashtag: 'Добавить хештег',
+        textareaRU: "Введите описание новости на русском",
+        textareaEN: "Введите описание новости на английском",
     }
 }

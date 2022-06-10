@@ -1,31 +1,25 @@
 import React, {useState, useEffect} from 'react';
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import { diffDate } from '../../../diff.date';
-
+import moment from 'moment';
 
 import arr from './marketNevsCards';
 import './MarketNews.scss'
 
-function MarketNews({setNewsID}) {
+function MarketNews({setNewsID, type}) {
     const [endtime, setEndtime] = useState()
 
     useEffect(() => {
-        let date = new Date()
-
-        let year = date.getFullYear()
-        let month = String(date.getMonth() + 1).padStart(2, '0'); 
-        let day = String(date.getDate()).padStart(2, '0');
-        let hour = date.getHours()
-        let minutes = date.getMinutes()
-
-        setEndtime(`${year}-${month}-${day} ${hour}:${minutes}`);
-
+        setEndtime(Date.now());
     },[])
 
-    const news = useSelector((store) => store.newsPublish);
+    let news = useSelector((store) => store.newsPublish);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
+
+    if (type !== "AllNews") {
+        news = news.filter(item=> item.type === type)
+    }
 
     const [cards, setCards] = useState(arr)
 
@@ -34,14 +28,15 @@ function MarketNews({setNewsID}) {
         setNewsID(id)
     }
 
-    
+    console.log(type)
+
     return (
         <>
             <section className={theme === 'dark' ? 'market-news market-news-dark' : 'market-news market-news-light'}>
                 <div className='market-news__header'>
                     <h2 className={theme === 'dark' ? 'header__title-dark' : 'header__title-light'}>
                         {language === "RU"
-                        ? "Технология"
+                        ? "Новости рынка"
                         : "Market News"
                         }
                     </h2>
@@ -55,10 +50,10 @@ function MarketNews({setNewsID}) {
                                 <div className='card__header'>
                                     {language === "RU"
                                     ? <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>
-                                        {`${diffDate(endtime, card.date)} ago`}
+                                        {moment(card.date, "YYYYMMDD h:mm:ss").locale('ru').fromNow()}
                                     </p>
                                     : <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>
-                                        {`${diffDate(endtime, card.date)} ago`}
+                                        {moment(card.date, "YYYYMMDD h:mm:ss").locale('en').fromNow()}
                                     </p>
                                     }
                                     <p className='card__header__user'>
