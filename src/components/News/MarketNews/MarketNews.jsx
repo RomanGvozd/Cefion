@@ -1,11 +1,28 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import { diffDate } from '../../../diff.date';
+
 
 import arr from './marketNevsCards';
 import './MarketNews.scss'
 
 function MarketNews({setNewsID}) {
+    const [endtime, setEndtime] = useState()
+
+    useEffect(() => {
+        let date = new Date()
+
+        let year = date.getFullYear()
+        let month = String(date.getMonth() + 1).padStart(2, '0'); 
+        let day = String(date.getDate()).padStart(2, '0');
+        let hour = date.getHours()
+        let minutes = date.getMinutes()
+
+        setEndtime(`${year}-${month}-${day} ${hour}:${minutes}`);
+
+    },[])
+
     const news = useSelector((store) => store.newsPublish);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
@@ -16,6 +33,7 @@ function MarketNews({setNewsID}) {
         window.scrollTo(0, 0);
         setNewsID(id)
     }
+
     
     return (
         <>
@@ -36,8 +54,12 @@ function MarketNews({setNewsID}) {
                                 </div>
                                 <div className='card__header'>
                                     {language === "RU"
-                                    ? <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>5 часов назад</p>
-                                    : <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>5 hours ago</p>
+                                    ? <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>
+                                        {`${diffDate(endtime, card.date)} ago`}
+                                    </p>
+                                    : <p className={theme === 'dark' ? 'card__header__title-dark' : 'card__header__title-light'}>
+                                        {`${diffDate(endtime, card.date)} ago`}
+                                    </p>
                                     }
                                     <p className='card__header__user'>
                                         by {card.author}

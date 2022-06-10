@@ -24,8 +24,21 @@ function NewsEditDraft({newsID}) {
     const [inputValue, setInputValue] = useState(page.titleRU);
     const [textareaValue, setTextareaValue] = useState(page.descriptionRU);
 
+    const newDate = () => {
+        let today = new Date()
+
+        let year = today.getFullYear()
+        let month = String(today.getMonth() + 1).padStart(2, '0'); 
+        let day = String(today.getDate()).padStart(2, '0');
+        let hour = today.getHours()
+        let minutes = today.getMinutes()
+
+        return (`${year}-${month}-${day} ${hour}:${minutes}`);
+    }
+
     const handleAddReview = () => {
-        dispatch(addItemReview(inputValue, inputValue, textareaValue, textareaValue))
+        let date = newDate()
+        dispatch(addItemReview(inputValue, inputValue, textareaValue, textareaValue, date))
         dispatch(deleteItem(newsID))
     }
 

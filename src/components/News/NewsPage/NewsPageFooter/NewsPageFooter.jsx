@@ -1,18 +1,38 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useSelector} from "react-redux";
 import arr from "./tags.array";
 import buttons from "./button.array";
 import {content} from './NewsPageFooter.config';
+import { diffDate } from "../../../../diff.date";
 
 import './NewsPageFooter.scss'
 
-function NewsPageFooter() {
+function NewsPageFooter({newsID}) {
+    const [endtime, setEndtime] = useState()
+
+    useEffect(() => {
+        let date = new Date()
+
+        let year = date.getFullYear()
+        let month = String(date.getMonth() + 1).padStart(2, '0'); 
+        let day = String(date.getDate()).padStart(2, '0');
+        let hour = date.getHours()
+        let minutes = date.getMinutes()
+
+        setEndtime(`${year}-${month}-${day} ${hour}:${minutes}`);
+
+    },[])
+
+    const newsPublish = useSelector((srote) => srote.newsPublish)
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
     const [tags, setTags] = useState(arr)
 
     const {title} = content[language]
+
+    let news = newsPublish.filter((item)=> item.id === newsID)
+    news = news[0]
     
     return (
         <>
@@ -20,10 +40,10 @@ function NewsPageFooter() {
                 <div className='footer__user'>
                     <img className='user__image' src={require('./image/user.png')} alt="" />
                     <div className='user__info'>
-                        <p className='user__name'>Name Surname</p>
+                        <p className='user__name'>{news.authorybk}</p>
                         <p className='user__email'>@marcelosalomao</p>
                     </div>
-                    <p className='user__time'>5 month ago</p>
+                    <p className='user__time'>{`${diffDate(endtime, news.date)} ago`}</p>
                 </div>
                 <div className='footer__social'>
                     <div className="footer__social-block">

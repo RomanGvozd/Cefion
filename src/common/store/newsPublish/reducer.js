@@ -8,6 +8,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Arnold Kirimi",
+        date: "2022-06-09 10:08",
     },
     {
         id: 222,
@@ -16,6 +17,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-04-10 18:15",
     },
     {
         id: 333,
@@ -24,6 +26,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-04-10 18:15",
     },
     {
         id: 444,
@@ -32,6 +35,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-04-10 18:15",
     },
     {
         id: 555,
@@ -40,6 +44,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-05-10 18:15",
     },
     {
         id: 666,
@@ -48,6 +53,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-06-09 18:15",
     },
     {
         id: 777,
@@ -56,6 +62,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-06-08 18:15",
     },
     {
         id: 888,
@@ -64,6 +71,7 @@ const INITIAL_STATE = [
         descriptionRU: "Аналитика данных используется для преобразования необработанных данных в полезную информацию. Он предоставляет статистику и пояснения, чтобы помочь предприятиям принимать более эффективные решения на основе данных. Согласно различным курсам по анализу данных: современные бизнес-операции вращаются вокруг науки о данных. Наука о данных использует несколько различных инструментов и технологий для достижения лучших результатов, и именно поэтому трудно выбрать только один конкретный инструмент анализа данных для улучшения бизнеса. Каждый инструмент играет свою роль, и не все они подходят для выполнения одной и той же работы. Поэтому давайте узнаем, что такое инструменты анализа данных, и рассмотрим некоторые инструменты, доступные на рынке.",
         descriptionEN: "Data analytics is used for transforming raw data into useful insights. It provides statistics and explanations to help businesses produce improved data-driven decisions. According to a variety of data analytics courses: modern business operations revolve around data science. Data Science uses several different tools and technologies to provide better results, and that’s what makes it difficult to choose just one particular data analytics tool for improving a business. Every tool has a different role to play, and not all of them are suitable for doing the same job. Therefore, let us learn what data analytics tools are, and explore some tools that are available in the market.",
         author: "Yashu Gola",
+        date: "2022-06-05 10:15",
     },
 ]
 
@@ -77,6 +85,7 @@ export default function reducer(state = INITIAL_STATE, { type, payload }) {
                 titleEN: payload.titleEN, 
                 descriptionRU: payload.descriptionRU,
                 descriptionEN: payload.descriptionEN,
+                date: payload.date,
             } ]; 
         case ACTION_DELETE_NEWS_PUBLISH:
             return state.filter(el => el.id !== payload ? true : false); 

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Routes, Route, useLocation } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { content } from "./NewsEditReview.config";
 
 import { deleteItem } from "../../../common/store/newsReview/actions";
@@ -21,16 +21,39 @@ function NewsEditReview({newsID}) {
     let page = newsPage.filter((item)=> item.id === newsID)
     page = page[0]
 
+    let today = new Date()
+
+    let year = today.getFullYear()
+    let month = today.getMonth()
+    let day = today.getDay()
+    let hours = today.getHours()
+    let minutes = today.getMinutes()
+
     const [inputValue, setInputValue] = useState(page.titleRU);
     const [textareaValue, setTextareaValue] = useState(page.descriptionRU);
+    const [date, setDate] = useState(`${year}-${day}-${month} ${hours}:${minutes}`);
+
+    const newDate = () => {
+        let today = new Date()
+
+        let year = today.getFullYear()
+        let month = String(today.getMonth() + 1).padStart(2, '0'); 
+        let day = String(today.getDate()).padStart(2, '0');
+        let hour = today.getHours()
+        let minutes = today.getMinutes()
+
+        return (`${year}-${month}-${day} ${hour}:${minutes}`);
+    }
 
     const handleAddReview = () => {
-        dispatch(addItemPublish(inputValue, inputValue, textareaValue, textareaValue))
+        let date = newDate()
+        dispatch(addItemPublish(inputValue, inputValue, textareaValue, textareaValue, date))
         dispatch(deleteItem(newsID))
     }
 
     const handleDraft = () => {
-        dispatch(addItemDrafts(inputValue, inputValue, textareaValue, textareaValue))
+        let date = newDate()
+        dispatch(addItemDrafts(inputValue, inputValue, textareaValue, textareaValue, date))
         dispatch(deleteItem(newsID))
     }
 

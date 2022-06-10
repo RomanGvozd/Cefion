@@ -2,10 +2,10 @@ export const ACTION_ADD_NEWS_DRAFTS = "ACTION_ADD_NEWS_DRAFTS";
 export const ACTION_DELETE_NEWS_DRAFTS = "ACTION_DELETE_NEWS_DRAFTS";
 export const ACTION_EDIT_NEWS_DRAFTS = "ACTION_EDIT_NEWS_DRAFTS";
 
-export function addItemDrafts(titleRU, titleEN, descriptionRU, descriptionEN) {
+export function addItemDrafts(titleRU, titleEN, descriptionRU, descriptionEN, date) {
   return {
     type: ACTION_ADD_NEWS_DRAFTS,
-    payload: { titleRU, titleEN, descriptionRU, descriptionEN }
+    payload: { titleRU, titleEN, descriptionRU, descriptionEN, date }
   };
 }
 

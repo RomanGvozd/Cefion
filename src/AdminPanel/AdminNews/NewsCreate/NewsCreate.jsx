@@ -22,13 +22,26 @@ function NewsCreate() {
         setDescriptionValue('')
     }
 
-    const handleAddDraft = () => {
-        dispatch(addItemDrafts(titleValue, titleValue, descriptionValue, descriptionValue))
+    const newDate = () => {
+        let today = new Date()
+
+        let year = today.getFullYear()
+        let month = String(today.getMonth() + 1).padStart(2, '0'); 
+        let day = String(today.getDate()).padStart(2, '0');
+        let hour = today.getHours()
+        let minutes = today.getMinutes()
+
+        return (`${year}-${month}-${day} ${hour}:${minutes}`);
     }
 
+    const handleAddDraft = () => {
+        let date = newDate()
+        dispatch(addItemDrafts(titleValue, titleValue, descriptionValue, descriptionValue, date))
+    }
     
     const handleAddReview = () => {
-        dispatch(addItemReview(titleValue, titleValue, descriptionValue, descriptionValue))
+        let date = newDate()
+        dispatch(addItemReview(titleValue, titleValue, descriptionValue, descriptionValue, date))
     }
 
     return(

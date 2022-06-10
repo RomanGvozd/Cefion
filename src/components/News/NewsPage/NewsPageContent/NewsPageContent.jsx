@@ -1,5 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
+import moment from "moment";
+import 'moment/locale/ru';
 
 import './NewsPageContent.scss';
 
@@ -11,15 +13,32 @@ function NewsPageContent({newsID}) {
     let news = newsPublish.filter((item)=> item.id === newsID)
     news = news[0]
 
+    let date = news.date.split(' ')
+    date = date[0].split('-')
+
+    let mounsRU = moment(date[1]).locale('ru').format('MMMM')
+    mounsRU = mounsRU[0].toUpperCase() + mounsRU.slice(1)
+    let mounsEN = moment(date[1]).locale('en').format('MMMM')
+    let years = date[0]
+    let numberDate = date[2]
+
     return(
         <>
             <section className={theme === 'dark' ? 'news-page news-page-dark' : 'news-page news-page-light'}>
                 <section className='news-page-section'>
                     <aside className='section__aside'>
-                        <h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>February 9th 2022</h6>
+                        {language === "RU"
+                        ?<h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>
+                            {`${numberDate} ${mounsRU} ${years}`}
+                        </h6>
+                        :<h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>
+                            {`${mounsEN} ${numberDate}th ${years}`}
+                        </h6>
+                        }
+
                         <div className='aside__user'>
                             <img className='user__image' src={require('./image/user.png')} alt="" />
-                            <p className={theme === 'dark' ? 'user__name-dark' : 'user__name-light'}>Name Surname</p>
+                            <p className={theme === 'dark' ? 'user__name-dark' : 'user__name-light'}>{news.author}</p>
                             <p className='user__email'>@marcelosalomao</p>
                         </div>
                     </aside>

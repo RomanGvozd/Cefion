@@ -11,7 +11,7 @@ function News({newsID}) {
     return (
         <>
             <NewsPageContent newsID={newsID}/>
-            <NewsPageFooter/>
+            <NewsPageFooter newsID={newsID}/>
             <NewsPageSearch/>
         </>
     );

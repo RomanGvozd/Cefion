@@ -21,7 +21,7 @@ function NewsPage({newsID}) {
                 <h6 className={theme === 'dark' ? 'aside__title-dark' : 'aside__title-light'}>February 9th 2022</h6>
                 <div className='aside__user'>
                     <img className='user__image' src={require('./image/user.png')} alt="" />
-                    <p className={theme === 'dark' ? 'user__name-dark' : 'user__name-light'}>Name Surname</p>
+                    <p className={theme === 'dark' ? 'user__name-dark' : 'user__name-light'}>{page.author}</p>
                     <p className='user__email'>@marcelosalomao</p>
                 </div>
             </aside>

@@ -1,12 +1,28 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
-import { Link, Routes, Route, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { diffDate } from "../../../diff.date";
 
 import { deleteItem } from "../../../common/store/newsPublish/actions";
 
 import './NewsPublished.scss';
 
 function NewsPublished({setNewsID, setNewsEditPublishID}) {
+
+    const [endtime, setEndtime] = useState()
+
+    useEffect(() => {
+        let date = new Date()
+
+        let year = date.getFullYear()
+        let month = String(date.getMonth() + 1).padStart(2, '0'); 
+        let day = String(date.getDate()).padStart(2, '0');
+        let hour = date.getHours()
+        let minutes = date.getMinutes()
+
+        setEndtime(`${year}-${month}-${day} ${hour}:${minutes}`);
+
+    },[])
 
     const news = useSelector((store) => store.newsPublish);
     const theme = useSelector((store) => store.theme.theme);
@@ -43,7 +59,7 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
                     </Link>
                     <div className="news__info">
                         <p className={theme === "dark" ? "info__time-dark": "info__time-light"}>
-                            5 hours ago
+                            {`${diffDate(endtime, item.date)} ago`}
                         </p>
                         <p className="info__author">
                             by {item.author}

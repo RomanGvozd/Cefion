@@ -28,14 +28,17 @@ function News() {
                         </div>
                         <NewsNavigation/>
                         <Routes>
+                            <Route path="/" element={<>
+                                <NewsBlock setNewsID={setNewsID}/>
+                                <MarketNews setNewsID={setNewsID}/>
+                            </>} />
                             <Route path="/blockchain" element={<></>} />
                             <Route path="/nft" element={<></>} />
                             <Route path="/defi" element={<></>} />
                             <Route path="/business" element={<></>} />
                             <Route path="/gamefi" element={<></>} />
                         </Routes>
-                        <NewsBlock setNewsID={setNewsID}/>
-                        <MarketNews setNewsID={setNewsID}/>
+
                     </>
                 }/>
                 <Route path={`/page/${newsID}`} element={<NewsPage newsID={newsID}/>} />

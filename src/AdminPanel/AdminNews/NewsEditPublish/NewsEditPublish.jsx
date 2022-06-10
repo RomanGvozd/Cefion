@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, Routes, Route, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { content } from "./NewsEditPublish.config";
 
-import {editItemPublish} from '../../../common/store/newsPublish/actions';
-import {deleteItem} from '../../../common/store/newsPublish/actions';
-import {addItemDrafts} from '../../../common/store/newsDrafts/actions';
+import { editItemPublish } from '../../../common/store/newsPublish/actions';
+import { deleteItem } from '../../../common/store/newsPublish/actions';
+import { addItemDrafts } from '../../../common/store/newsDrafts/actions';
+import { addItemReview } from "../../../common/store/newsReview/actions";
 
 import './NewsEditPublish.scss';
 
@@ -15,7 +16,7 @@ function NewsEditPublish({newsID}) {
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
 
-    const { DownloadCover, Input, Draft, Save, textarea} = content[language];
+    const { DownloadCover, Input, Review, Draft, Save, textarea} = content[language];
 
     let page = newsPage.filter((item)=> item.id === newsID)
     page = page[0]
@@ -23,8 +24,27 @@ function NewsEditPublish({newsID}) {
     const [inputValue, setInputValue] = useState(page.titleRU);
     const [textareaValue, setTextareaValue] = useState(page.descriptionRU);
 
-    const handleDraft = () => {
-        dispatch(addItemDrafts(inputValue, inputValue, textareaValue, textareaValue))
+    const newDate = () => {
+        let today = new Date()
+
+        let year = today.getFullYear()
+        let month = String(today.getMonth() + 1).padStart(2, '0'); 
+        let day = String(today.getDate()).padStart(2, '0');
+        let hour = today.getHours()
+        let minutes = today.getMinutes()
+
+        return (`${year}-${month}-${day} ${hour}:${minutes}`);
+    }
+
+    const handleAddDraft = () => {
+        let date = newDate()
+        dispatch(addItemDrafts(inputValue, inputValue, textareaValue, textareaValue, date))
+        dispatch(deleteItem(newsID))
+    }
+
+    const handleAddReview = () => {
+        let date = newDate()
+        dispatch(addItemReview(inputValue, inputValue, textareaValue, textareaValue, date))
         dispatch(deleteItem(newsID))
     }
 
@@ -49,12 +69,20 @@ function NewsEditPublish({newsID}) {
                     placeholder={Input}
                     value={inputValue}
                     onChange={(e)=>setInputValue(e.target.value)}
-                />               
+                />
+                <Link to={`/admin/news/published`} >
+                    <button 
+                        className="form__button"
+                        onClick={handleAddReview}
+                    >
+                        {Review}
+                    </button>
+                </Link>           
                 <div className="form__wrapper-button">
                     <Link 
                         to={`/admin/news/published`} 
                         className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"}
-                        onClick={handleDraft}
+                        onClick={handleAddDraft}
                     >
                         {Draft}
                     </Link>

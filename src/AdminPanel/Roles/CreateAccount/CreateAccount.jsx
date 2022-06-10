@@ -33,15 +33,21 @@ function CreateAccount() {
                 resutRoles.push(item.titleEN)
             }
         })
-
+        let tegName = []
+        name.split(' ').forEach(item => {
+            tegName.push(item.toLowerCase())
+            
+        })
         const result = {
             name: name,
+            tegName: `@${tegName.join('')}`,
             password: password,
             roles: resutRoles,
         }
-
         console.log(result)
+
     }
+
 
     return(
         <div className="create-account">

@@ -2,10 +2,10 @@ export const ACTION_ADD_NEWS_REVIEW = "ACTION_ADD_NEWS_REVIEW";
 export const ACTION_DELETE_NEWS_REVIEW = "ACTION_DELETE_NEWS_REVIEW";
 export const ACTION_EDIT_NEWS_REVIEW = "ACTION_EDIT_NEWS_REVIEW";
 
-export function addItemReview(titleRU, titleEN, descriptionRU, descriptionEN) {
+export function addItemReview(titleRU, titleEN, descriptionRU, descriptionEN, date) {
   return {
     type: ACTION_ADD_NEWS_REVIEW,
-    payload: { titleRU, titleEN, descriptionRU, descriptionEN }
+    payload: { titleRU, titleEN, descriptionRU, descriptionEN, date}
   };
 }
 
