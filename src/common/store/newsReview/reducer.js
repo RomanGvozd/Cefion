@@ -8,6 +8,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-03-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -19,6 +20,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-04-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -30,6 +32,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-01-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -41,6 +44,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-05-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -52,6 +56,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-06-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -63,6 +68,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-06-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -74,6 +80,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-06-06 10:08",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -85,6 +92,7 @@ const INITIAL_STATE = [
         descriptionRU: "Выведение крипторынка «на свет» не решает проблемы правоприменения: председатель CFTC",
         descriptionEN: "Bringing crypto market 'into the light' doesn’t address enforcement: CFTC chair",
         author: "Yashu Gola",
+        tagName: "@yashugola",
         date: "2022-06-10 14:30",
         type: "Blockchain",
         hashtags: ["#data", "#microsoft", "#excel", "#python"],
@@ -114,6 +122,8 @@ export default function reducer(state = INITIAL_STATE, { type, payload }) {
                     item.titleEN = payload.titleEN
                     item.descriptionRU = payload.descriptionRU
                     item.descriptionEN = payload.descriptionEN
+                    item.type = payload.type
+                    item.hashtags = payload.hashtags
                 }
                 return item
             })

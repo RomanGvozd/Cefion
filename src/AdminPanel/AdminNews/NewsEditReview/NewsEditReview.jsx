@@ -8,6 +8,8 @@ import { editItemReview } from "../../../common/store/newsReview/actions";
 import { addItemPublish } from "../../../common/store/newsPublish/actions";
 import { addItemDrafts } from '../../../common/store/newsDrafts/actions';
 
+import SelectNewsGroup from "../SelectNewsGroup/SelectNewsGroup";
+
 import './NewsEditReview.scss';
 
 function NewsEditReview({newsID}) {
@@ -16,7 +18,7 @@ function NewsEditReview({newsID}) {
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
 
-    const { DownloadCover, InputRU, InputEN, Publish, Draft, Save, textareaRU, textareaEN} = content[language];
+    const { DownloadCover, InputRU, InputEN, Publish, Draft, Save, AddHashtag, textareaRU, textareaEN} = content[language];
 
     let page = newsPage.filter((item)=> item.id === newsID)
     page = page[0]
@@ -25,6 +27,12 @@ function NewsEditReview({newsID}) {
     const [ titleValueEN, setTitleValueEN ] = useState(page.titleEN);
     const [ descriptionValueRU, setDescriptionValueRU ] = useState(page.descriptionRU);
     const [ descriptionValueEN, setDescriptionValueEN ] = useState(page.descriptionEN);
+
+    const [selected, setSelected] = useState(page.type);
+    const options = ["Blockchain", "NFT", "DeFI", "Business", "GameFi"];
+
+    const [inputTagsValue, setInputTagsValue] = useState('')
+    const [tags, setTags] = useState(page.hashtags)
 
     const newDate = () => {
         let today = new Date()
@@ -40,18 +48,26 @@ function NewsEditReview({newsID}) {
 
     const handleAddReview = () => {
         let date = newDate()
-        dispatch(addItemPublish(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date))
+        dispatch(addItemPublish(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
         dispatch(deleteItem(newsID))
     }
 
     const handleDraft = () => {
         let date = newDate()
-        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date))
+        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
         dispatch(deleteItem(newsID))
     }
 
     const handleEdit = () => {
-        dispatch(editItemReview(newsID, titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN))
+        dispatch(editItemReview(newsID, titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, selected, tags))
+    }
+
+    const handleAddTag = () => {
+        setTags([...tags, `#${inputTagsValue}`])
+    }
+
+    const handleDeleteTag = (id) => {
+        setTags(tags.filter(tag => tag !== id ))
     }
     
     return(
@@ -99,6 +115,43 @@ function NewsEditReview({newsID}) {
                         {Save}
                     </Link>
                 </div> 
+            </div>
+            <div className="news-create__tags-wrapper">
+                <div className="tags-wrapper__input-wrapper">
+                    <input 
+                        className={theme === "dark" ? "tags-wrapper__input background-dark" : "tags-wrapper__input background-light"}
+                        type="text"
+                        placeholder={AddHashtag}
+                        value={inputTagsValue}
+                        onChange={(e)=>setInputTagsValue(e.target.value)}
+                    >
+
+                    </input>
+                    <button 
+                        className={theme === "dark" ? "input__button background-dark" : "input__button background-light"}
+                        onClick={handleAddTag}
+                    >
+                        +
+                    </button>
+                </div>
+                <div className="tags-wrapper">
+                    {tags.map((tag)=>(
+                        <div 
+                            key={tag} 
+                            className={theme === "dark" ? "tags background-dark" : "tags background-light"}
+                            onClick={()=>handleDeleteTag(tag)}
+                        >
+                            {tag}
+                        </div>
+                    ))}
+                </div>
+                <SelectNewsGroup 
+                    selected={selected} 
+                    setSelected={setSelected}
+                    options={options}
+                    theme={theme}
+                    language={language}
+                />
             </div>
             <div className="news-create__textarea-wrapper">
                 <textarea 

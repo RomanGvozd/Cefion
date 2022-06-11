@@ -134,7 +134,7 @@ function NewsCreate() {
                         <div 
                             key={tag} 
                             className={theme === "dark" ? "tags background-dark" : "tags background-light"}
-                            onDoubleClick={()=>handleDeleteTag(tag)}
+                            onClick={()=>handleDeleteTag(tag)}
                         >
                             {tag}
                         </div>

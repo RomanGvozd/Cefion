@@ -35,10 +35,11 @@ function MarketNews({setNewsID, type}) {
             <section className={theme === 'dark' ? 'market-news market-news-dark' : 'market-news market-news-light'}>
                 <div className='market-news__header'>
                     <h2 className={theme === 'dark' ? 'header__title-dark' : 'header__title-light'}>
-                        {language === "RU"
+                        {/* {language === "RU"
                         ? "Новости рынка"
                         : "Market News"
-                        }
+                        } */}
+                        {type}
                     </h2>
                 </div>
                 <div className='market-news__content'>

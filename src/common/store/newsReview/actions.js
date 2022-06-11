@@ -9,10 +9,10 @@ export function addItemReview(titleRU, titleEN, descriptionRU, descriptionEN, da
   };
 }
 
-export function editItemReview(id, titleRU, titleEN, descriptionRU, descriptionEN) {
+export function editItemReview(id, titleRU, titleEN, descriptionRU, descriptionEN, type, hashtags) {
   return {
     type: ACTION_EDIT_NEWS_REVIEW,
-    payload: { id, titleRU, titleEN, descriptionRU, descriptionEN }
+    payload: { id, titleRU, titleEN, descriptionRU, descriptionEN, type, hashtags }
   };
 }
 

@@ -9,10 +9,11 @@ import './NewsPageFooter.scss'
 
 function NewsPageFooter({newsID}) {
     const [endtime, setEndtime] = useState()
+    const [views, setViews] = useState(15)
 
     useEffect(() => {
         setEndtime(Date.now());
-
+        setViews(views + 1)
     },[])
 
     const newsPublish = useSelector((srote) => srote.newsPublish)
@@ -31,7 +32,7 @@ function NewsPageFooter({newsID}) {
                     <img className='user__image' src={require('./image/user.png')} alt="" />
                     <div className='user__info'>
                         <p className='user__name'>{news.authorybk}</p>
-                        <p className='user__email'>@marcelosalomao</p>
+                        <p className='user__email'>{news.tagName}</p>
                     </div>
                     {language === "RU"
                         ?<p className='user__time'>
@@ -46,7 +47,7 @@ function NewsPageFooter({newsID}) {
                     <div className="footer__social-block">
                         <div className="social__search">
                             <div className={theme === "dark" ? "social__search-icon-dark" : "social__search-icon-light"}></div>
-                            <p className='social__search-text'>15</p>
+                            <p className='social__search-text'>{views}</p>
                         </div>
                         <div className="social__tags">
                             <div className={theme === "dark" ? "social__tags-icon-dark" : "social__tags-icon-light"}></div>

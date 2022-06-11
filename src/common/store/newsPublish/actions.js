@@ -9,10 +9,10 @@ export function addItemPublish(titleRU, titleEN, descriptionRU, descriptionEN, d
   };
 }
 
-export function editItemPublish(id, titleRU, titleEN, descriptionRU, descriptionEN) {
+export function editItemPublish(id, titleRU, titleEN, descriptionRU, descriptionEN, type, hashtags) {
   return {
     type: ACTION_EDIT_NEWS_PUBLISH,
-    payload: { id, titleRU, titleEN, descriptionRU, descriptionEN }
+    payload: { id, titleRU, titleEN, descriptionRU, descriptionEN, type, hashtags }
   };
 }
 

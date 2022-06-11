@@ -6,6 +6,7 @@ export const content = {
         Publish: "Publish",
         Draft: "Draft",
         Save: "Save",
+        AddHashtag: 'Add hashtag',
         textareaRU: "Enter a description of the news in Russian",
         textareaEN: "Enter a description of the news in English",
     },
@@ -16,6 +17,7 @@ export const content = {
         Publish: "Опубликовать",
         Draft: "В черновик",
         Save: "Сохранить",
+        AddHashtag: 'Добавить хештег',
         textareaRU: "Введите описание новости на русском",
         textareaEN: "Введите описание новости на английском",
     }

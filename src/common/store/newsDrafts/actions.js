@@ -9,10 +9,10 @@ export function addItemDrafts(titleRU, titleEN, descriptionRU, descriptionEN, da
   };
 }
 
-export function editItemDrafts(id, titleRU, titleEN, descriptionRU, descriptionEN) {
+export function editItemDrafts(id, titleRU, titleEN, descriptionRU, descriptionEN, type, hashtags) {
   return {
     type: ACTION_EDIT_NEWS_DRAFTS,
-    payload: { id, titleRU, titleEN, descriptionRU, descriptionEN }
+    payload: { id, titleRU, titleEN, descriptionRU, descriptionEN, type, hashtags }
   };
 }
 

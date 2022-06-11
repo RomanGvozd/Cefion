@@ -38,7 +38,7 @@ function NewsPageContent({newsID}) {
                         <div className='aside__user'>
                             <img className='user__image' src={require('./image/user.png')} alt="" />
                             <p className={theme === 'dark' ? 'user__name-dark' : 'user__name-light'}>{news.author}</p>
-                            <p className='user__email'>@marcelosalomao</p>
+                            <p className='user__email'>{news.tagName}</p>
                         </div>
                     </aside>
                     <div className='section__content'>
