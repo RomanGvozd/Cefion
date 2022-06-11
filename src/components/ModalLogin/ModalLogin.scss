@@ -1,6 +1,6 @@
 @keyframes spawn {
     0% {
-        transform: translateY(-50%) scale(0);
+        transform: translateY(-100%) scale(0);
     } 
     100% {
         transform: translateY(0), scale(1);
@@ -31,14 +31,14 @@
     }
 
     .modal-login {
-        width: 391px;
-        height: calc(281px + 420 * (100vw / 1920));
-        margin-top: calc(15px + 35 * (100vw / 1920));
+        width: 24.43rem;
+        height: 35rem;
+        margin-top: 5rem;
         border: 1px solid #424246;
-        border-radius: 15px;
+        border-radius: 0.93rem;
+        padding: 2rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
 
         animation-duration: 0.7s;
@@ -46,22 +46,22 @@
 
         .modal__title {
             font-weight: 600;
-            font-size: calc(15px + 15 * (100vw / 1920));
+            font-size: 1.87rem;
             line-height: 38.5%;
-            margin-bottom: 30px;
+            margin-bottom: 3rem;
             text-align: start;
         }
 
         .modal__input {
-            width: 83%;
-            height: calc(40px + 18 * (100vw / 1920));
+            width: 100%;
+            height: auto;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #424246;
-            border-radius: 10px;
-            margin-top: 15px;
-            padding: 10px;
+            border-radius: 0.62rem;
+            margin: 1rem 0;
+            padding: 1.25rem;
             color: #2E9C3E;
-            font-size: calc(8px + 8 * (100vw / 1920));
+            font-size: 0.93rem;
 
             &:focus {
                 border: 1px solid #2E9C3E;
@@ -71,18 +71,18 @@
         }
 
         .modal__forgot-dark {
-            margin-top: 15px;
+            margin-top: 1rem;
             font-weight: 400;
-            font-size: calc(8px + 7 * (100vw / 1920));
+            font-size: 0.87rem;
             line-height: 17px;
             color: rgba(255, 255, 255, 0.5);
             cursor: pointer;
         }
 
         .modal__forgot-light {
-            margin-top: 15px;
+            margin-top: 1rem;
             font-weight: 400;
-            font-size: calc(8px + 7 * (100vw / 1920));
+            font-size: 0.87rem;
             line-height: 17px;
             color: rgba(0, 0, 0, 0.5);
             cursor: pointer;
@@ -104,42 +104,43 @@
         // }
 
         .modal__button {
-            width: 83%;
-            height: calc(40px + 10 * (100vw / 1920));
+            width: 100%;
+            height: auto;
             background: #2E9C3E;
             border: 1px solid #2E9C3E;
-            border-radius: 10px;
+            padding: 1rem;
+            border-radius: 0.62rem;
             color: white;
-            margin-top: calc(50px + 250 * (100vw / 1920));
-            font-size: calc(8px + 8 * (100vw / 1920));
+            margin-top: 10rem;
+            font-size: 1rem;
 
         }
 
-        @media only screen and (max-width: 1400px) {
-            .modal__button {
-                margin-top: calc(50px + 100 * (100vw / 1920));
+        // @media only screen and (max-width: 1400px) {
+        //     .modal__button {
+        //         margin-top: calc(50px + 100 * (100vw / 1920));
     
-            }
+        //     }
         
-        }
+        // }
 
     }
 
-    @media only screen and (max-width: 1400px) {
-        .modal-login {
-            width: 321px;
-            height: calc(281px + 220 * (100vw / 1920));
+    // @media only screen and (max-width: 1400px) {
+    //     .modal-login {
+    //         width: 321px;
+    //         height: calc(281px + 220 * (100vw / 1920));
 
-        }
+    //     }
     
-    }
+    // }
 
-    @media only screen and (max-width: 600px) {
-        .modal-login {
-            width: 90%;
+    // @media only screen and (max-width: 600px) {
+    //     .modal-login {
+    //         width: 90%;
 
-        }
+    //     }
     
-    }
+    // }
 
 }
