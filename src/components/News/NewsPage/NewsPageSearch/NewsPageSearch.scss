@@ -31,9 +31,10 @@
             margin-right: 1.25rem;
             transition: 0.5s;
             cursor: pointer;
+            opacity: 1;
             
             &:hover {
-                transform: scale(1.02);
+                opacity: 0.8;
             }
 
             &:hover .card__title {
