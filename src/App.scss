@@ -47,16 +47,21 @@ html {
 ::-webkit-scrollbar {
   background: rgba(0, 0, 0, 0);
   width: 5px;
+  height: 5px;
+
 }
 
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0);
   width: 5px;
+  height: 5px;
+  
 }
 
 ::-webkit-scrollbar-thumb {
   width: 5px;
   background: rgba(126, 126, 126, 0.596);
+  cursor: pointer;
 }
 
 li {
