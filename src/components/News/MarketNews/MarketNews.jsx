@@ -3,7 +3,6 @@ import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import moment from 'moment';
 
-import arr from './marketNevsCards';
 import './MarketNews.scss'
 
 function MarketNews({setNewsID, type}) {
@@ -21,30 +20,28 @@ function MarketNews({setNewsID, type}) {
         news = news.filter(item=> item.type === type)
     }
 
-    const [cards, setCards] = useState(arr)
-
-    const scrollTop = (id) => {
+    const scrollTop = () => {
         window.scrollTo(0, 0);
-        setNewsID(id)
     }
-
-    console.log(type)
 
     return (
         <>
             <section className={theme === 'dark' ? 'market-news market-news-dark' : 'market-news market-news-light'}>
                 <div className='market-news__header'>
                     <h2 className={theme === 'dark' ? 'header__title-dark' : 'header__title-light'}>
-                        {/* {language === "RU"
-                        ? "Новости рынка"
-                        : "Market News"
-                        } */}
+
                         {type}
                     </h2>
                 </div>
                 <div className='market-news__content'>
                     {news.map((card)=>(
-                        <Link to={`/news/page/${card.id}`} onClick={()=>scrollTop(card.id)}>
+                        <Link 
+                            to={`/news/page/${card.id}`} 
+                            onClick={()=>{
+                                scrollTop(card.id)
+                                setNewsID(card.id)
+                            }}
+                        >
                             <div className={theme === 'dark' ? 'content__card content__card-dark' : 'content__card content__card-light'}>
                                 <div className='card__image'>
                                 </div>

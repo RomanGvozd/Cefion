@@ -17,6 +17,14 @@
         overflow: hidden;
         display: flex;
 
+        .list__card-dark {
+            color: white;
+        }
+
+        .list__card-light {
+            color: black;
+        }
+
         .list__card {
             min-width: 24.5rem;
             height: auto;

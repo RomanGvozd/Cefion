@@ -13,7 +13,6 @@ import './News.scss'
 
 function News() {
     const theme = useSelector((store) => store.theme.theme);
-    const language = useSelector((store) => store.language.language);
 
     const [newsID, setNewsID] = useState('');
     
@@ -40,7 +39,7 @@ function News() {
                         </Routes>
                     </>
                 }/>
-                <Route path={`/page/${newsID}`} element={<NewsPage newsID={newsID}/>} />
+                <Route path={`/page/${newsID}`} element={<NewsPage newsID={newsID} setNewsID={setNewsID}/>} />
             </Routes>
 
         </section>

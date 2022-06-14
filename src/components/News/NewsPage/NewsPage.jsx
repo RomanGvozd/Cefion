@@ -6,15 +6,15 @@ import NewsPageSearch from './NewsPageSearch/NewsPageSearch';
 
 import './NewsPage.scss'
 
-function News({newsID}) {
+function NewsPage({newsID, setNewsID}) {
     
     return (
         <>
             <NewsPageContent newsID={newsID}/>
             <NewsPageFooter newsID={newsID}/>
-            <NewsPageSearch/>
+            <NewsPageSearch setNewsID={setNewsID}/>
         </>
     );
 }
 
-export default News;
+export default NewsPage;
