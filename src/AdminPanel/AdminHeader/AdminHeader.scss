@@ -1,13 +1,13 @@
 .admin__header {
     width: 100%;
-    height: 90px;
+    height: auto;
     display: flex;
     justify-content: center;
 
     .header-wrapper {
         width: 95%;
-        height: 90px;
-        padding: 30px;
+        height: auto;
+        padding: 1.87rem;
         border-bottom: 1px solid rgb(66, 66, 70);
         display: flex;
         justify-content: space-between;
@@ -25,11 +25,11 @@
     
             .content__input-dark {
                 width: 350px;
-                height: 40px;
+                height: 3.13rem;
                 background: #1C1C1E;
                 border: 1px solid #424246;
-                border-radius: 10px;
-                padding: 10px;
+                border-radius: 0.62rem;
+                padding: 0.62rem;
                 color: #2E9C3E;
                 
                 &:focus {
@@ -41,11 +41,11 @@
     
             .content__input-light {
                 width: 350px;
-                height: 40px;
+                height: 3.13rem;
                 background: #F5F5F5;
                 border: 1px solid #D6D6D6;
-                border-radius: 10px;
-                padding: 10px;
+                border-radius: 0.62rem;
+                padding: 0.62rem;
                 color: #2E9C3E;
     
                 &:focus {
@@ -56,26 +56,26 @@
             }
     
             .setting__theme {
-                width: 50px;
-                height: 40px;
+                width: 3.43rem;
+                height: 3.13rem;
                 background: rgba(0, 0, 0, 0.05);
                 border: 1px solid #D6D6D6;
-                border-radius: 10px;
+                border-radius: 0.62rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin-left: 15px;
     
                 .setting__theme-icon-dark {
-                    width: 22px;
-                    height: 22px;
+                    width: 1.37rem;
+                    height: 1.37rem;
                     background-image: url(./images/themeDark.svg);
                     background-size: cover;
                 }
     
                 .setting__theme-icon-light {
-                    width: 22px;
-                    height: 22px;
+                    width: 1.37rem;
+                    height: 1.37rem;
                     background-image: url(./images/themeLight.svg);
                     background-size: cover;
                 }

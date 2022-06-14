@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
+import scrollToElement from 'scroll-to-element';
+import { useLocation } from "react-router-dom";
 
 import './PersonalAccount.scss';
 
-
 function PersonalAccount() {
+    const {hash} = useLocation();
+    const use = useLocation();
+
+    useEffect(()=>{
+        scrollToElement(`${hash}`);
+    }, [])
+
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
     

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useSelector} from "react-redux";
 
 import Description from './Description/Description';
@@ -20,10 +20,10 @@ function Main() {
     <main className={theme === 'dark' ? 'main main-dark' : 'main main-light'}>
       <Description/>
       <PartnersLine/>
-      <PersonalAccount/>
-      <SocialOpportunities/>
-      <CryptoWallet/>
-      <Timeline/>
+      <PersonalAccount />
+      <SocialOpportunities />
+      <CryptoWallet />
+      <Timeline />
       <Briefly/>
       <Numbers/>
     </main>

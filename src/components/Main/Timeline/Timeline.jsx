@@ -1,11 +1,19 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
+import scrollToElement from 'scroll-to-element';
+import { useLocation } from "react-router-dom";
 
 import './Timeline.scss';
 
 function Timeline() {
+    const {hash} = useLocation();
+
+    useEffect(()=>{
+        scrollToElement(`${hash}`);
+    }, [])
+
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 

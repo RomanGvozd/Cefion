@@ -14,8 +14,8 @@
     display: flex;
 
     .admin__content {
-        width: 80%;
         height: calc(100% - 90px);
+        transition: 0.3s;
 
         .anim__section {
             width: 100%;

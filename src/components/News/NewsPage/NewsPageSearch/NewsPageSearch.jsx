@@ -1,15 +1,13 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
-import arr from './CardArray';
 import {content} from './NewsPageSearch.config';
 
 import './NewsPageSearch.scss'
 
 function NewsPageSearch() {
+    const newsPublish = useSelector((store) => store.newsPublish);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
-
-    const [cards, setCards] = useState(arr);
 
     const {title, cardRead} = content[language];
 
@@ -20,7 +18,7 @@ function NewsPageSearch() {
                     {title}
                 </h2>
                 <div className='news-page-search__list'>
-                    {cards.map((card)=>(
+                    {newsPublish.map((card)=>(
                         <div className='list__card' key={card.id}>
                             <img className='card__image' src={require('./image/cardImage.png')} alt="" />
                             {language === "RU"
@@ -31,8 +29,8 @@ function NewsPageSearch() {
                             <div className='card__user'>
                                 <img className='user__image' src={require('./image/user.png')} alt="" />
                                 <div className='user__info'>
-                                    <p className={theme === 'dark' ? 'info__name-dark' : 'info__name-light'}>{card.name}</p>
-                                    <p className='info__email'>{card.email}</p>
+                                    <p className={theme === 'dark' ? 'info__name-dark' : 'info__name-light'}>{card.author}</p>
+                                    <p className='info__email'>{card.tagName}</p>
                                 </div>
                                 <p className='user__text'>{cardRead}</p>
                             </div>

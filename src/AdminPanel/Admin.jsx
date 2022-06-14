@@ -20,6 +20,11 @@ function Admin() {
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+    const [show, setShow] = useState(true)
+
+    const handleShow = () => {
+        setShow(!show)
+    }
 
     const handleLogin = () => {
         if (name === "admin" && password === "2211442") {
@@ -64,10 +69,15 @@ function Admin() {
             {login 
             && 
                 <main className={theme === "dark" ? "admin__main admin__main-dark" : "admin__main admin__main-light"}>
-                    <AdminNav/>
-                    <div className="admin__content">
+                    <AdminNav handleShow={handleShow} show={show}/>
+                    <div 
+                        className="admin__content"
+                        style={show ? {width: `80%`,} : {width: `93%`,}}
+                    >
                         <AdminHeader/>
-                        <section className="anim__section">
+                        <section 
+                            className="anim__section"
+                        >
                             <Routes>
                                 <Route path="/roles" element={<Roles />} />
                                 <Route path="/landing*" element={<AdminLanding />} />

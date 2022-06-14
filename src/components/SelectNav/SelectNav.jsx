@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react';
 
 import './SelectNav.scss';
 
@@ -31,9 +31,12 @@ const SelectNav = ({selected, options, theme, language, isActive, setIsActive}) 
             {isActive && (
                 <div className={theme === 'dark' ? 'select__content select__content-dark' : 'select__content select__content-light'}>
                     {options.map(option => (
-                        <a href={"#" + option.id}
+                        <a href={`/#${option.id}`}
                         className='content__item'
-                        onClick={() =>handleScroll(option.id)}
+                        onClick={() =>{
+                            handleScroll(option.id)
+
+                        }}
                         >
                             {language === "RU"
                             ? <p className={theme === "dark" ? "item__text-dark" : "item__text-light"}>{option.titleRU}</p>

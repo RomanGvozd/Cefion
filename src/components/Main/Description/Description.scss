@@ -49,23 +49,18 @@
                 display: flex;
     
                 .download__button {
-                    width: 7.5rem;
-                    height: 2.5rem;
-                    border-radius: 0.31rem;
-                    margin-right: 1.25rem;
-    
-                }
+                    width: 8.438rem;
+                    height: 2.75rem;
+                    margin: 10px;
+                    border-radius: 4px;
+                    border: none;
+                    transition: 0.5s;
+                    cursor: pointer;
 
-                .download__android {
-                    background-image: url(./image/android.svg);
-                    background-size: cover;
-                    
-                }
-    
-                .download__google-play {
-                    background-image: url(./image/google-play.svg);
-                    background-size: cover;
-    
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+
                 }
     
     

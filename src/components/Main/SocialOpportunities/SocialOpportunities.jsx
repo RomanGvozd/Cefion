@@ -1,10 +1,18 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
+import scrollToElement from 'scroll-to-element';
+import { useLocation } from "react-router-dom";
 
 import './SocialOpportunities.scss';
 
 function SocialOpportunities() {
+    const {hash} = useLocation();
+
+    useEffect(()=>{
+        scrollToElement(`${hash}`);
+    }, [])
+
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
@@ -48,7 +56,7 @@ function SocialOpportunities() {
                     <h2 className="description__title">
                         {language === "RU"
                         ? "Социальные возможности"
-                        : "Personal account"
+                        : "Social Opportunities"
                         }
                     </h2>
                     <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>

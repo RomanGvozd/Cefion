@@ -68,8 +68,8 @@ function Footer() {
                     {DownloadTheApp}
                 </h4>
                 <div className="block__download">
-                    <button className="download__button download__android"></button>
-                    <button className="download__button download__google-play"></button>
+                    <img className="download__button" src={require(`./image/android.svg`).default} alt="" />
+                    <img className="download__button" src={require(`./image/google-play.svg`).default} alt="" />
                 </div>
             </div>
             <div className={theme === "dark" ? "block__social footer-dark" : "block__social footer-light"}>

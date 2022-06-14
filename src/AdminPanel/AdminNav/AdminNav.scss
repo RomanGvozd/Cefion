@@ -7,23 +7,56 @@
 }
 
 .admin__nav {
-    width: 20%;
     height: 100%;
-    padding: 0 30px;
+    transition: 0.3s;
 
     .nav__header {
         width: 100%;
-        height: 90px;
+        height: auto;
         border-bottom: 1px solid rgb(66, 66, 70);
+        padding: 1.87rem 0;
         display: flex;
         align-items: center;
+        justify-content: space-between;
 
-        .nav__image {
-            width: 100%;
-            height: 50px;
-            background-image: url(./images/title.svg);
-            background-size: contain;
-            background-repeat: no-repeat;
+        .header__image {
+            width: 8rem;
+            height: 3.37rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+            .image {
+                width: 3.18rem;
+                height: 100%;
+                background-image: url(./images/titleImage.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+            .text {
+                width: 4.18rem;
+                height: 1rem;
+                background-image: url(./images/titleText.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+
+        }
+
+        .header__button {
+            width: 0.9rem;
+            height: 1.5rem;
+            background-image: url(./images/headerArrow.svg);
+            background-size: cover;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .header__button-active {
+            transform: rotate(180deg);        
+ 
         }
 
     }
@@ -31,18 +64,24 @@
     .nav__management {
         width: 100%;
         height: auto;
-        margin-top: 20px;
+        margin-top: 1.41rem;
 
         .management__title {
+            height: 2rem;
             font-weight: 500;
             font-size: 1.25rem;
             line-height: 29px;
+            transition: 0.5s;
+        }
+
+        .management__title-active {
+            transform: scale(0);
         }
 
         .management__nav {
             width: 100%;
             height: auto;
-            margin-top: 20px;
+            margin-top: 1.41rem;
 
             .nav__button-dark {
                 color: white;
@@ -55,11 +94,23 @@
 
             .nav__button {
                 width: 100%;
-                padding: 10px;
+                padding: 1rem;
                 background: rgba(255, 255, 255, 0.05);
                 border: 1px solid #424246;
-                border-radius: 10px;
-                margin: 5px 0;
+                border-radius: 0.62rem;
+                margin: 0.5rem 0;
+                display: flex;
+                align-items: center;
+
+                .button__image {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    object-fit: contain;
+                }
+
+                .button__text {
+                    margin-left: 0.75rem;
+                }
 
             }
 
@@ -76,11 +127,17 @@
 
         .button__end {
             width: 100%;
-            padding: 10px;
+            padding: 1rem;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #424246;
-            border-radius: 10px;
-            margin: 50px 0;
+            border-radius: 0.62rem;
+            margin: 3rem 0;
+            display: flex;
+            align-items: center;
+
+            .button__text {
+                margin-left: 0.75rem;
+            }
 
         }
 

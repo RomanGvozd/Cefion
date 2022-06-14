@@ -21,6 +21,16 @@
             min-width: 24.5rem;
             height: auto;
             margin-right: 1.25rem;
+            transition: 0.5s;
+            cursor: pointer;
+            
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            &:hover .card__title {
+                color: #2E9C3E;
+            }
 
             .card__image {
                 width: 100%;
@@ -33,6 +43,9 @@
                 line-height: 155%;
                 margin: 1.25rem 0;
                 height: 7.5rem;
+                transition: 0.5s;
+                z-index: 30;
+
             }
 
             .card__user {

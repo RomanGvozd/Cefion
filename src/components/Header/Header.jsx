@@ -10,10 +10,8 @@ import SelectNav from '../SelectNav/SelectNav';
 import {changeTheme} from '../../common/store/theme/actions';
 import {changeLanguage} from '../../common/store/language/actions';
 
-
 import './Header.scss';
 import './HeaderAdaptive.scss';
-
 
 function Header({openModalLogin}) {
     let lastScroll = 0
@@ -108,35 +106,38 @@ function Header({openModalLogin}) {
                                 />
                             </div>
                             <Link 
-                            className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
-                            to="/Roadmap"
-                            style={pathname === "/Roadmap" ? {color: "#2E9C3E"} : {}}
-                            onClick={()=>{
-                                setNav(false) 
-                                scrollTop()}
-                            }
+                                className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
+                                to="/Roadmap"
+                                style={pathname === "/Roadmap" ? {color: "#2E9C3E"} : {}}
+                                onClick={()=>{
+                                    setNav(false) 
+                                    scrollTop()
+                                    setIsActive(false)}
+                                }
                             >
                                 {Roadmap}
                             </Link>
                             <Link 
-                            className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
-                            to="/news" 
-                            style={pathname === "/news" ? {color: "#2E9C3E"} : {}}
-                            onClick={()=>{
-                                setNav(false) 
-                                scrollTop()}
-                            }
+                                className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
+                                to="/news" 
+                                style={pathname === "/news" ? {color: "#2E9C3E"} : {}}
+                                onClick={()=>{
+                                    setNav(false) 
+                                    scrollTop()
+                                    setIsActive(false)}
+                                }
                             >
                                 {News}
                             </Link>
                             <Link 
-                            className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
-                            to="/about" 
-                            style={pathname === "/about" ? {color: "#2E9C3E"} : {}}
-                            onClick={()=>{
-                                setNav(false) 
-                                scrollTop()}
-                            }
+                                className={theme === 'dark' ? 'list__item-dark' : 'list__item-light'} 
+                                to="/about" 
+                                style={pathname === "/about" ? {color: "#2E9C3E"} : {}}
+                                onClick={()=>{
+                                    setNav(false) 
+                                    scrollTop()
+                                    setIsActive(false)}
+                                }
                             >
                                 {AboutUs}
                             </Link>   

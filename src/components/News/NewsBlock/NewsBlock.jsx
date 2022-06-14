@@ -4,8 +4,6 @@ import { content } from "./newsBlock.config";
 import {Link} from "react-router-dom";
 import moment from 'moment';
 
-import arr from './newsBlockPosts';
-
 import './NewsBlock.scss'
 
 function NewsBlock({setNewsID}) {
@@ -21,12 +19,19 @@ function NewsBlock({setNewsID}) {
 
     let news = newsPublish[newsPublish.length-1]
 
-    const [posts, setPosts] = useState(arr);
+    let posts = []
+
+    for (let i = 0; i < 5; i++) {
+        posts.push(newsPublish[i])
+    }
 
     const [show, setShow] = useState(false);
 
     const { text1, button1, button2 } = content[language];
 
+    const scrollTop = () => {
+        window.scrollTo(0, 0);
+    }
     
     return (
         <section className="news-block">
@@ -72,23 +77,38 @@ function NewsBlock({setNewsID}) {
                 </div>
                 <div className="news-block__posts">
                     {posts.map((post)=>(
-                        <div className='posts__block'>
-                            {language === "RU"
-                            ? <>
-                                <p className='posts__text'>{post.descriptionRU}</p>
-                                {show && <p className='posts__subtext'>
-                                    <div className={theme === 'dark' ? 'posts__subtext-image-dark' : 'posts__subtext-image-light'}></div>{post.peopleSearch}
-                                </p>}
-                            </>
+                        <Link 
+                            to={`/news/page/${post.id}`} 
+                            onClick={()=>{
+                                setNewsID(post.id)
+                                scrollTop()
+                            }}
+                        >
+                            <div 
+                                className={theme === 'dark' ? 'posts__block posts__block-dark' : 'posts__block posts__block-light'}
+                                key={post.id}
+                            >
+                                {language === "RU"
+                                ? <>
+                                    <p className='posts__text'>{post.titleRU}</p>
+                                    {show && 
+                                    <p className='posts__subtext'>
+                                        <div className={theme === 'dark' ? 'posts__subtext-image-dark' : 'posts__subtext-image-light'}>
+                                        </div>{15}
+                                    </p>}
+                                </>
 
-                            : <>
-                                <p className='posts__text'>{post.descriptionEN}</p>
-                                {show && <p className='posts__subtext'>
-                                    <div className={theme === 'dark' ? 'posts__subtext-image-dark' : 'posts__subtext-image-light'}></div>{post.peopleSearch}
-                                </p>}
-                            </>
-                            }
-                        </div>
+                                : <>
+                                    <p className='posts__text'>{post.titleEN}</p>
+                                    {show && 
+                                    <p className='posts__subtext'>
+                                        <div className={theme === 'dark' ? 'posts__subtext-image-dark' : 'posts__subtext-image-light'}>
+                                        </div>{15}
+                                    </p>}
+                                </>
+                                }
+                            </div>
+                        </Link>
                     ))}
                 </div>
             </div>

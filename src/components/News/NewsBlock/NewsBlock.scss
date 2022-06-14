@@ -14,6 +14,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transition: 0.5s;
+        opacity: 0.8;
+
+        &:hover {
+            opacity: 1;
+            transform: scale(1.03);
+        }
 
         .image__top {
             width: 100%;
@@ -146,10 +153,25 @@
             height: auto;
             margin-top: 20px;
 
+            .posts__block-dark {
+                color: white;
+            }
+
+            .posts__block-light {
+                color: black;
+            }
+
+
             .posts__block {
                 width: 100%;
                 border-bottom: 1px solid rgb(66, 66, 70);
                 padding: 1.25rem 0;
+                cursor: pointer;
+                transition: 0.5s;
+
+                &:hover {
+                    color: #2E9C3E;
+                }
 
                 .posts__text {
                     font-weight: 300;
