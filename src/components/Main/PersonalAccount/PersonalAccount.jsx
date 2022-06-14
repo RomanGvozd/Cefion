@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 import scrollToElement from 'scroll-to-element';
@@ -8,10 +8,11 @@ import './PersonalAccount.scss';
 
 function PersonalAccount() {
     const {hash} = useLocation();
-    const use = useLocation();
 
     useEffect(()=>{
-        scrollToElement(`${hash}`);
+        if (hash) {
+            scrollToElement(`${hash}`);
+        }
     }, [])
 
     const theme = useSelector((store) => store.theme.theme);

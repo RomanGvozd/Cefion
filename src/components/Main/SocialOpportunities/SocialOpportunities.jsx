@@ -10,7 +10,9 @@ function SocialOpportunities() {
     const {hash} = useLocation();
 
     useEffect(()=>{
-        scrollToElement(`${hash}`);
+        if (hash) {
+            scrollToElement(`${hash}`);
+        }
     }, [])
 
     const theme = useSelector((store) => store.theme.theme);
