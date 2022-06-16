@@ -1,11 +1,24 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useSelector } from "react-redux";
 import { content } from "./UserList.config";
 import { UserListArr } from "./UserList.array";
+import axios from 'axios'
 
 import "./UserList.scss";
 
 function UserList() {
+
+    const getUsers = async () => {
+        await axios.get('/api/roles/role/admin')
+        .then(res => {
+            console.log(res.data)
+        })
+    }
+
+    useEffect(()=> {
+        getUsers()
+    }, [])
+
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
