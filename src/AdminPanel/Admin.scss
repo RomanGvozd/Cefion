@@ -10,7 +10,7 @@
 
 .admin__main {
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
 
     .admin__content {
@@ -58,6 +58,33 @@
             margin: 10px 0;
         }
 
+    }
+
+}
+
+.button-back {
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .button__image-dark {
+        width: 0.75rem;
+        height: 1rem;
+        background-image: url(./image/backDark.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 1rem;
+    }
+
+    .button__image-light {
+        width: 0.75rem;
+        height: 1rem;
+        background-image: url(./image/backLight.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-right: 1rem;
     }
 
 }

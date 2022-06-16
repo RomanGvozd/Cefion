@@ -81,6 +81,48 @@
                 }
     
             }
+
+            .header__user {
+                display: flex;
+                padding-left: 2rem;
+
+                .user__image {
+                    width: 3.43rem;
+                    height: 3.43rem;
+                    object-fit: contain;
+                }
+
+                .user__info {
+                    width: auto;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 0 1rem;
+
+                    .info__name-dark {
+                        font-weight: 400;
+                        font-size: 1rem;
+                        line-height: 19px;
+                        color: rgba(255, 255, 255, 0.5);
+                    }
+
+                    .info__name-light {
+                        font-weight: 400;
+                        font-size: 1rem;
+                        line-height: 19px;
+                        color: rgba(0, 0, 0, 0.5);
+                    }
+
+                    .info__tagname {
+                        font-weight: 400;
+                        font-size: 1.12rem;
+                        line-height: 130%;
+                    }
+
+                }
+
+            }
     
         }
 

@@ -37,18 +37,23 @@ function AdminNav({handleShow, show}) {
                 ?<h4 className={show ? "management__title" : "management__title management__title-active"}>
                     {CefionManagement}
                 </h4>
-                :<h4 className={show ? "management__title" : "management__title management__title-active"}></h4>
+                :<h4 className={show ? "management__title" : "management__title management__title-active"}>
+                </h4>
                 }
                 <nav className="management__nav">
                     {buttons.map((button)=>(
                     <Link to={button.link} key={button.id}>
                         <button 
-                            className={theme === "dark" ? "nav__button nav__button-dark" : "nav__button nav__button-light"}
+                            className={theme === "dark" ? "nav__button background-dark" : "nav__button background-light"}
                             style={pathname === `${button.link}` ? {color: "#2E9C3E", border: "1px solid #2E9C3E"} : {}}
                             // style={show ? {} : {justifyContent: `center`}}
                             
                         >
-                            <img className="button__image" src={require(`${button.image}`)} alt="" />
+                            {theme === "dark"
+                            ? <img className="button__image" src={require(`${button.imageDark}`)} alt="" />
+                            : <img className="button__image" src={require(`${button.imageLight}`)} alt="" />
+                            }
+
                             {language === "RU" && show ? <p className="button__text">{button.textRU}</p> : <></>}
                             {language === "EN" && show ? <p className="button__text">{button.textEN}</p> : <></>}
                         </button>
@@ -56,8 +61,11 @@ function AdminNav({handleShow, show}) {
                     ))}
                 </nav>
                 <Link to="/">
-                    <button className={theme === "dark" ? "button__end button__end-dark" : "button__end button__end-light"}>
-                        <img src={require(`./imageButton/end.svg`).default} alt="" />
+                    <button className={theme === "dark" ? "button__end background-dark" : "button__end background-light"}>
+                        {theme === "dark"
+                        ? <img src={require(`./imageButton/endDark.svg`).default} alt="" />
+                        : <img src={require(`./imageButton/endLight.svg`).default} alt="" />
+                        }
                         { show && <p className="button__text">{EndSession}</p>}
                     </button>
                 </Link>
@@ -65,5 +73,6 @@ function AdminNav({handleShow, show}) {
         </aside>
     )
 }
+
 
 export default AdminNav;

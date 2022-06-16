@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { content } from "./NewsCreate.config";
+import TextEditorLow from "../../TextEditorLow/TextEditor";
+import TextEditor from "../../TextEditor/TextEditor";
 
 import SelectNewsGroup from "../SelectNewsGroup/SelectNewsGroup";
 
@@ -90,6 +92,43 @@ function NewsCreate() {
                     value={titleValueEN}
                     onChange={(e)=>setTitleValueEN(e.target.value)}
                 />
+                <div className="news-create__tags-wrapper">
+                    <div className="tags-wrapper__input-wrapper">
+                        <input 
+                            className={theme === "dark" ? "tags-wrapper__input background-dark" : "tags-wrapper__input background-light"}
+                            type="text"
+                            placeholder={AddHashtag}
+                            value={inputTagsValue}
+                            onChange={(e)=>setInputTagsValue(e.target.value)}
+                        >
+
+                        </input>
+                        <button 
+                            className={theme === "dark" ? "input__button background-dark" : "input__button background-light"}
+                            onClick={handleAddTag}
+                        >
+                            +
+                        </button>
+                    </div>
+                    <div className="tags-wrapper">
+                        {tags.map((tag)=>(
+                            <div 
+                                key={tag} 
+                                className={theme === "dark" ? "tags background-dark" : "tags background-light"}
+                                onClick={()=>handleDeleteTag(tag)}
+                            >
+                                {tag}
+                            </div>
+                        ))}
+                    </div>
+                    <SelectNewsGroup 
+                        selected={selected} 
+                        setSelected={setSelected}
+                        options={options}
+                        theme={theme}
+                        language={language}
+                    />
+                </div>
                 <button 
                     className="form__button"
                     onClick={handleAddReview}
@@ -111,58 +150,31 @@ function NewsCreate() {
                     </button>
                 </div> 
             </div>
-            <div className="news-create__tags-wrapper">
-                <div className="tags-wrapper__input-wrapper">
-                    <input 
-                        className={theme === "dark" ? "tags-wrapper__input background-dark" : "tags-wrapper__input background-light"}
-                        type="text"
-                        placeholder={AddHashtag}
-                        value={inputTagsValue}
-                        onChange={(e)=>setInputTagsValue(e.target.value)}
-                    >
-
-                    </input>
-                    <button 
-                        className={theme === "dark" ? "input__button background-dark" : "input__button background-light"}
-                        onClick={handleAddTag}
-                    >
-                        +
-                    </button>
-                </div>
-                <div className="tags-wrapper">
-                    {tags.map((tag)=>(
-                        <div 
-                            key={tag} 
-                            className={theme === "dark" ? "tags background-dark" : "tags background-light"}
-                            onClick={()=>handleDeleteTag(tag)}
-                        >
-                            {tag}
-                        </div>
-                    ))}
-                </div>
-                <SelectNewsGroup 
-                    selected={selected} 
-                    setSelected={setSelected}
-                    options={options}
-                    theme={theme}
-                    language={language}
-                />
-            </div>
             <div className="news-create__textarea-wrapper">
-                <textarea 
+                <h4 className="textarea-wrapper__title">{textareaRU}</h4>
+                <TextEditor 
+                    value={descriptionValueRU}
+                    setValue={setDescriptionValueRU}
+                />
+                {/* <textarea 
                     className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
                     placeholder={textareaRU}
                     value={descriptionValueRU}
                     onChange={(e)=>setDescriptionValueRU(e.target.value)}
                 >
-                </textarea>
-                <textarea 
+                </textarea> */}
+                <h4 className="textarea-wrapper__title">{textareaEN}</h4>
+                <TextEditor
+                    value={descriptionValueEN}
+                    setValue={setDescriptionValueEN}
+                />
+                {/* <textarea 
                     className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
                     placeholder={textareaEN}
                     value={descriptionValueEN}
                     onChange={(e)=>setDescriptionValueEN(e.target.value)}
                 >
-                </textarea>
+                </textarea> */}
             </div>
 
         </section>

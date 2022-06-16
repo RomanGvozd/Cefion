@@ -3,6 +3,8 @@ import {useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 import { content } from "./NewsEditDraft.config";
 
+import TextEditor from "../../TextEditor/TextEditor";
+
 import { addItemReview } from '../../../common/store/newsReview/actions';
 import { deleteItem } from "../../../common/store/newsDrafts/actions";
 import { editItemDrafts } from "../../../common/store/newsDrafts/actions";
@@ -71,104 +73,127 @@ function NewsEditDraft({newsID}) {
     }
     
     return(
-        <section className="news-edit">
-             <div 
-                className="news-edit__form"
-            >
-                <label 
-                    className={theme === "dark" ? "form__input-file background-dark" : "form__input-file background-light"} 
+        <>
+            <Link to="/admin/news/drafts">
+                <button 
+                    className={theme === "dark" ? "button-back background-dark" : "button-back background-light"}
                 >
-                    <p>{DownloadCover}</p>
-                    <input style={{visibility: `hidden`}} type="file" />
-                </label>
-                <input 
-                    className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
-                    type="text" 
-                    placeholder={InputRU}
-                    value={titleValueRU}
-                    onChange={(e)=>setTitleValueRU(e.target.value)}
-                />
-                <input 
-                    className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
-                    type="text" 
-                    placeholder={InputEN}
-                    value={titleValueEN}
-                    onChange={(e)=>setTitleValueEN(e.target.value)}
-                />
-                <Link to={`/admin/news/drafts`} >
-                    <button 
-                        className="form__button"
-                        onClick={handleAddReview}
+                    <div className={theme === "dark" ? "button__image-dark" : "button__image-light"}></div>
+                    {language === "RU"
+                    ? "Назад"
+                    : "Back"
+                    }
+                </button>
+            </Link>
+            <section className="news-edit">
+                <div 
+                    className="news-edit__form"
+                >
+                    <label 
+                        className={theme === "dark" ? "form__input-file background-dark" : "form__input-file background-light"} 
                     >
-                        {Button}
-                    </button>
-                </Link>
-                <div className="form__wrapper-button">
-                    <button 
-                        className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"}
-                        onClick={handleCancel}
-                    >
-                        {Clear}
-                    </button>
-                    <Link to={`/admin/news/drafts`} className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"} onClick={handleEdit}>
-                        {Save}
-                    </Link>
-                </div> 
-            </div>
-            <div className="news-create__tags-wrapper">
-                <div className="tags-wrapper__input-wrapper">
+                        <p>{DownloadCover}</p>
+                        <input style={{visibility: `hidden`}} type="file" />
+                    </label>
                     <input 
-                        className={theme === "dark" ? "tags-wrapper__input background-dark" : "tags-wrapper__input background-light"}
-                        type="text"
-                        placeholder={AddHashtag}
-                        value={inputTagsValue}
-                        onChange={(e)=>setInputTagsValue(e.target.value)}
-                    >
+                        className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
+                        type="text" 
+                        placeholder={InputRU}
+                        value={titleValueRU}
+                        onChange={(e)=>setTitleValueRU(e.target.value)}
+                    />
+                    <input 
+                        className={theme === "dark" ? "form__input background-dark" : "form__input background-light"} 
+                        type="text" 
+                        placeholder={InputEN}
+                        value={titleValueEN}
+                        onChange={(e)=>setTitleValueEN(e.target.value)}
+                    />
+                        <div className="news-create__tags-wrapper">
+                            <div className="tags-wrapper__input-wrapper">
+                                <input 
+                                    className={theme === "dark" ? "tags-wrapper__input background-dark" : "tags-wrapper__input background-light"}
+                                    type="text"
+                                    placeholder={AddHashtag}
+                                    value={inputTagsValue}
+                                    onChange={(e)=>setInputTagsValue(e.target.value)}
+                                >
 
-                    </input>
-                    <button 
-                        className={theme === "dark" ? "input__button background-dark" : "input__button background-light"}
-                        onClick={handleAddTag}
-                    >
-                        +
-                    </button>
-                </div>
-                <div className="tags-wrapper">
-                    {tags.map((tag)=>(
-                        <div 
-                            key={tag} 
-                            className={theme === "dark" ? "tags background-dark" : "tags background-light"}
-                            onClick={()=>handleDeleteTag(tag)}
-                        >
-                            {tag}
+                                </input>
+                                <button 
+                                    className={theme === "dark" ? "input__button background-dark" : "input__button background-light"}
+                                    onClick={handleAddTag}
+                                >
+                                    +
+                                </button>
+                            </div>
+                            <div className="tags-wrapper">
+                                {tags.map((tag)=>(
+                                    <div 
+                                        key={tag} 
+                                        className={theme === "dark" ? "tags background-dark" : "tags background-light"}
+                                        onClick={()=>handleDeleteTag(tag)}
+                                    >
+                                        {tag}
+                                    </div>
+                                ))}
+                            </div>
+                            <SelectNewsGroup 
+                                selected={selected} 
+                                setSelected={setSelected}
+                                options={options}
+                                theme={theme}
+                                language={language}
+                            />
                         </div>
-                    ))}
+                    <Link to={`/admin/news/drafts`} >
+                        <button 
+                            className="form__button"
+                            onClick={handleAddReview}
+                        >
+                            {Button}
+                        </button>
+                    </Link>
+                    <div className="form__wrapper-button">
+                        <button 
+                            className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"}
+                            onClick={handleCancel}
+                        >
+                            {Clear}
+                        </button>
+                        <Link to={`/admin/news/drafts`} className={theme === "dark" ? "wrapper-button__button background-dark" : "wrapper-button__button background-light"} onClick={handleEdit}>
+                            {Save}
+                        </Link>
+                    </div> 
                 </div>
-                <SelectNewsGroup 
-                    selected={selected} 
-                    setSelected={setSelected}
-                    options={options}
-                    theme={theme}
-                    language={language}
-                />
-            </div>
-            <div className="news-create__textarea-wrapper">
-                <textarea 
-                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                    placeholder={textareaRU}
-                    value={descriptionValueRU}
-                    onChange={(e)=>setDescriptionValueRU(e.target.value)}
-                >
-                </textarea>
-                <textarea 
-                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                    placeholder={textareaEN}
-                    value={descriptionValueEN}
-                    onChange={(e)=>setDescriptionValueEN(e.target.value)}
-                >
-                </textarea>
-            </div>
-        </section>
+                <div className="news-create__textarea-wrapper">
+                    <h4 className="textarea-wrapper__title">{textareaRU}</h4>
+                    <TextEditor 
+                        value={descriptionValueRU}
+                        setValue={setDescriptionValueRU}
+                    />
+                    {/* <textarea 
+                        className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
+                        placeholder={textareaRU}
+                        value={descriptionValueRU}
+                        onChange={(e)=>setDescriptionValueRU(e.target.value)}
+                    >
+                    </textarea> */}
+                    <h4 className="textarea-wrapper__title">{textareaEN}</h4>
+                    <TextEditor 
+                        value={descriptionValueEN}
+                        setValue={setDescriptionValueEN}
+                    />
+                    {/* <textarea 
+                        className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
+                        placeholder={textareaEN}
+                        value={descriptionValueEN}
+                        onChange={(e)=>setDescriptionValueEN(e.target.value)}
+                    >
+                    </textarea> */}
+                </div>
+            </section>
+        </>
     )
 }
 

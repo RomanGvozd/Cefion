@@ -53,11 +53,15 @@ function NewsPageContent({newsID}) {
 
                         <img className='content__image' src={require('./image/newsPageImage.png')} alt="" />
                         {language === "RU"
-                        ?<p className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}>
-                            {news.descriptionRU}
+                        ?<p 
+                            className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}
+                            dangerouslySetInnerHTML={{__html: `${news.descriptionRU}`}}
+                        >
                         </p>
-                        :<p className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}>
-                            {news.descriptionEN}
+                        :<p 
+                            className={theme === 'dark' ? 'content__text-dark' : 'content__text-light'}
+                            dangerouslySetInnerHTML={{__html: `${news.descriptionEN}`}}
+                        >
                         </p>
                         }
 

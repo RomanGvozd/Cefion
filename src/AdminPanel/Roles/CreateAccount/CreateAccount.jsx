@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useSelector} from "react-redux";
 import { content } from "./CreateAccount.config";
+import axios from 'axios'
 
 import arr from './rolesArray';
 
@@ -44,9 +45,24 @@ function CreateAccount() {
             password: password,
             roles: resutRoles,
         }
-        console.log(result)
+
+        // axios.post('/api/auth/registration', {
+        //     name: name,
+        //     tegName: `@${tegName.join('')}`,
+        //     password: password,
+        //     roles: resutRoles,
+        // })
+        // .then((response) => {
+        //     console.log(response);
+
+        // }, (error) => {
+        //     console.log(error);
+
+        // });
 
     }
+
+
 
 
     return(

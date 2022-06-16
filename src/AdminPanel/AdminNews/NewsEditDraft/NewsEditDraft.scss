@@ -68,8 +68,9 @@
     }
 
     .news-create__tags-wrapper {
-        width: 25%;
+        width: 100%;
         height: 100%;
+        margin-top: 1rem;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -127,10 +128,16 @@
     }
 
     .news-create__textarea-wrapper {
-        width: 41%;
+        width: 66%;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+
+        .textarea-wrapper__title {
+            font-weight: 300;
+            font-size: 1.25rem;
+            line-height: 138%;
+            padding-bottom: 1rem;
+        }
         
         .news-create__textarea {
             width: 100%;

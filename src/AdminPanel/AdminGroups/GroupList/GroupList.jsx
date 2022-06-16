@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { Link, Routes, Route, useLocation } from "react-router-dom";
 
-import ModalSubmit from "./ModalSubmit/ModalSubmit";
+import ModalSubmit from "../../ModalSubmit/ModalSubmit";
 
 import { deleteItem } from "../../../common/store/groups/actions";
 
@@ -15,6 +15,7 @@ function GroupList() {
     const dispatch = useDispatch();
 
     const [show, setShow] = useState(false);
+    const [groupID, setGroupId] = useState('');
     const {pathname} = useLocation();
 
     const handleDelete = (id) => {
@@ -30,14 +31,17 @@ function GroupList() {
                 >
                     <button 
                         className={theme === "dark" ? "group__delete background-dark" : "group__delete background-light"}
-                        onClick={()=>handleDelete(group.id)}
+                        onClick={()=>{
+                            setShow(true)
+                            setGroupId(group.id)
+                        }}
                     >
                         <div className="group__delete-image"></div>
                     </button>
                     <img className="group__image" src={require('./image/groupImage.png')} alt="" />
                     <h6 className="group__title">{group.title}</h6>
                     <p className={theme === "dark" ? "group__description-dark" : "group__description-light"}>{group.description}</p>
-                    {/* {show && <ModalSubmit group={group} setShow={setShow} handleDelete={handleDelete}/>} */}
+                    {(show && groupID === group.id) && <ModalSubmit item={group} setShow={setShow} handleDelete={handleDelete}/>}
                 </div>
             ))}
 

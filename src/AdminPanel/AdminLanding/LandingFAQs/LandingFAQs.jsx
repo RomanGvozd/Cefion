@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import { content } from "./LandingFAQs.config";
+import { Link } from "react-router-dom";
 
 import {showItem} from '../../../common/store/faqs/actions';
 import {addItem} from '../../../common/store/faqs/actions';
@@ -36,70 +37,83 @@ function LandingFAQs() {
     }
 
     return(
-        <section className="landing-faqs">
-            <div className="landing-faqs__aside">
-                <input 
-                    className={theme === "dark" ? "aside__input background-dark" : "aside__input background-light"}
-                    type="text"
-                    placeholder={inputRU}
-                    value={inputValueRU}
-                    onChange={(e)=>setInputValueRU(e.target.value)}
-                />
-                <textarea
-                    className={theme === "dark" ? "aside__textarea background-dark" : "aside__textarea background-light"}
-                    placeholder={textareaRU}
-                    value={textareaValueRU}
-                    onChange={(e)=>setTextareatValueRU(e.target.value)}
-                >
-                </textarea>
-                <input 
-                    className={theme === "dark" ? "aside__input background-dark" : "aside__input background-light"}
-                    type="text"
-                    placeholder={inputEN}
-                    value={inputValueEN}
-                    onChange={(e)=>setInputValueEN(e.target.value)}
-                />
-                <textarea
-                    className={theme === "dark" ? "aside__textarea background-dark" : "aside__textarea background-light"}
-                    placeholder={textareaEN}
-                    value={textareaValueEN}
-                    onChange={(e)=>setTextareaValueEN(e.target.value)}
-                >
-                </textarea>
+        <>
+            <Link to="/admin/landing">
                 <button 
-                    className={theme === "dark" ? "aside__button background-dark" : "aside__button background-light"}
-                    onClick={handleAdd}
+                    className={theme === "dark" ? "button-back background-dark" : "button-back background-light"}
                 >
-                    {button}
+                    <div className={theme === "dark" ? "button__image-dark" : "button__image-light"}></div>
+                    {language === "RU"
+                    ? "Назад"
+                    : "Back"
+                    }
                 </button>
-            </div>
-            <div className="landing-faqs__aside-faqs">
-                {faqs.map((question)=>(
-                    <div 
-                        className={question.isShow ? 'find-question__block find-question__block-active' : 'find-question__block'} 
-                        key={question.id} 
-                        onClick={()=>handleOpen(question.id)}
+            </Link>
+            <section className="landing-faqs">
+                <div className="landing-faqs__aside">
+                    <input 
+                        className={theme === "dark" ? "aside__input background-dark" : "aside__input background-light"}
+                        type="text"
+                        placeholder={inputRU}
+                        value={inputValueRU}
+                        onChange={(e)=>setInputValueRU(e.target.value)}
+                    />
+                    <textarea
+                        className={theme === "dark" ? "aside__textarea background-dark" : "aside__textarea background-light"}
+                        placeholder={textareaRU}
+                        value={textareaValueRU}
+                        onChange={(e)=>setTextareatValueRU(e.target.value)}
                     >
-                        <div className='button-delete' onClick={()=>handleDelete(question.id)}>
-                        </div>
-                        <div className='block__header'>
-                            {language === "RU"
-                            ? <h5 className={question.isShow ? 'block__title block__title-active' : 'block__title'}>{question.titleRU}</h5>
-                            : <h5 className={question.isShow ? 'block__title block__title-active' : 'block__title'}>{question.titleEN}</h5>
+                    </textarea>
+                    <input 
+                        className={theme === "dark" ? "aside__input background-dark" : "aside__input background-light"}
+                        type="text"
+                        placeholder={inputEN}
+                        value={inputValueEN}
+                        onChange={(e)=>setInputValueEN(e.target.value)}
+                    />
+                    <textarea
+                        className={theme === "dark" ? "aside__textarea background-dark" : "aside__textarea background-light"}
+                        placeholder={textareaEN}
+                        value={textareaValueEN}
+                        onChange={(e)=>setTextareaValueEN(e.target.value)}
+                    >
+                    </textarea>
+                    <button 
+                        className={theme === "dark" ? "aside__button background-dark" : "aside__button background-light"}
+                        onClick={handleAdd}
+                    >
+                        {button}
+                    </button>
+                </div>
+                <div className="landing-faqs__aside-faqs">
+                    {faqs.map((question)=>(
+                        <div 
+                            className={question.isShow ? 'find-question__block find-question__block-active' : 'find-question__block'} 
+                            key={question.id} 
+                            onClick={()=>handleOpen(question.id)}
+                        >
+                            <div className='button-delete' onClick={()=>handleDelete(question.id)}>
+                            </div>
+                            <div className='block__header'>
+                                {language === "RU"
+                                ? <h5 className={question.isShow ? 'block__title block__title-active' : 'block__title'}>{question.titleRU}</h5>
+                                : <h5 className={question.isShow ? 'block__title block__title-active' : 'block__title'}>{question.titleEN}</h5>
+                                }
+                            </div>
+                            {question.isShow === true && language === "RU" 
+                            ? <p className='block__text'>{question.descriptionRU}</p>
+                            : <></>
+                            }
+                            {question.isShow === true && language === "EN" 
+                            ? <p className='block__text'>{question.descriptionEN}</p>
+                            : <></>
                             }
                         </div>
-                        {question.isShow === true && language === "RU" 
-                        ? <p className='block__text'>{question.descriptionRU}</p>
-                        : <></>
-                        }
-                        {question.isShow === true && language === "EN" 
-                        ? <p className='block__text'>{question.descriptionEN}</p>
-                        : <></>
-                        }
-                    </div>
-                ))}
-            </div>
-        </section>
+                    ))}
+                </div>
+            </section>
+        </>
     )
 }
 

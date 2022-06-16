@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import ModalSubmit from "../../ModalSubmit/ModalSubmit";
 
 import { deleteItem } from "../../../common/store/newsPublish/actions";
 
@@ -19,6 +20,9 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
+
+    const [show, setShow] = useState(false);
+    const [newsID, setNewsId] = useState('');
 
     const handleDelete = (id) => {
         dispatch(deleteItem(id))
@@ -41,7 +45,10 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
                     </Link>
                     <button 
                         className={theme === "dark" ? "news__delete background-dark" : "news__delete background-light"}
-                        onClick={()=>handleDelete(item.id)}
+                        onClick={()=>{
+                            setShow(true)
+                            setNewsId(item.id)
+                        }}
                     >
                         <div className="news__delete-image"></div>
                     </button>
@@ -67,6 +74,13 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
                     <p className={theme === "dark" ? "news__description-dark" : "news__description-light"}>
                         {news.descriptionRU}
                     </p>
+                    <div className="news__footer">
+                        <img className="footer__icon" src={require(`./image/searchDark.svg`).default} alt="" />
+                        <p className="footer__text">0</p>
+                        <img className="footer__icon" src={require(`./image/hashtagDark.svg`).default} alt="" />
+                        <p className="footer__text">0</p>
+                    </div>
+                    {(show && newsID === item.id) && <ModalSubmit item={item} setShow={setShow} handleDelete={handleDelete}/>}
                 </div>
             ))}
         </section>

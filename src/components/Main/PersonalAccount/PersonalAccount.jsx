@@ -3,6 +3,7 @@ import {useSelector} from "react-redux";
 import { motion } from "framer-motion";
 import scrollToElement from 'scroll-to-element';
 import { useLocation } from "react-router-dom";
+import { content } from "./PersonalAccount.config";
 
 import './PersonalAccount.scss';
 
@@ -31,6 +32,8 @@ function PersonalAccount() {
         })
     }
 
+    const {title, description1, description2, description3, description4, button} = content[language]
+
     return(
         <>
             <motion.section
@@ -58,40 +61,22 @@ function PersonalAccount() {
                 }
                 <div className="personal-account__description">
                     <h2 className="description__title">
-                        {language === "RU"
-                        ? "Личный аккаунт"
-                        : "Personal account"
-                        }
+                        {title}
                     </h2>
                     <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>
-                        {language === "RU"
-                        ? "Создайте учётную запись на платформе, где уважают личные границы. Подпишитесь на перспективных партнёров, друзей, новых знакомых."
-                        : "Create an account on a platform that respects personal boundaries. Subscribe to promising partners, friends, and new acquaintances."
-                        }
+                        {description1}
                     </p>
                     <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>
-                        {language === "RU"
-                        ? "В Cefion есть расширенные возможности по настройке безопасности и конфиденциальности аккаунта. Включите 2FA и экран безопасности, придумайте проверочную фразу для входа."
-                        : "Cefion has advanced options for configuring account security and privacy. Turn on 2FA and the security screen and create a passphrase to enter."
-                        }
+                        {description2}
                     </p>
                     <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>
-                        {language === "RU"
-                        ? "Спрячьте от других пользователей кошелёк, подписчиков и статистику. На платформе создана атмосфера анонимности и уважения к личной информации."
-                        : "Hide your wallet, subscribers, and statistics from other users. The platform has an atmosphere of anonymity and respect for personal information."
-                        }
+                        {description3}
                     </p>
                     <p className={theme === "dark" ? "description__text-dark" : "description__text-light"}>
-                        {language === "RU"
-                        ? "Управляйте своим инвестиционным портфелем и делитесь достижениями в приложении!"
-                        : "Manage your investment portfolio and share your achievements in the app!"
-                        }
+                        {description4}
                     </p>
                     <button className="description__button">
-                        {language === "RU"
-                        ? "Давайте начнем"
-                        : "Let's start"
-                        }
+                        {button}
                     </button>
                 </div>
             </motion.section>

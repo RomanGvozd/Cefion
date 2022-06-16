@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
+import { Link } from "react-router-dom";
 
 import AdminBlocksItem from "./AdminBlocksItem/AdminBlocksItem";
 
@@ -28,47 +29,61 @@ function LandingRoadmap() {
     }
 
     return(
-        <section className="landing-roadmap">
-            <div className="landing-roadmap__block-left">
-                <input 
-                    className={theme === "dark" ? "block-left__input background-dark" : "block-left__input background-light"} 
-                    type="text" 
-                    placeholder={language === "RU" ? "Введите заголовок" : "Enter title"}
-                    onChange={(e)=>setInputValue(e.target.value)}
-                    value={inputValue}
-                />
-                <textarea 
-                    className={theme === "dark" ? "block-left__texarea background-dark" : "block-left__texarea background-light"} 
-                    placeholder={language === "RU" ? "Введите описание на русском" : "Enter a description in Russian"}
-                    onChange={(e)=>setTextareaValueRU(e.target.value)}
-                    value={textareaValueRU}
+        <>
+            <Link to="/admin/landing">
+                <button 
+                    className={theme === "dark" ? "button-back background-dark" : "button-back background-light"}
                 >
-                </textarea>
-                <textarea 
-                    className={theme === "dark" ? "block-left__texarea background-dark" : "block-left__texarea background-light"} 
-                    placeholder={language === "RU" ? "Введите описание на английском" : "Enter a description in English"}
-                    onChange={(e)=>setTextareaValueEN(e.target.value)}
-                    value={textareaValueEN}
-                >
-                </textarea>
-            </div>
-            <div className="landing-roadmap__block-right">
-                <button
-                    className={theme === "dark" ? "block-right__button background-dark" : "block-right__button background-light"}
-                    onClick={handleAdd}
-                >
+                    <div className={theme === "dark" ? "button__image-dark" : "button__image-light"}></div>
                     {language === "RU"
-                    ? "Новый раздел +"
-                    : "New section +"
+                    ? "Назад"
+                    : "Back"
                     }
                 </button>
-                <div className="landing-roadmap__block-roadmap">
-                    {roadmap.map((block)=>(
-                        <AdminBlocksItem key={block.id} block={block} onDelete={handleDelete}/>
-                    ))}
+            </Link>
+            <section className="landing-roadmap">
+                <div className="landing-roadmap__block-left">
+                    <input 
+                        className={theme === "dark" ? "block-left__input background-dark" : "block-left__input background-light"} 
+                        type="text" 
+                        placeholder={language === "RU" ? "Введите заголовок" : "Enter title"}
+                        onChange={(e)=>setInputValue(e.target.value)}
+                        value={inputValue}
+                    />
+                    <textarea 
+                        className={theme === "dark" ? "block-left__texarea background-dark" : "block-left__texarea background-light"} 
+                        placeholder={language === "RU" ? "Введите описание на русском" : "Enter a description in Russian"}
+                        onChange={(e)=>setTextareaValueRU(e.target.value)}
+                        value={textareaValueRU}
+                    >
+                    </textarea>
+                    <textarea 
+                        className={theme === "dark" ? "block-left__texarea background-dark" : "block-left__texarea background-light"} 
+                        placeholder={language === "RU" ? "Введите описание на английском" : "Enter a description in English"}
+                        onChange={(e)=>setTextareaValueEN(e.target.value)}
+                        value={textareaValueEN}
+                    >
+                    </textarea>
                 </div>
-            </div>
-        </section>
+                <div className="landing-roadmap__block-right">
+                    <button
+                        className={theme === "dark" ? "block-right__button background-dark" : "block-right__button background-light"}
+                        onClick={handleAdd}
+                    >
+                        {language === "RU"
+                        ? "Новый раздел +"
+                        : "New section +"
+                        }
+                    </button>
+                    <div className="landing-roadmap__block-roadmap">
+                        {roadmap.map((block)=>(
+                            <AdminBlocksItem key={block.id} block={block} onDelete={handleDelete}/>
+                        ))}
+                    </div>
+                </div>
+            </section>
+        </>
+
     )
 }
 

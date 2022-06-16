@@ -1,0 +1,37 @@
+
+.ck-rounded-corners .ck.ck-editor__top .ck-sticky-panel .ck-toolbar, .ck.ck-editor__top .ck-sticky-panel .ck-toolbar.ck-rounded-corners {
+    background: #1C1C1E;
+    border: 1px solid #424246;
+    border-radius: 0.62rem 0.62rem 0 0;
+    color: white;
+}
+
+.ck.ck-button:not(.ck-disabled):active, a.ck.ck-button:not(.ck-disabled):active {
+    background: #424246;
+    box-shadow: inset 0 2px 2px var(--ck-color-button-default-active-shadow);
+}
+
+.ck.ck-button:not(.ck-disabled):hover, a.ck.ck-button:not(.ck-disabled):hover {
+    background-color: #1C1C1E;
+    cursor: pointer;
+}
+
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused) {
+    min-height: 16.7rem;
+    background: #1C1C1E;
+    border: 1px solid #424246;
+    border-radius: 0 0 0.62rem 0.62rem;
+    color: white;
+}
+
+.ck-rounded-corners .ck.ck-editor__main>.ck-editor__editable, .ck.ck-editor__main>.ck-editor__editable.ck-rounded-corners {
+    min-height: 16.7rem;
+    background: #1C1C1E;
+    border: 1px solid #424246;
+    border-radius: 0 0 0.62rem 0.62rem;
+    color: white;
+}
+
+.text-editor {
+    margin-bottom: 1rem;
+}

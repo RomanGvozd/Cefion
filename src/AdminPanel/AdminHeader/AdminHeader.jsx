@@ -53,6 +53,17 @@ function AdminHeader() {
                     >
                     </div>
                 </button>
+                <div className="header__user">
+                    <img className="user__image" src={require(`./images/user.png`)} alt="" />
+                    <div className="user__info">
+                        <p className={theme === "dark" ? "info__name-dark" : "info__name-light"}>
+                            Name Surname
+                        </p>
+                        <p className="info__tagname">
+                            @marcelosalomao
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
