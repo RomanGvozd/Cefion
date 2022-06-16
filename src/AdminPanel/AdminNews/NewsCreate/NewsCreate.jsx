@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { content } from "./NewsCreate.config";
-import TextEditorLow from "../../TextEditorLow/TextEditor";
 import TextEditor from "../../TextEditor/TextEditor";
 
 import SelectNewsGroup from "../SelectNewsGroup/SelectNewsGroup";

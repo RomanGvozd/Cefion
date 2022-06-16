@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import {useSelector} from "react-redux";
 import { content } from "./CreateAccount.config";
 import axios from 'axios'
@@ -8,6 +8,7 @@ import arr from './rolesArray';
 import './CreateAccount.scss';
 
 function CreateAccount() {
+
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
@@ -39,31 +40,24 @@ function CreateAccount() {
             tegName.push(item.toLowerCase())
             
         })
-        const result = {
+        const user = {
             name: name,
             tegName: `@${tegName.join('')}`,
             password: password,
             roles: resutRoles,
         }
 
-        // axios.post('/api/auth/registration', {
-        //     name: name,
-        //     tegName: `@${tegName.join('')}`,
-        //     password: password,
-        //     roles: resutRoles,
-        // })
-        // .then((response) => {
-        //     console.log(response);
+        axios.post('/api/auth/registration', {user})
+            .then((response) => {
+                console.log(response);
+                console.log(response.data);
+                
+            }, (error) => {
+                console.log(error);
 
-        // }, (error) => {
-        //     console.log(error);
-
-        // });
+            });
 
     }
-
-
-
 
     return(
         <div className="create-account">

@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import { content } from "./LandingMedia.config";
 import { Link } from "react-router-dom";
 
+import TextEditor from '../../TextEditor/TextEditor';
+
 import {addItem} from '../../../common/store/team/actions';
 import {deleteItem} from '../../../common/store/team/actions';
 
@@ -35,7 +37,7 @@ function LandingAbout() {
     return(
         <>
             <Link to="/admin/landing">
-                <button 
+                <button
                     className={theme === "dark" ? "button-back background-dark" : "button-back background-light"}
                 >
                     <div className={theme === "dark" ? "button__image-dark" : "button__image-light"}></div>
@@ -56,33 +58,33 @@ function LandingAbout() {
                 </div>
                 <div className="landing-about__main">
                     <div className="block-about">
-                        1
+                        <TextEditor/>
                     </div>
                     <div className="block-team">
                         <div className='block-command__card-input'>
-                            <label 
+                            <label
                                 className={theme === "dark" ? "input-file background-dark" : "input-file background-light"}
                             >
                                 <div className='input-file-vector'></div>
                                 <input style={{visibility: `hidden`}} type="file"/>
                             </label>
-                            <input 
+                            <input
                                 className={theme === "dark" ? "input background-dark" : "input background-light"} 
-                                type="text" 
+                                type="text"
                                 placeholder={inputRU}
                                 value={inputNameRU}
                                 onChange={(e)=>setInputNameRU(e.target.value)}
                             />
-                            <input 
+                            <input
                                 className={theme === "dark" ? "input background-dark" : "input background-light"} 
-                                type="text" 
+                                type="text"
                                 placeholder={inputEN}
                                 value={inputNameEN}
                                 onChange={(e)=>setInputNameEN(e.target.value)}
                             />
-                            <input 
+                            <input
                                 className={theme === "dark" ? "input background-dark" : "input background-light"} 
-                                type="text" 
+                                type="text"
                                 placeholder={input}
                                 value={inputSpecialization}
                                 onChange={(e)=>setInputSpecialization(e.target.value)}
