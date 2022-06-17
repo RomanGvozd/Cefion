@@ -7,11 +7,11 @@ import axios from 'axios'
 import "./UserList.scss";
 
 function UserList() {
-
+    
     const getUsers = async () => {
-        await axios.get('/api/roles/role/admin')
+        await axios.get('/api/roles/page')
         .then(res => {
-            console.log(res.data)
+            console.log(res)
         })
     }
 
@@ -19,13 +19,14 @@ function UserList() {
         getUsers()
     }, [])
 
+    const users = useSelector((store) => store.users);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
     const {Administration, Users} = content[language];
 
-    const filterUser = UserListArr.filter( (user)=> user.roles[0] === "User")
-    const filterAdministration = UserListArr.filter( (user)=> user.roles[0] !== "User")
+    const filterUser = users.filter( (user)=> user.roles[0] === "user")
+    const filterAdministration = users.filter( (user)=> user.roles[0] !== "user")
 
     return(
         <div className={theme === "dark" ? "user-list user-list-dark" : "user-list user-list-light"}>

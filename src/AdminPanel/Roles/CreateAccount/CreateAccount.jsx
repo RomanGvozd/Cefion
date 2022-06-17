@@ -47,7 +47,12 @@ function CreateAccount() {
             roles: resutRoles,
         }
 
-        axios.post('/api/auth/registration', {user})
+        axios.post('https://cefion.vercel.app/api/auth/registration', {
+            name: name,
+            tegName: `@${tegName.join('')}`,
+            password: password,
+            roles: resutRoles,
+        })
             .then((response) => {
                 console.log(response);
                 console.log(response.data);
