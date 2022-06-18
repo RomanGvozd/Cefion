@@ -1,4 +1,4 @@
-export const buttons = [
+export let buttons = [
     {
         id: 1,
         link: "/admin/roles",

@@ -15,6 +15,9 @@ import SelectNewsGroup from "../SelectNewsGroup/SelectNewsGroup";
 import './NewsEditReview.scss';
 
 function NewsEditReview({newsID}) {
+    const currentUser = useSelector((store) => store.currentUser);
+    let filteredRoles = currentUser.roles.includes("superadmin") || currentUser.roles.includes("redactor")
+
     const newsPage = useSelector((store) => store.newsReview);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
@@ -146,14 +149,14 @@ function NewsEditReview({newsID}) {
                             language={language}
                         />
                     </div>
-                    <Link to={`/admin/news/review`} >
+                    {filteredRoles && <Link to={`/admin/news/review`} >
                         <button 
                             className="form__button"
                             onClick={handleAddReview}
                         >
                             {Publish}
                         </button>
-                    </Link>
+                    </Link>}
                     <div className="form__wrapper-button">
                         <Link 
                             to={`/admin/news/review`} 
@@ -173,25 +176,11 @@ function NewsEditReview({newsID}) {
                         value={descriptionValueRU}
                         setValue={setDescriptionValueRU}
                     />
-                    {/* <textarea 
-                        className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                        placeholder={textareaRU}
-                        value={descriptionValueRU}
-                        onChange={(e)=>setDescriptionValueRU(e.target.value)}
-                    >
-                    </textarea> */}
                     <h4 className="textarea-wrapper__title">{textareaEN}</h4>
                     <TextEditor 
                         value={descriptionValueEN}
                         setValue={setDescriptionValueEN}
                     />
-                    {/* <textarea 
-                        className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                        placeholder={textareaEN}
-                        value={descriptionValueEN}
-                        onChange={(e)=>setDescriptionValueEN(e.target.value)}
-                    >
-                    </textarea> */}
                 </div>
             </section>
         </>

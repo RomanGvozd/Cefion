@@ -16,6 +16,9 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
         setEndtime(Date.now());
     },[])
 
+    const currentUser = useSelector((store) => store.currentUser);
+    let filteredRoles = currentUser.roles.includes("superadmin") || currentUser.roles.includes("admin")
+
     const news = useSelector((store) => store.newsPublish);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
@@ -43,7 +46,7 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
                             <div className="news__edit-image"></div>
                         </button>
                     </Link>
-                    <button 
+                    {filteredRoles && <button 
                         className={theme === "dark" ? "news__delete background-dark" : "news__delete background-light"}
                         onClick={()=>{
                             setShow(true)
@@ -51,7 +54,7 @@ function NewsPublished({setNewsID, setNewsEditPublishID}) {
                         }}
                     >
                         <div className="news__delete-image"></div>
-                    </button>
+                    </button>}
                     <Link to={`/admin/news/page/${item.id}`} onClick={()=>setNewsID(item.id)}>
                         <img className="news__image" src={require('./image/newsImage.png')} alt="" />
                     </Link>

@@ -10,6 +10,8 @@ import newsDraftsReducer from './newsDrafts/reducer';
 import newsReviewReducer from './newsReview/reducer';
 import newsPublishReducer from './newsPublish/reducer';
 import usersReducer from './users/reducer';
+import currentUserReducer from './currentUser/reducer';
+
 
 const root = combineReducers({
     theme: themeReducer,
@@ -23,6 +25,8 @@ const root = combineReducers({
     newsReview: newsReviewReducer,
     newsPublish: newsPublishReducer,
     users: usersReducer,
+    currentUser: currentUserReducer,
+
 });
 
 export default createStore(root);

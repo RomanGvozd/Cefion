@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import {useSelector} from "react-redux";
 import { content } from "./CreateAccount.config";
 import axios from 'axios'
+import ModalAlert from "../../ModalAlert/ModalAlert";
 
 import arr from './rolesArray';
 
@@ -12,12 +13,14 @@ function CreateAccount() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
-    const {CreateAccount, EnterName, EnterPassword} = content[language];
+    const {CreateAccount, EnterName, EnterPassword, Alert} = content[language];
 
     const [roles, setRoles] = useState(arr)
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
+
+    const [showAlert, setShowAlert] = useState(false);
 
     const handleChecket = (id) => {
         setRoles(roles.map(role => {
@@ -29,30 +32,31 @@ function CreateAccount() {
     }
 
     const handleCreate = () => {
-        const resutRoles = []
+        const resultRoles = []
         roles.forEach(item => {
             if (item.completed === true) {
-                resutRoles.push(item.titleEN)
+                resultRoles.push(item.titleEN.toLowerCase())
             }
         })
-        let tegName = []
+        let tagName = []
         name.split(' ').forEach(item => {
-            tegName.push(item.toLowerCase())
+            tagName.push(item.toLowerCase())
             
         })
         const user = {
-            name: name,
-            tegName: `@${tegName.join('')}`,
+            username: name,
+            // tagName: `@${tagName.join('')}`,
             password: password,
-            roles: resutRoles,
+            // role: resultRoles,
+            role: "ADMIN",
         }
 
-        axios.post('https://cefion.vercel.app/api/auth/registration', {
-            name: name,
-            tegName: `@${tegName.join('')}`,
-            password: password,
-            roles: resutRoles,
-        })
+        setShowAlert(true)
+        setTimeout(() => {
+            setShowAlert(false)
+        }, 2000);
+
+        axios.post('/api/auth/registration', user)
             .then((response) => {
                 console.log(response);
                 console.log(response.data);
@@ -76,6 +80,7 @@ function CreateAccount() {
                 value={name}
                 onChange={(e)=>setName(e.target.value)}
             />
+            {/* {password.length < 8 && <p className="text-validate">Пароль должен быть больше 8 символов</p>} */}
             <input 
                 className={theme === "dark" ? "create-account__input create-account__input-dark" : "create-account__input create-account__input-light"} 
                 type="text" 
@@ -102,6 +107,7 @@ function CreateAccount() {
             >
                 {CreateAccount}
             </button>
+            {showAlert && <ModalAlert text={Alert} name={name}/>}
         </div>
     )
 }

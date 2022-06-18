@@ -9,6 +9,7 @@ import {changeLanguage} from '../../common/store/language/actions';
 import './AdminHeader.scss';
 
 function AdminHeader() {
+    const currentUser = useSelector((store) => store.currentUser);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
@@ -57,10 +58,10 @@ function AdminHeader() {
                     <img className="user__image" src={require(`./images/user.png`)} alt="" />
                     <div className="user__info">
                         <p className={theme === "dark" ? "info__name-dark" : "info__name-light"}>
-                            Name Surname
+                            {currentUser.username}
                         </p>
                         <p className="info__tagname">
-                            @marcelosalomao
+                            {currentUser.tagName}
                         </p>
                     </div>
                 </div>

@@ -1,8 +1,7 @@
 import React, {useEffect} from "react";
 import { useSelector } from "react-redux";
 import { content } from "./UserList.config";
-import { UserListArr } from "./UserList.array";
-import axios from 'axios'
+import axios from 'axios';
 
 import "./UserList.scss";
 
@@ -18,6 +17,9 @@ function UserList() {
     useEffect(()=> {
         getUsers()
     }, [])
+
+    const currentUser = useSelector((store) => store.currentUser);
+    let filteredRoles = currentUser.roles.includes("superadmin")
 
     const users = useSelector((store) => store.users);
     const theme = useSelector((store) => store.theme.theme);
@@ -51,8 +53,10 @@ function UserList() {
                                 <p className={theme === "dark" ? "item__tagname-dark" : "item__tagname-light"}>
                                     {user.tagName}
                                 </p>
-                                <div className={theme === "dark" ? "item__image-dark" : "item__image-light"}>
-                                </div>
+                                {filteredRoles &&
+                                    <div className={theme === "dark" ? "item__image-dark" : "item__image-light"}>
+                                    </div>
+                                }
                             </div>
                         </div>
                     ))}
@@ -79,8 +83,11 @@ function UserList() {
                                 <p className={theme === "dark" ? "item__tagname-dark" : "item__tagname-light"}>
                                     {user.tagName}
                                 </p>
-                                <div className={theme === "dark" ? "item__image-dark" : "item__image-light"}>
-                                </div>
+                                {filteredRoles &&
+                                    <div className={theme === "dark" ? "item__image-dark" : "item__image-light"}>
+                                    </div>
+                                }
+
                             </div>
                         </div>
                     ))}

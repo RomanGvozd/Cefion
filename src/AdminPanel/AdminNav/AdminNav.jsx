@@ -7,10 +7,19 @@ import { buttons } from "./adminNav.buttons";
 import './AdminNav.scss';
 
 function AdminNav({handleShow, show}) {
+    const currentUser = useSelector((store) => store.currentUser);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
     const {pathname} = useLocation();
+
+    let filteredRoles = currentUser.roles.includes("admin") || currentUser.roles.includes("superadmin")
+
+    let filteredButtons = buttons
+
+    if (!filteredRoles) {
+        filteredButtons = buttons.filter((item)=> item.link === "/admin/news")
+    }
 
     const {CefionManagement, Cefion, EndSession} = content[language];
 
@@ -41,7 +50,7 @@ function AdminNav({handleShow, show}) {
                 </h4>
                 }
                 <nav className="management__nav">
-                    {buttons.map((button)=>(
+                    {filteredButtons.map((button)=>(
                     <Link to={button.link} key={button.id}>
                         <button 
                             className={theme === "dark" ? "nav__button background-dark" : "nav__button background-light"}
