@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import { Routes, Route } from "react-router-dom";
-import axios from "axios";
 
 import AdminHeader from "./AdminHeader/AdminHeader";
 import AdminNav from "./AdminNav/AdminNav";
@@ -16,18 +15,18 @@ import { addItem } from "../common/store/currentUser/actions";
 import { accountLogin } from "../common/api/auth.api";
 import './Admin.scss';
 
-
 function Admin() {
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
 
     const dispatch = useDispatch();
 
-    const [login, setLogin] = useState(false);
-
     const [formValues, setFormValues]=  useState({username:"", password:""});
-
     const [show, setShow] = useState(true);
+    const [login, setLogin] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [authorization, setAuthorization] = useState(false);
+
 
     const handleShow = () => {
         setShow(!show)
@@ -38,15 +37,18 @@ function Admin() {
         setFormValues((state)=>({...state,[name]:value}));
     }
 
-    const handleLogin = () => {
-        accountLogin(formValues)
+    const handleLogin = async () => {
+        setLoading(true)
+        await accountLogin(formValues)
         .then((response) => {
             dispatch(addItem(response.data.username))
+            setLoading(false)
             setLogin(true)
-            
         }, (error) => {
             console.log(error);
-
+            setLoading(false)
+            setLogin(false)
+            setAuthorization(true)
         });
     }
 
@@ -57,6 +59,7 @@ function Admin() {
                 <section className="admin-login">
                     <h1>log in</h1>
                     <div className="admin-login__form">
+                        {authorization && <p>Неверный логин или пароль</p>}
                         <input 
                             className="form__input" 
                             type="text" 
@@ -73,7 +76,9 @@ function Admin() {
                             value={formValues.password}
                             onChange={handleChange}
                             />
-                        <button 
+                        {loading 
+                        ? "Loading..."
+                        : <button 
                             className="form__button"
                             onClick={handleLogin}
                         >
@@ -81,8 +86,7 @@ function Admin() {
                             ? "Авторизоваться"
                             : "Login"
                             }
-
-                        </button>
+                        </button>}
                     </div>
                 </section>
             }
