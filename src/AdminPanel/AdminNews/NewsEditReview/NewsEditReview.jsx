@@ -16,7 +16,7 @@ import './NewsEditReview.scss';
 
 function NewsEditReview({newsID}) {
     const currentUser = useSelector((store) => store.currentUser);
-    let filteredRoles = currentUser.roles.includes("superadmin") || currentUser.roles.includes("redactor")
+    let filteredRoles = currentUser.roles.includes("super_admin") || currentUser.roles.includes("redactor")
 
     const newsPage = useSelector((store) => store.newsReview);
     const theme = useSelector((store) => store.theme.theme);
@@ -53,13 +53,13 @@ function NewsEditReview({newsID}) {
 
     const handleAddReview = () => {
         let date = newDate()
-        dispatch(addItemPublish(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+        dispatch(addItemPublish(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, currentUser.username, date, selected, tags))
         dispatch(deleteItem(newsID))
     }
 
     const handleDraft = () => {
         let date = newDate()
-        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, currentUser.username, date, selected, tags))
         dispatch(deleteItem(newsID))
     }
 

@@ -4,22 +4,34 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import ModalSubmit from "../../ModalSubmit/ModalSubmit";
 
-import { deleteItem } from "../../../common/store/newsReview/actions";
+import { deleteItem, getNewsReview } from "../../../common/store/newsReview/actions";
+import { api } from "../../../common/api/api";
 
 import './NewsReview.scss';
 
 function NewsReview({setNewsID, setNewsEditReviewID}) {
+    const dispatch = useDispatch();
+
     const [endtime, setEndtime] = useState()
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         setEndtime(Date.now());
-
+        setIsLoading(true);
+        api.get('/api/news_Editor')
+        .then(res => {
+            console.log(res)
+            dispatch(getNewsReview(res.data))
+        }).catch(()=>{
+            setIsLoading(false);
+        }).finally(()=>{
+            setIsLoading(false);
+        })
     },[])
 
     const news = useSelector((store) => store.newsReview);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
-    const dispatch = useDispatch();
 
     const [show, setShow] = useState(false);
     const [newsID, setNewsId] = useState('');

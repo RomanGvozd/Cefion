@@ -6,7 +6,7 @@ import Admin from './AdminPanel/Admin';
 import App from './App';
 import {Provider} from 'react-redux';
 
-import store from './common/store/store';
+import {store} from './common/store/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

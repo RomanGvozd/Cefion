@@ -15,6 +15,8 @@ import SelectNewsGroup from "../SelectNewsGroup/SelectNewsGroup";
 import './NewsEditPublish.scss';
 
 function NewsEditPublish({newsID}) {
+    const currentUser = useSelector((store) => store.currentUser);
+
     const newsPage = useSelector((store) => store.newsPublish);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
@@ -50,13 +52,13 @@ function NewsEditPublish({newsID}) {
 
     const handleAddDraft = () => {
         let date = newDate()
-        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, currentUser.username, date, selected, tags))
         dispatch(deleteItem(newsID))
     }
 
     const handleAddReview = () => {
         let date = newDate()
-        dispatch(addItemReview(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+        dispatch(addItemReview(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, currentUser.username, date, selected, tags))
         dispatch(deleteItem(newsID))
     }
 

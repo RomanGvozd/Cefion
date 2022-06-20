@@ -13,7 +13,7 @@ function AdminNav({handleShow, show}) {
 
     const {pathname} = useLocation();
 
-    let filteredRoles = currentUser.roles.includes("admin") || currentUser.roles.includes("superadmin")
+    let filteredRoles = currentUser.roles.includes("admin") || currentUser.roles.includes("super_admin")
 
     let filteredButtons = buttons
 

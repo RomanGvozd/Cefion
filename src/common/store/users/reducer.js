@@ -1,53 +1,13 @@
-import { ACTION_ADD_USER, ACTION_DELETE_USER } from "./actions";
+import { ACTION_ADD_USER, ACTION_DELETE_USER, ACTION_GET_USERS } from "./actions";
 
-const INITIAL_STATE = [
-    {
-        id: 1,
-        name: "Arnold Kirimi",
-        tagName: `@arnoldkirimi`,
-        password: "111222333",
-        roles: ["admin"],
-    },
-    {
-        id: 2,
-        name: "Marcelos Alomao",
-        tagName: "@marcelosalomao",
-        password: "111222333",
-        roles: ["user"],
-    },
-    {
-        id: 3,
-        name: "Arnold Kirimi",
-        tagName: `@arnoldkirimi`,
-        password: "111222333",
-        roles: ["user"],
-    },
-    {
-        id: 4,
-        name: "Antonio Kirimi",
-        tagName: `@antoniokirimi`,
-        password: "111222333",
-        roles: ["user"],
-    },
-    {
-        id: 5,
-        name: "Antonio Kirimi",
-        tagName: `@antoniokirimi`,
-        password: "111222333",
-        roles: [ "copywriter"],
-    },
-    {
-        id: 6,
-        name: "Antonio Kirimi",
-        tagName: `@antoniokirimi`,
-        password: "111222333",
-        roles: [ "copywriter"],
-    },
-]
+const INITIAL_STATE = []
 
 export default function reducer(state = INITIAL_STATE, { type, payload }) {
 
     switch (type) {
+        case ACTION_GET_USERS:
+            console.log(payload)
+            return payload
         case ACTION_ADD_USER:
             return [ ...state, {
                 id: Date.now(), 

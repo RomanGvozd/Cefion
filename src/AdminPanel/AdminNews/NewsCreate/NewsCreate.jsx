@@ -11,6 +11,7 @@ import { addItemReview } from "../../../common/store/newsReview/actions";
 import './NewsCreate.scss';
 
 function NewsCreate() {
+    const currentUser = useSelector((store) => store.currentUser);
     const theme = useSelector((store) => store.theme.theme);
     const language = useSelector((store) => store.language.language);
     const dispatch = useDispatch();
@@ -50,12 +51,14 @@ function NewsCreate() {
 
     const handleAddDraft = () => {
         let date = newDate()
-        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+        dispatch(addItemDrafts(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, currentUser.username, date, selected, tags))
+        handleCancel()
     }
     
     const handleAddReview = () => {
         let date = newDate()
-        dispatch(addItemReview(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, date, selected, tags))
+        dispatch(addItemReview(titleValueRU, titleValueEN, descriptionValueRU, descriptionValueEN, currentUser.username, date, selected, tags))
+        handleCancel()
     }
 
     const handleAddTag = () => {
@@ -155,25 +158,11 @@ function NewsCreate() {
                     value={descriptionValueRU}
                     setValue={setDescriptionValueRU}
                 />
-                {/* <textarea 
-                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                    placeholder={textareaRU}
-                    value={descriptionValueRU}
-                    onChange={(e)=>setDescriptionValueRU(e.target.value)}
-                >
-                </textarea> */}
                 <h4 className="textarea-wrapper__title">{textareaEN}</h4>
                 <TextEditor
                     value={descriptionValueEN}
                     setValue={setDescriptionValueEN}
                 />
-                {/* <textarea 
-                    className={theme === "dark" ? "news-create__textarea background-dark" : "news-create__textarea background-light"}
-                    placeholder={textareaEN}
-                    value={descriptionValueEN}
-                    onChange={(e)=>setDescriptionValueEN(e.target.value)}
-                >
-                </textarea> */}
             </div>
 
         </section>

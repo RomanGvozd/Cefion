@@ -10,7 +10,7 @@ import './Roles.scss';
 
 function Roles() {
     const currentUser = useSelector((store) => store.currentUser);
-    let filteredRoles = currentUser.roles.includes("superadmin")
+    let filteredRoles = currentUser.roles.includes("super_admin")
 
     return(
         <section className="admin-roles" style={!filteredRoles ? {justifyContent: `space-between`,} : {}}>

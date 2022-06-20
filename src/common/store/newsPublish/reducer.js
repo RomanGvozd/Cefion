@@ -1,4 +1,4 @@
-import { ACTION_ADD_NEWS_PUBLISH, ACTION_DELETE_NEWS_PUBLISH, ACTION_EDIT_NEWS_PUBLISH } from "./actions";
+import { ACTION_ADD_NEWS_PUBLISH, ACTION_DELETE_NEWS_PUBLISH, ACTION_EDIT_NEWS_PUBLISH, ACTION_GET_NEWS } from "./actions";
 
 const INITIAL_STATE = [
     {
@@ -102,6 +102,8 @@ const INITIAL_STATE = [
 export default function reducer(state = INITIAL_STATE, { type, payload }) {
 
     switch (type) {
+        case ACTION_GET_NEWS:
+            return [...state, ...payload]
         case ACTION_ADD_NEWS_PUBLISH:
             return [ ...state, {
                 id: Date.now(), 
@@ -109,6 +111,7 @@ export default function reducer(state = INITIAL_STATE, { type, payload }) {
                 titleEN: payload.titleEN, 
                 descriptionRU: payload.descriptionRU,
                 descriptionEN: payload.descriptionEN,
+                author: payload.author,
                 date: payload.date,
                 type: payload.type,
                 hashtags: payload.hashtags,

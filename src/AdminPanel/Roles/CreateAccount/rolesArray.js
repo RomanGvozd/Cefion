@@ -2,7 +2,7 @@ const roles = [
     {
         id: 1,
         titleRU: "Суперадмин",
-        titleEN: "Superadmin",
+        titleEN: "Super_admin",
         completed: false,
     },
     {
@@ -14,7 +14,7 @@ const roles = [
     {
         id: 3,
         titleRU: "Редактор",
-        titleEN: "Redactor",
+        titleEN: "Editor",
         completed: false,
     },
     {

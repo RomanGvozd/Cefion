@@ -85,6 +85,7 @@ export default function reducer(state = INITIAL_STATE, { type, payload }) {
                 titleEN: payload.titleEN, 
                 descriptionRU: payload.descriptionRU,
                 descriptionEN: payload.descriptionEN,
+                author: payload.author,
                 date: payload.date,
                 type: payload.type,
                 hashtags: payload.hashtags,

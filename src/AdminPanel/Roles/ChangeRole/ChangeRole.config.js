@@ -1,11 +1,11 @@
 export const content = {
     EN: {
-        IssueArole: "Issue a role",
+        IssueArole: "Change role",
         EnterName: "Enter name",
         Apply: "Apply",
     },
     RU: {
-        IssueArole: "Выдать роль",
+        IssueArole: "Поменять роль",
         EnterName: "Ввести имя",
         Apply: "Применить",
     }

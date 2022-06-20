@@ -20,12 +20,14 @@ function Header({openModalLogin}) {
     const [hide, setHide] = useState(0);
     const {pathname} = useLocation();
     const [isActive, setIsActive] = useState(false);
+    const [isActiveNav, setIsActiveNav] = useState(false);
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
             if (scrollPosition() > lastScroll) {
                 setHide(-100)
-                setIsActive(false)        
+                setIsActive(false)
+                setIsActiveNav(false)      
             } else if (scrollPosition() < lastScroll) {
                 setHide(0)
             }     
@@ -77,7 +79,13 @@ function Header({openModalLogin}) {
                         </div>
                     </Link>
                     <div className='nav__buuton-wrapper'>
-                        <div className='nav__button' onClick={()=>setNav(true)}>
+                        <div 
+                            className='nav__button' 
+                            onClick={()=>{
+                                setNav(true)
+                                setIsActiveNav(true)
+                            }}
+                        >
                             <span className='nav__button-span'></span>
                         </div>
                     </div>
@@ -85,7 +93,7 @@ function Header({openModalLogin}) {
 
                 <nav className='header__nav'>
                     <div 
-                        className={nav ? 'nav__list nav__list-open' : 'nav__list'}
+                        className={(nav && isActiveNav) ? 'nav__list nav__list-open' : 'nav__list'}
                         style={theme === "dark" ? {backgroundColor: "black"} : {backgroundColor: "white"}}
                     >
                             {nav 

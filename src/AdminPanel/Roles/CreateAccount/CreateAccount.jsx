@@ -45,21 +45,19 @@ function CreateAccount() {
         })
         const user = {
             username: name,
-            // tagName: `@${tagName.join('')}`,
+            tagName: `@${tagName.join('')}`,
             password: password,
-            // role: resultRoles,
-            role: "ADMIN",
+            roles: resultRoles,
         }
 
-        setShowAlert(true)
-        setTimeout(() => {
-            setShowAlert(false)
-        }, 2000);
-
-        axios.post('/api/auth/registration', user)
+        axios.post('/api/reg/create', user)
             .then((response) => {
                 console.log(response);
                 console.log(response.data);
+                setShowAlert(true)
+                setTimeout(() => {
+                    setShowAlert(false)
+                }, 2000);
                 
             }, (error) => {
                 console.log(error);
